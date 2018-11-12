@@ -310,6 +310,18 @@ void TeleopVesc::joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
 	*/
 }
 
+double duty_limit(double input_duty)
+{
+	double duty_limit = 0.95;
+	double output_duty;
+
+	if(input_duty>=duty_limit)	output_duty = duty_limit;
+	else if(input_duty<=-duty_limit)	output_duty = -duty_limit;
+	else output_duty = input_duty;
+
+	return output_duty;
+}
+
 void omni_jacobian(double vx, double vy, double wz, double *duty1, double *duty2, double *duty3)
 {
 	// robot parameter
@@ -322,9 +334,9 @@ void omni_jacobian(double vx, double vy, double wz, double *duty1, double *duty2
 	u2 = (-0.5*vx + sqrt(3.)/2.*vy - d*wz)/radius_wheel;
 	u3 = (-0.5*vx - sqrt(3.)/2.*vy - d*wz)/radius_wheel;
 
-	*duty1 = u1*VEL2DUTY;
-	*duty2 = u2*VEL2DUTY;
-	*duty3 = u3*VEL2DUTY;
+	*duty1 = duty_limit(u1*VEL2DUTY);
+	*duty2 = duty_limit(u2*VEL2DUTY);
+	*duty3 = duty_limit(u3*VEL2DUTY);
 }
 
 /*
