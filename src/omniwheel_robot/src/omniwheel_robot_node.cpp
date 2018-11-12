@@ -396,7 +396,6 @@ int main(int argc, char **argv)
 		teleop_vesc->duty[0] = teleop_vesc->duty[0];//*sin(2*M_PI*1.*cnt_loop/rate_hz);
 		teleop_vesc->duty[1] = teleop_vesc->duty[1];//*sin(2*M_PI*1.*cnt_loop/rate_hz);
 		teleop_vesc->duty[2] = teleop_vesc->duty[2];//*sin(2*M_PI*1.*cnt_loop/rate_hz);
-		// teleop_vesc->duty[3] = 0.5;
 		teleop_vesc->setDutyCycleOut();
 
 		// // position example (0~360 deg)
