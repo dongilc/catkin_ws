@@ -348,7 +348,7 @@ int main(int argc, char **argv)
   ros::init(argc, argv, "vesc_control_node");
 
   // loop freq
-  int rate_hz = 100;	//hz
+  int rate_hz = 50;	//hz
 
   // TeleopVesc Class
   const int num_of_vesc = VESC_ID_END+1;
