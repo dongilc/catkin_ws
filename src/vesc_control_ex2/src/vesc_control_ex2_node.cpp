@@ -8,9 +8,6 @@
  */
 
 #include "vesc_control.h"
-#include <stdio.h>
-#include <termios.h>    //termios, TCSANOW, ECHO, ICANON
-#include <unistd.h>     //STDIN_FILENO
 
 // Settings
 #define VESC_ID_0				0
@@ -40,6 +37,24 @@
 // Uncomment this only when you want to see the below infomations.
 //#define PRINT_SENSOR_CORE
 //#define PRINT_SENSOR_CUSTOMS
+
+void TeleopVesc::keyboardCallback(const geometry_msgs::Twist::ConstPtr& cmd_vel)
+{
+	//ROS_INFO("lin x:%.2f, y:%.2f, z:%.2f", cmd_vel->linear.x, cmd_vel->linear.y, cmd_vel->linear.z);
+	//ROS_INFO("ang x:%.2f, y:%.2f, z:%.2f", cmd_vel->angular.x, cmd_vel->angular.y, cmd_vel->angular.z);
+	dps[0] = cmd_vel->linear.x*2.;//cmd_vel->linear.x*200.;
+	speed[0] = cmd_vel->angular.z*1.;
+	if(cmd_vel->angular.z < 0) {
+		enable.data = false;
+		dps[0] = 0.;
+		speed[0] = 0.;
+	}
+	else 
+	{
+		startTime = ros::Time::now();
+		enable.data = true;
+	}
+}
 
 void TeleopVesc::customsCallback(const vesc_msgs::VescGetCustomApp::ConstPtr& custom_rx_msg)
 {
@@ -227,21 +242,6 @@ void TeleopVesc::setPositionOut()
 	}
 }
 
-// keyboard input
-int getch()
-{
-  static struct termios oldt, newt;
-  tcgetattr( STDIN_FILENO, &oldt);           // save old settings
-  newt = oldt;
-  newt.c_lflag &= ~(ICANON);                 // disable buffering      
-  tcsetattr( STDIN_FILENO, TCSANOW, &newt);  // apply new settings
-
-  int c = getchar();  // read character (non-blocking)
-
-  tcsetattr( STDIN_FILENO, TCSANOW, &oldt);  // restore old settings
-  return c;
-}
-
 /*
  * Main Function
  * 
@@ -251,32 +251,24 @@ int main(int argc, char **argv)
   ros::init(argc, argv, "vesc_control_node");
 
   // loop freq
-  int rate_hz = 50;	//hz
+  int rate_hz = 250;	//hz
 
   // TeleopVesc Class
   const int num_of_vesc = VESC_ID_END+1;//4;
-  TeleopVesc *teleop_vesc = new TeleopVesc(num_of_vesc);
-  teleop_vesc->enable.data = false;
+  TeleopVesc *teleop_vesc = new TeleopVesc(num_of_vesc); 
 
-//   teleop_vesc->enable.data = true;
-//   teleop_vesc->custom_cmd_type[0] = COMM_SET_DPS;
-//   teleop_vesc->custom_cmd_value[0] = 1000.;
-//   teleop_vesc->setCustomOut();
+  // sleeper model swip
+  double freq = 1.;
+  double amplitude = 17.7; // deg
 
   // ROS Loop
   int cnt_lp = 0;
   ros::Rate loop_rate(rate_hz); //Hz
   ROS_INFO("Start Tele-operation");
+  teleop_vesc->enable.data = true;
+  teleop_vesc->startTime = ros::Time::now();
   while (ros::ok())
   { 
-	  	// keyboard input
-		int c = getch();
-		if(c == 'r') {
-			ROS_INFO("rps_0:%.2f(dps_0:%.2f), rad_0:%.2f", teleop_vesc->rps[0], teleop_vesc->rps[0]*RPS2DPS, teleop_vesc->rad[0]);
-		}
-
-		teleop_vesc->enable.data = true;
-
 		// read encoder data.
 		//teleop_vesc->requestCustoms();
 		//ROS_INFO("rps_0:%.2f(dps_0:%.2f), rad_0:%.2f", teleop_vesc->rps[0], teleop_vesc->rps[0]*RPS2DPS, teleop_vesc->rad[0]);
@@ -320,8 +312,9 @@ int main(int argc, char **argv)
 		//teleop_vesc->setPositionOut();
 
 		// Custom example
+		freq = teleop_vesc->speed[0];
 		teleop_vesc->custom_cmd_type[0] = COMM_SET_DPS;
-		teleop_vesc->custom_cmd_value[0] = 10.;
+		teleop_vesc->custom_cmd_value[0] = teleop_vesc->dps[0]*amplitude*2*M_PI*freq*cos(2*M_PI*freq*(ros::Time::now() - teleop_vesc->startTime).toSec());
 		//teleop_vesc->custom_cmd_type[1] = COMM_SET_DPS;
 		//teleop_vesc->custom_cmd_value[1] = 1000.;
 		//teleop_vesc->custom_cmd_type[2] = COMM_SET_DPS;

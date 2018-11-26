@@ -10,4 +10,5 @@
 
  <!-- vesc_control_ex2 node -->
   <node pkg="vesc_control_ex2" type="vesc_control_ex2_node" name="vesc_control_ex2_node" output="screen"/>
-</launch>
+
+ </launch>

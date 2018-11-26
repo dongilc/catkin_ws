@@ -11,6 +11,7 @@
 #include "ros/ros.h"
 #include <std_msgs/Bool.h>
 #include <sensor_msgs/Joy.h>
+#include <geometry_msgs/Twist.h>
 #include "vesc_msgs/VescSetCommand.h"	//cdi
 #include "vesc_msgs/VescStateStamped.h"	//cdi
 #include "vesc_msgs/VescGetCustomApp.h"	//cdi
@@ -27,6 +28,7 @@ public:
 	double* rad;
 	double* current;
 	double* speed;
+	double* dps;
 	double* duty;
 	double* position;
 	double* enc_deg;
@@ -34,6 +36,7 @@ public:
 	int*    custom_cmd_type;
 	double* custom_cmd_value;
 
+	ros::Time startTime;
 	std_msgs::Bool enable;
 	ros::Publisher vesc_cmd_get_customs, vesc_cmd_set_customs, vesc_cmd_alive, vesc_cmd_speed, vesc_cmd_current, vesc_cmd_duty, vesc_cmd_position, vesc_cmd_brake;
 	vesc_msgs::VescSetCommand cmd_msg;
@@ -48,6 +51,7 @@ public:
 		rad = new double[NO_VESC];
 		current = new double[NO_VESC];
 		speed = new double[NO_VESC];
+		dps = new double[NO_VESC];
 		duty = new double[NO_VESC];
 		position = new double[NO_VESC];
 		enc_deg = new double[NO_VESC];
@@ -62,6 +66,7 @@ public:
 			rad[i] = 0.;
 			current[i] = 0.;
 			speed[i] = 0.;
+			dps[i] = 0.;
 			duty[i] = 0.;
 			position[i] = 0.;
 			enc_deg[i] = 0.;
@@ -83,6 +88,7 @@ public:
 		// Subscriber
 		vesc_sensor_core_ = nh_.subscribe<vesc_msgs::VescStateStamped>("sensors/core", 10, &TeleopVesc::stateCallback, this);
 		vesc_sensor_customs_= nh_.subscribe<vesc_msgs::VescGetCustomApp>("sensors/customs", 10, &TeleopVesc::customsCallback, this);
+		vesc_keyboard_input_ = nh_.subscribe<geometry_msgs::Twist>("cmd_vel", 10, &TeleopVesc::keyboardCallback, this);
 	}
 
 	~TeleopVesc() {
@@ -91,6 +97,7 @@ public:
 		delete[] rad;
 		delete[] current;
 		delete[] speed;
+		delete[] dps;
 		delete[] duty;
 		delete[] position;
 		delete[] enc_deg;
@@ -112,9 +119,10 @@ public:
 private:
 	void stateCallback(const vesc_msgs::VescStateStamped::ConstPtr& state_msg);
 	void customsCallback(const vesc_msgs::VescGetCustomApp::ConstPtr& custom_rx_msg);
+	void keyboardCallback(const geometry_msgs::Twist::ConstPtr& cmd_vel);
 
 	ros::NodeHandle nh_;
-	ros::Subscriber vesc_sensor_core_, vesc_sensor_customs_;
+	ros::Subscriber vesc_sensor_core_, vesc_sensor_customs_, vesc_keyboard_input_;
 };
 
 #endif
