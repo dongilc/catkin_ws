@@ -9,10 +9,10 @@ find_package(catkin REQUIRED COMPONENTS
   message_generation
 )
 
-add_message_files(
-   DIRECTORY msg
-   FILES
-)
+#add_message_files(
+#   DIRECTORY msg
+#   FILES
+#)
 
 generate_messages(
    DEPENDENCIES
