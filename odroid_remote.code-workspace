@@ -1,0 +1,6 @@
+{
+    "folders": [{
+        "uri": "sftp://odroid:odroid@192.168.1.17/home/odroid/workspace/catkin_ws",
+        "name": "odroid_home"
+    }]
+}
