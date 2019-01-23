@@ -15,7 +15,7 @@
 #define VESC_ID_2				2
 #define VESC_ID_3				3
 #define VESC_ID_START			VESC_ID_0
-#define VESC_ID_END				VESC_ID_0	// Change this depend on your condition
+#define VESC_ID_END				VESC_ID_3	// Change this depend on your condition
 #define CAN_FORWARD_OFF			0
 #define CAN_FORWARD_ON			1
 #define BRAKE_CURRENT			10.
@@ -298,11 +298,11 @@ int main(int argc, char **argv)
 		//teleop_vesc->setSpeedOut();
 
 		// // // duty example (0.005~0.95)
-		//teleop_vesc->duty[0] = 0.1;
-		//teleop_vesc->duty[1] = 0.1;
-		//teleop_vesc->duty[2] = 0.1;
-		// teleop_vesc->duty[3] = 0.5;
-		//teleop_vesc->setDutyCycleOut();
+		teleop_vesc->duty[0] = 0.1;
+		teleop_vesc->duty[1] = 0.1;
+		teleop_vesc->duty[2] = 0.1;
+		teleop_vesc->duty[3] = 0.1;
+	    teleop_vesc->setDutyCycleOut();
 
 		// // position example (0~360 deg)
 		//teleop_vesc->position[0] = 0.;
@@ -315,8 +315,8 @@ int main(int argc, char **argv)
 		//freq = teleop_vesc->speed[0];
 		//teleop_vesc->custom_cmd_type[0] = COMM_SET_DPS;
 		//teleop_vesc->custom_cmd_value[0] = teleop_vesc->dps[0]*amplitude*2*M_PI*freq*cos(2*M_PI*freq*(ros::Time::now() - teleop_vesc->startTime).toSec());
-		teleop_vesc->custom_cmd_type[0] = COMM_SET_DPS;
-		teleop_vesc->custom_cmd_value[0] = 100.;
+		//teleop_vesc->custom_cmd_type[0] = COMM_SET_DPS;
+		//teleop_vesc->custom_cmd_value[0] = 100.;
 		//teleop_vesc->custom_cmd_type[1] = COMM_SET_DPS;
 		//teleop_vesc->custom_cmd_value[1] = 1000.;
 		//teleop_vesc->custom_cmd_type[2] = COMM_SET_DPS;
@@ -325,7 +325,7 @@ int main(int argc, char **argv)
 		//teleop_vesc->custom_cmd_value[3] = 1000.;
 		// teleop_vesc->custom_cmd_type[1] = COMM_SET_DPS;
 		//teleop_vesc->custom_cmd_value[1] = 0.;
-		teleop_vesc->setCustomOut();
+		//teleop_vesc->setCustomOut();
 
 		ros::spinOnce();
 		loop_rate.sleep();
