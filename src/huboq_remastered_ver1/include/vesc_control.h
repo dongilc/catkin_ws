@@ -21,6 +21,7 @@ class TeleopVesc
 {
 public:
 	int NO_VESC;
+	std::string port_name;
 
 	int ctm_state;	// 0:ready, 1:init, 2:run, 3:end
 	double* erpm;
@@ -41,10 +42,12 @@ public:
 	ros::Publisher vesc_cmd_get_customs, vesc_cmd_set_customs, vesc_cmd_alive, vesc_cmd_speed, vesc_cmd_current, vesc_cmd_duty, vesc_cmd_position, vesc_cmd_brake;
 	vesc_msgs::VescSetCommand cmd_msg;
 	vesc_msgs::VescSetCustomApp custom_tx_msg;
+	std::string topic_name;
 
-	TeleopVesc(const int no_of_vesc)
+	TeleopVesc(const int no_of_vesc, const std::string port)
 	{
 		NO_VESC = no_of_vesc;
+		port_name = port;
 
 		erpm = new double[NO_VESC];
 		rps = new double[NO_VESC];
@@ -76,18 +79,28 @@ public:
 		}
 
 		// Publisher
-		vesc_cmd_get_customs = nh_.advertise<std_msgs::Bool>("commands/motor/get_customs", 10);
-		vesc_cmd_set_customs = nh_.advertise<vesc_msgs::VescSetCustomApp>("commands/motor/set_customs", 10);
-		vesc_cmd_alive = nh_.advertise<std_msgs::Bool>("commands/motor/alive", 10);
-		vesc_cmd_speed = nh_.advertise<vesc_msgs::VescSetCommand>("commands/motor/speed", 10);
-		vesc_cmd_duty = nh_.advertise<vesc_msgs::VescSetCommand>("commands/motor/duty_cycle", 10);
-		vesc_cmd_current = nh_.advertise<vesc_msgs::VescSetCommand>("commands/motor/current", 10);
-		vesc_cmd_position = nh_.advertise<vesc_msgs::VescSetCommand>("commands/motor/position", 10);
-		vesc_cmd_brake = nh_.advertise<vesc_msgs::VescSetCommand>("commands/motor/brake", 10);
+		topic_name = port + "/commands/motor/get_customs";
+		vesc_cmd_get_customs = nh_.advertise<std_msgs::Bool>(topic_name, 10);
+		topic_name = port + "/commands/motor/set_customs";
+		vesc_cmd_set_customs = nh_.advertise<vesc_msgs::VescSetCustomApp>(topic_name, 10);
+		topic_name = port + "/commands/motor/alive";
+		vesc_cmd_alive = nh_.advertise<std_msgs::Bool>(topic_name, 10);
+		topic_name = port + "/commands/motor/speed";
+		vesc_cmd_speed = nh_.advertise<vesc_msgs::VescSetCommand>(topic_name, 10);
+		topic_name = port + "/commands/motor/duty_cycle";
+		vesc_cmd_duty = nh_.advertise<vesc_msgs::VescSetCommand>(topic_name, 10);
+		topic_name = port + "/commands/motor/current";
+		vesc_cmd_current = nh_.advertise<vesc_msgs::VescSetCommand>(topic_name, 10);
+		topic_name = port + "/commands/motor/position";
+		vesc_cmd_position = nh_.advertise<vesc_msgs::VescSetCommand>(topic_name, 10);
+		topic_name = port + "/commands/motor/brake";
+		vesc_cmd_brake = nh_.advertise<vesc_msgs::VescSetCommand>(topic_name, 10);
 
 		// Subscriber
-		vesc_sensor_core_ = nh_.subscribe<vesc_msgs::VescStateStamped>("sensors/core", 10, &TeleopVesc::stateCallback, this);
-		vesc_sensor_customs_= nh_.subscribe<vesc_msgs::VescGetCustomApp>("sensors/customs", 10, &TeleopVesc::customsCallback, this);
+		topic_name = port + "/sensors/core";
+		vesc_sensor_core_ = nh_.subscribe<vesc_msgs::VescStateStamped>(topic_name, 10, &TeleopVesc::stateCallback, this);
+		topic_name = port + "/sensors/customs";
+		vesc_sensor_customs_= nh_.subscribe<vesc_msgs::VescGetCustomApp>(topic_name, 10, &TeleopVesc::customsCallback, this);
 		vesc_keyboard_input_ = nh_.subscribe<geometry_msgs::Twist>("cmd_vel", 10, &TeleopVesc::keyboardCallback, this);
 		joy_sub_ = nh_.subscribe<sensor_msgs::Joy>("joy", 10, &TeleopVesc::joyCallback, this);
 	}

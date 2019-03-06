@@ -71,7 +71,7 @@ private:
   typedef enum {
     MODE_INITIALIZING,
     MODE_ENABLE,
-	MODE_DISABLE,
+	  MODE_DISABLE,
   } driver_mode_t;
 
   // other variables

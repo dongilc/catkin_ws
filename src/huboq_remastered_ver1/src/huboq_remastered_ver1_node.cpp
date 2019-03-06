@@ -12,8 +12,9 @@
 // Settings
 #define VESC_ID_0				0
 #define VESC_ID_1				1
-//#define VESC_ID_2				2
-//#define VESC_ID_3				3
+#define VESC_ID_2				2
+#define VESC_ID_3				3
+#define VESC_ID_4				4
 #define VESC_ID_START			VESC_ID_0
 #define VESC_ID_END				VESC_ID_1	// Change this depend on your condition
 #define CAN_FORWARD_OFF			0
@@ -99,6 +100,7 @@ void TeleopVesc::joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
 		//
 		duty[0] = -(0.2*joy_cmd_forward + 0.1*joy_cmd_steering);
 		duty[1] = +(0.2*joy_cmd_forward - 0.1*joy_cmd_steering);
+		duty[2] = 0.1;
 		break;
 	case 2:
 		//
@@ -254,14 +256,23 @@ void TeleopVesc::setDutyCycleOut()
 	int id;
 	int can_forw = 0;
 
-	if(enable.data)
+	if(this->enable.data)
 	{
-		// current
-		for(int i=VESC_ID_START; i<=VESC_ID_END; i++) {
-			if(i==0) can_forw = CAN_FORWARD_OFF;
-			else     can_forw = CAN_FORWARD_ON;
-			setCmdMsg(duty[i], can_forw, i);
-			vesc_cmd_duty.publish(cmd_msg);
+		if(this->port_name=="/dev/ttyVESC1")
+		{
+			// duty
+			for(int i=VESC_ID_START; i<=VESC_ID_END; i++) {
+				if(i==0) can_forw = CAN_FORWARD_OFF;
+				else     can_forw = CAN_FORWARD_ON;
+				setCmdMsg(this->duty[i], can_forw, i);
+				this->vesc_cmd_duty.publish(cmd_msg);
+			}
+		}
+		else if(this->port_name=="/dev/ttyVESC2")
+		{
+			// duty
+			setCmdMsg(this->duty[2], 0, 0);
+			this->vesc_cmd_duty.publish(cmd_msg);
 		}
 	}
 }
@@ -312,15 +323,17 @@ int main(int argc, char **argv)
   int rate_hz = 50;	//hz
 
   // TeleopVesc Class
-  const int num_of_vesc = VESC_ID_END+1;//4;
-  TeleopVesc *teleop_vesc = new TeleopVesc(num_of_vesc); 
+  TeleopVesc *teleop_vesc1 = new TeleopVesc(2, "/dev/ttyVESC1"); 
+  TeleopVesc *teleop_vesc2 = new TeleopVesc(1, "/dev/ttyVESC2"); 
 
   // ROS Loop
   int cnt_lp = 0;
   ros::Rate loop_rate(rate_hz); //Hz
   ROS_INFO("Start Tele-operation");
-  teleop_vesc->enable.data = true;
-  teleop_vesc->startTime = ros::Time::now();
+  teleop_vesc1->enable.data = true;
+  teleop_vesc2->enable.data = true;
+  teleop_vesc1->startTime = ros::Time::now();
+  teleop_vesc2->startTime = ros::Time::now();
   while (ros::ok())
   { 
 		// read encoder data.
@@ -356,7 +369,9 @@ int main(int argc, char **argv)
 		//teleop_vesc->duty[1] = duty[1];
 		//teleop_vesc->duty[2] = 0.1;
 		// teleop_vesc->duty[3] = 0.5;
-		teleop_vesc->setDutyCycleOut();
+		teleop_vesc1->setDutyCycleOut();
+
+		teleop_vesc2->setDutyCycleOut();
 		//ROS_INFO("duty_0:%.2f, duty_1:%.2f", teleop_vesc->duty[0], teleop_vesc->duty[1]);
 
 		// // position example (0~360 deg)

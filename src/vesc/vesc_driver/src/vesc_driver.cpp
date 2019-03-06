@@ -10,6 +10,8 @@
 
 namespace vesc_driver
 {
+static std::string port;
+static std::string topic_name;
 
 VescDriver::VescDriver(ros::NodeHandle nh,
                        ros::NodeHandle private_nh) :
@@ -22,7 +24,6 @@ VescDriver::VescDriver(ros::NodeHandle nh,
   driver_mode_(MODE_INITIALIZING), fw_version_major_(-1), fw_version_minor_(-1)
 {
   // get vesc serial port address
-  std::string port;
   if (!private_nh.getParam("port", port)) {
     ROS_FATAL("VESC communication port parameter required.");
     ros::shutdown();
@@ -40,23 +41,35 @@ VescDriver::VescDriver(ros::NodeHandle nh,
   }
 
   // create vesc state (telemetry) publisher
-  state_pub_ = nh.advertise<vesc_msgs::VescStateStamped>("sensors/core", 10);
-  customs_pub_ = nh.advertise<vesc_msgs::VescGetCustomApp>("sensors/customs", 10);
+  topic_name = port + "/sensors/core";
+  state_pub_ = nh.advertise<vesc_msgs::VescStateStamped>(topic_name.c_str(), 10);
+  topic_name = port + "/sensors/customs";
+  customs_pub_ = nh.advertise<vesc_msgs::VescGetCustomApp>(topic_name.c_str(), 10);
 
   // since vesc state does not include the servo position, publish the commanded
   // servo position as a "sensor"
-  servo_sensor_pub_ = nh.advertise<std_msgs::Float64>("sensors/servo_position_command", 10);
+  topic_name = port + "/sensors/servo_position_command";
+  servo_sensor_pub_ = nh.advertise<std_msgs::Float64>(topic_name.c_str(), 10);
 
   // subscribe to motor and servo command topics
-  get_customs_sub_ = nh.subscribe("commands/motor/get_customs", 10, &VescDriver::getCustomsCallback, this); //cdi
-  set_customs_sub_ = nh.subscribe("commands/motor/set_customs", 10, &VescDriver::setCustomsCallback, this); //cdi
-  alive_sub_ = nh.subscribe("commands/motor/alive", 10, &VescDriver::aliveCallback, this); //cdi
-  duty_cycle_sub_ = nh.subscribe("commands/motor/duty_cycle", 10, &VescDriver::dutyCycleCallback, this);
-  current_sub_ = nh.subscribe("commands/motor/current", 10, &VescDriver::currentCallback, this);
-  brake_sub_ = nh.subscribe("commands/motor/brake", 10, &VescDriver::brakeCallback, this);
-  speed_sub_ = nh.subscribe("commands/motor/speed", 10, &VescDriver::speedCallback, this);
-  position_sub_ = nh.subscribe("commands/motor/position", 10, &VescDriver::positionCallback, this);
-  servo_sub_ = nh.subscribe("commands/servo/position", 10, &VescDriver::servoCallback, this);
+  topic_name = port + "/commands/motor/get_customs";
+  get_customs_sub_ = nh.subscribe(topic_name.c_str(), 10, &VescDriver::getCustomsCallback, this); //cdi
+  topic_name = port + "/commands/motor/set_customs";
+  set_customs_sub_ = nh.subscribe(topic_name.c_str(), 10, &VescDriver::setCustomsCallback, this); //cdi
+  topic_name = port + "/commands/motor/alive";
+  alive_sub_ = nh.subscribe(topic_name.c_str(), 10, &VescDriver::aliveCallback, this); //cdi
+  topic_name = port + "/commands/motor/duty_cycle";
+  duty_cycle_sub_ = nh.subscribe(topic_name.c_str(), 10, &VescDriver::dutyCycleCallback, this);
+  topic_name = port + "/commands/motor/current";
+  current_sub_ = nh.subscribe(topic_name.c_str(), 10, &VescDriver::currentCallback, this);
+  topic_name = port + "/commands/motor/brake";
+  brake_sub_ = nh.subscribe(topic_name.c_str(), 10, &VescDriver::brakeCallback, this);
+  topic_name = port + "/commands/motor/speed";
+  speed_sub_ = nh.subscribe(topic_name.c_str(), 10, &VescDriver::speedCallback, this);
+  topic_name = port + "/commands/motor/position";
+  position_sub_ = nh.subscribe(topic_name.c_str(), 10, &VescDriver::positionCallback, this);
+  topic_name = port + "/commands/servo/position";
+  servo_sub_ = nh.subscribe(topic_name.c_str(), 10, &VescDriver::servoCallback, this);
 
   // create a 50Hz timer, used for state machine & polling VESC telemetry
   timer_ = nh.createTimer(ros::Duration(1.0/50.0), &VescDriver::timerCallback, this);
@@ -94,8 +107,8 @@ void VescDriver::timerCallback(const ros::TimerEvent& event)
     // request version number, return packet will update the internal version numbers
     vesc_.requestFWVersion();
     if (fw_version_major_ >= 0 && fw_version_minor_ >= 0) {
-      ROS_INFO("Connected to VESC with firmware version %d.%d",
-               fw_version_major_, fw_version_minor_);
+      ROS_INFO("Connected to VESC with firmware version %d.%d, %s",
+               fw_version_major_, fw_version_minor_, port.c_str());
       driver_mode_ = MODE_ENABLE;
     }
   }
