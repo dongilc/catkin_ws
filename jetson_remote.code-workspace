@@ -1,0 +1,6 @@
+{
+    "folders": [{
+        "uri": "sftp://nvidia:nvidia@192.168.0.195/home/nvidia/workspace/catkin_ws",
+        "name": "jetson_catkin_ws"
+    }]
+}
