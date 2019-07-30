@@ -1,0 +1,10 @@
+<launch>
+  <!-- joy node -->
+  <node respawn="true" pkg="joy" type="joy_node" name="joy_teleop" output="screen">
+    <param name="dev" type="string" value="/dev/input/js0" />
+    <param name="deadzone" value="0.1" />
+  </node>
+
+  <!-- huboq_teleop_node -->
+  <node pkg="huboq_teleop" type="huboq_teleop_node" name="huboq_teleop_node" output="screen"/>
+</launch>

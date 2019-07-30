@@ -1,0 +1,9 @@
+controller_list:
+  - name: fake_mani_controller
+    joints:
+      - HR_joint
+      - HP_joint
+      - Knee_joint
+      - AP_joint
+      - AR_joint
+      - AY_joint

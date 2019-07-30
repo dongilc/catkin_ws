@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: huboq_urdf_pkg
+    relative_path: urdf/6dof_huboq_stl.urdf
+    xacro_args: "--inorder "
+  SRDF:
+    relative_path: config/6dof_huboq.srdf
+  CONFIG:
+    author_name: dongilc
+    author_email: dongilc@mju.ac.kr
+    generated_timestamp: 1552920825

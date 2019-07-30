@@ -1,0 +1,329 @@
+<?xml version="1.0"?>
+
+<robot name="6dof_huboq" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <!-- Include materials -->
+
+    <material name="Black">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+    </material>
+
+    <material name="Red">
+        <color rgba="0.8 0.0 0.0 1.0"/>
+    </material>
+
+    <material name="White">
+        <color rgba="1.0 1.0 1.0 1.0"/>
+    </material>
+
+
+  <xacro:property name="deg_to_rad" value="0.01745329251994329577"/>
+
+
+  <!-- Folder Setting -->
+  <!-- small stl:huboq_mani_stl-small, original stl:huboq_mani_stl -->
+  <xacro:property name="stl_folder" value="huboq_mani_stl-small"/>
+
+
+  <!-- Constants -->
+  <xacro:property name="M_SCALE" value="0.001 0.001 0.001"/> 
+  <xacro:property name="M_PI" value="3.14159"/>
+
+  <!-- Link Properties -->
+  <xacro:property name="base_link_length" value="0.14" />
+  <xacro:property name="base_link_width" value="0.07" />
+  <xacro:property name="base_link_height" value="0.1" />
+
+	<xacro:property name="HR_link_length" value="0.13" />
+	<xacro:property name="HR_link_radius" value="0.06" />
+
+	<xacro:property name="HP_link_length" value="0.1" />
+	<xacro:property name="HP_link_width" value="0.11" />
+  <xacro:property name="HP_link_height" value="0.28" />
+
+	<xacro:property name="Knee_link_length" value="0.1" />
+	<xacro:property name="Knee_link_width" value="0.11" />
+  <xacro:property name="Knee_link_height" value="0.28" />
+
+  <xacro:property name="AP_link_length" value="0.12" />
+	<xacro:property name="AP_link_radius" value="0.06" />
+
+	<xacro:property name="AR_link_length" value="0.15" />
+	<xacro:property name="AR_link_width" value="0.10" />
+  <xacro:property name="AR_link_height" value="0.175" />
+
+  <xacro:property name="AY_link_length" value="0.15" />
+	<xacro:property name="AY_link_radius" value="0.15" />
+
+  <!-- Inertia Properties -->
+	<xacro:macro name="inertial_matrix" params="mass">
+               <inertial>
+                       <mass value="${mass}" />
+                       <inertia ixx="0.5" ixy="0.0" ixz="0.0"
+                                iyy="0.5" iyz="0.0"
+                                izz="0.5" />
+               </inertial>
+	</xacro:macro>
+
+
+  <!--     -->
+   <xacro:macro name="transmission_block" params="joint_name">
+	  <transmission name="tran1">
+	    <type>transmission_interface/SimpleTransmission</type>
+	    <joint name="${joint_name}">
+	      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+	    </joint>
+	    <actuator name="motor1">
+	      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+	      <mechanicalReduction>1</mechanicalReduction>
+	    </actuator>
+	  </transmission>
+   </xacro:macro>
+
+<!-- BOTTOM FIXED LINK 
+This link is the base of the arm in which arm is placed 
+-->
+
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+  <joint name="bottom_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="base_link"/>
+    <child link="bottom_link"/>
+  </joint>
+
+  <link name="bottom_link">
+    <visual>
+      <origin xyz=" 0 0 -0.04"  rpy="0 0 0"/>
+      <geometry>
+	       <box size="1 1 0.02" />
+      </geometry>
+      <material name="Brown" />
+    </visual>
+
+    <collision>
+      <origin xyz=" 0 0 -0.04"  rpy="0 0 0"/>
+      <geometry>
+	       <box size="1 1 0.02" />
+      </geometry>
+      </collision>>
+  </link>
+
+  <gazebo reference="bottom_link">
+    <material>Gazebo/White</material>
+  </gazebo>
+
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+  <link name="base_link">
+    <visual>
+      <geometry>
+	    <box size="${base_link_length} ${base_link_width} ${base_link_height}"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 ${base_link_height/2}"/>
+      <material name="yellow">
+        <color rgba="1 1 0 1"/>
+      </material>
+    </visual>
+
+    <collision>
+      <geometry>
+	    <box size="${base_link_length} ${base_link_width} ${base_link_height}"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 ${base_link_height/2}"/>
+    </collision>
+
+	  <xacro:inertial_matrix mass="1"/>
+  </link>
+
+  <joint name="HR_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="HR_link"/>
+    <origin xyz="0 0 ${base_link_height}"/>
+    <axis xyz="1 0 0" />
+    <limit effort="300" velocity="0.1" lower="${-40*deg_to_rad}" upper="${40*deg_to_rad}"/>
+    <dynamics damping="50" friction="1"/>
+  </joint>
+
+  <link name="HR_link">
+    <visual>
+      <geometry>
+	      <cylinder length="${HR_link_length}" radius="${HR_link_radius}"/>
+     </geometry>
+        <origin rpy="0 ${90.*M_PI/180.} 0" xyz="0 0 0"/>
+      <material name="blue">
+        <color rgba="0 0 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+	      <cylinder length="${HR_link_length}" radius="${HR_link_radius}"/>
+      </geometry>
+      <origin rpy="0 ${90.*M_PI/180.} 0" xyz="0 0 0"/>
+    </collision>
+	  <xacro:inertial_matrix mass="1"/>
+  </link>
+
+  <joint name="HP_joint" type="revolute">
+    <parent link="HR_link"/>
+    <child link="HP_link"/>
+    <origin xyz="0 0 0"/>
+    <axis xyz="0 1 0" />
+    <limit effort="300" velocity="0.1" lower="${-80*deg_to_rad}" upper="${80*deg_to_rad}"/>
+    <dynamics damping="50" friction="1"/>
+  </joint>
+
+  <link name="HP_link">
+    <visual>
+      <geometry>
+        <box size="${HP_link_length} ${HP_link_width} ${HP_link_height}"/>
+      </geometry>
+        <origin rpy="0 0 0" xyz="0 0 ${HP_link_height/2}"/>
+      <material name="red">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+	      <box size="${HP_link_length} ${HP_link_width} ${HP_link_height}"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 ${HP_link_height/2}"/>
+    </collision>
+  	<xacro:inertial_matrix mass="1"/>
+  </link>
+
+  <joint name="Knee_joint" type="revolute">
+    <parent link="HP_link"/>
+    <child link="Knee_link"/>
+    <origin xyz="0 0 ${HP_link_height}"/>
+    <axis xyz="0 1 0" />
+    <limit effort="300" velocity="0.1" lower="${-160*deg_to_rad}" upper="${80*deg_to_rad}"/>
+    <dynamics damping="50" friction="1"/>
+  </joint>
+
+  <link name="Knee_link">
+    <visual>
+      <geometry>
+        <box size="${Knee_link_length} ${Knee_link_width} ${Knee_link_height}"/>
+      </geometry>
+        <origin rpy="0 0 0" xyz="0 0 ${Knee_link_height/2}"/>
+      <material name="cyon">
+        <color rgba="0 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+	      <box size="${Knee_link_length} ${Knee_link_width} ${Knee_link_height}"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 ${Knee_link_height/2}"/>
+    </collision>
+  	<xacro:inertial_matrix mass="1"/>
+  </link>
+
+  <joint name="AP_joint" type="revolute">
+    <parent link="Knee_link"/>
+    <child link="AP_link"/>
+    <origin xyz="0 0 ${Knee_link_height}"/>
+    <axis xyz="0 1 0" />
+    <limit effort="300" velocity="0.1" lower="${-90*deg_to_rad}" upper="${90*deg_to_rad}"/>
+    <dynamics damping="50" friction="1"/>
+  </joint>
+
+  <link name="AP_link">
+    <visual>
+      <geometry>
+	      <cylinder length="${AP_link_length}" radius="${AP_link_radius}"/>
+      </geometry>
+        <origin rpy="${90.*M_PI/180.} 0 0" xyz="0 0 0"/>
+      <material name="Magenta">
+        <color rgba="1 0 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+	      <cylinder length="${AP_link_length}" radius="${AP_link_radius}"/>
+      </geometry>
+      <origin rpy="${90.*M_PI/180.} 0 0" xyz="0 0 0"/>
+    </collision>
+	  <xacro:inertial_matrix mass="1"/>
+  </link>
+
+  <joint name="AR_joint" type="revolute">
+    <parent link="AP_link"/>
+    <child link="AR_link"/>
+    <origin xyz="0 0 0"/>
+    <axis xyz="1 0 0" />
+    <limit effort="300" velocity="0.1" lower="${-80*deg_to_rad}" upper="${80*deg_to_rad}"/>
+    <dynamics damping="50" friction="1"/>
+  </joint>
+
+  <link name="AR_link">
+    <visual>
+      <geometry>
+        <box size="${AR_link_length} ${AR_link_width} ${AR_link_height}"/>
+      </geometry>
+        <origin rpy="0 0 0" xyz="0 0 ${AR_link_height/2}"/>
+      <material name="orange">
+        <color rgba="1 0.5 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+	      <box size="${AR_link_length} ${AR_link_width} ${AR_link_height}"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 ${AR_link_height/2}"/>
+    </collision>
+  	<xacro:inertial_matrix mass="1"/>
+  </link>
+
+  <joint name="AY_joint" type="revolute">
+    <parent link="AR_link"/>
+    <child link="AY_link"/>
+    <origin xyz="0 0 ${AR_link_height}"/>
+    <axis xyz="0 0 1" />
+    <limit effort="300" velocity="0.1" lower="-3.14" upper="3.14"/>
+    <dynamics damping="50" friction="1"/>
+  </joint>
+
+  <link name="AY_link">
+    <visual>
+      <geometry>
+	      <cylinder length="${AY_link_length}" radius="${AY_link_radius}"/>
+      </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="Gray">
+        <color rgba="0.3 0.3 0.3 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+	      <cylinder length="${AY_link_length}" radius="${AY_link_radius}"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+	  <xacro:inertial_matrix mass="1"/>
+  </link>
+
+
+  
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+  <!-- Transmissions for ROS Control -->
+
+   <xacro:transmission_block joint_name="HR_joint"/>
+   <xacro:transmission_block joint_name="HP_joint"/>
+   <xacro:transmission_block joint_name="Knee_joint"/>
+   <xacro:transmission_block joint_name="AP_joint"/>
+   <xacro:transmission_block joint_name="AR_joint"/>
+   <xacro:transmission_block joint_name="AY_joint"/>
+
+ <!-- ros_control plugin -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/6dof_huboq</robotNamespace>
+    </plugin>
+  </gazebo>
+
+
+
+</robot>
