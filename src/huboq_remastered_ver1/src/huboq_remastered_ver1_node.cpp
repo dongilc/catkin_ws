@@ -9,6 +9,27 @@
 
 #include "vesc_control.h"
 
+/*
+ * HuboQ Remastered
+ * 
+ * VESC1 
+ * #0 - Left Wheel
+ * #1 - Right Wheel
+ * 
+ * VESC2
+ * #0 - LHR
+ * #1 - LHP1
+ * #2 - LHP2
+ * #3 - LHK1
+ * #4 - LHK2
+ * 
+ * VESC3
+ * #0 - LAP
+ * #1 - LAR
+ * #2 - LAY
+ * 
+ */
+
 // Settings
 #define VESC_ID_0				0
 #define VESC_ID_1				1
@@ -39,8 +60,9 @@
 //#define PRINT_SENSOR_CORE
 //#define PRINT_SENSOR_CUSTOMS
 
-void TeleopVesc::keyboardCallback(const geometry_msgs::Twist::ConstPtr& cmd_vel)
+void TeleopInput::keyboardCallback(const geometry_msgs::Twist::ConstPtr& cmd_vel)
 {
+	/*
 	//ROS_INFO("lin x:%.2f, y:%.2f, z:%.2f", cmd_vel->linear.x, cmd_vel->linear.y, cmd_vel->linear.z);
 	//ROS_INFO("ang x:%.2f, y:%.2f, z:%.2f", cmd_vel->angular.x, cmd_vel->angular.y, cmd_vel->angular.z);
 	dps[0] = cmd_vel->linear.x*2.;//cmd_vel->linear.x*200.;
@@ -55,9 +77,10 @@ void TeleopVesc::keyboardCallback(const geometry_msgs::Twist::ConstPtr& cmd_vel)
 		startTime = ros::Time::now();
 		enable.data = true;
 	}
+	*/
 }
 
-void TeleopVesc::joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
+void TeleopInput::joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
 {
 	static int joy_cont_mode;
 	double joy_cmd_forward, joy_cmd_steering, joy_cmd_brake;
@@ -94,13 +117,13 @@ void TeleopVesc::joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
 	switch (joy_cont_mode) {
 	case 0:
 		//default mode
-		duty[0] = duty[1] = 0.;
+		vh1_->duty[0] = vh1_->duty[1] = 0.;
 		break;
 	case 1:
 		//
-		duty[0] = -(0.2*joy_cmd_forward + 0.1*joy_cmd_steering);
-		duty[1] = +(0.2*joy_cmd_forward - 0.1*joy_cmd_steering);
-		duty[2] = 0.1;
+		vh1_->duty[0] = -(0.2*joy_cmd_forward + 0.1*joy_cmd_steering);
+		vh1_->duty[1] = +(0.2*joy_cmd_forward - 0.1*joy_cmd_steering);
+		vh2_->duty[0] = 0.1*joy->axes[1];
 		break;
 	case 2:
 		//
@@ -271,7 +294,7 @@ void TeleopVesc::setDutyCycleOut()
 		else if(this->port_name=="/dev/ttyVESC2")
 		{
 			// duty
-			setCmdMsg(this->duty[2], 0, 0);
+			setCmdMsg(this->duty[0], 0, 0);
 			this->vesc_cmd_duty.publish(cmd_msg);
 		}
 	}
@@ -320,11 +343,14 @@ int main(int argc, char **argv)
   ros::init(argc, argv, "vesc_control_node");
 
   // loop freq
-  int rate_hz = 50;	//hz
+  int rate_hz = 250;	//hz
 
   // TeleopVesc Class
   TeleopVesc *teleop_vesc1 = new TeleopVesc(2, "/dev/ttyVESC1"); 
   TeleopVesc *teleop_vesc2 = new TeleopVesc(1, "/dev/ttyVESC2"); 
+
+// TeleopInput Class
+  TeleopInput tele_input(teleop_vesc1, teleop_vesc2, NULL);
 
   // ROS Loop
   int cnt_lp = 0;

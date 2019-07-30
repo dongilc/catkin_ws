@@ -101,8 +101,6 @@ public:
 		vesc_sensor_core_ = nh_.subscribe<vesc_msgs::VescStateStamped>(topic_name, 10, &TeleopVesc::stateCallback, this);
 		topic_name = port + "/sensors/customs";
 		vesc_sensor_customs_= nh_.subscribe<vesc_msgs::VescGetCustomApp>(topic_name, 10, &TeleopVesc::customsCallback, this);
-		vesc_keyboard_input_ = nh_.subscribe<geometry_msgs::Twist>("cmd_vel", 10, &TeleopVesc::keyboardCallback, this);
-		joy_sub_ = nh_.subscribe<sensor_msgs::Joy>("joy", 10, &TeleopVesc::joyCallback, this);
 	}
 
 	~TeleopVesc() {
@@ -133,12 +131,32 @@ public:
 private:
 	void stateCallback(const vesc_msgs::VescStateStamped::ConstPtr& state_msg);
 	void customsCallback(const vesc_msgs::VescGetCustomApp::ConstPtr& custom_rx_msg);
-	void keyboardCallback(const geometry_msgs::Twist::ConstPtr& cmd_vel);
-	void joyCallback(const sensor_msgs::Joy::ConstPtr& joy);
 
 	ros::NodeHandle nh_;
-	ros::Subscriber joy_sub_;
-	ros::Subscriber vesc_sensor_core_, vesc_sensor_customs_, vesc_keyboard_input_;
+	ros::Subscriber vesc_sensor_core_, vesc_sensor_customs_;
+};
+
+//
+class TeleopInput
+{
+public:
+	TeleopVesc *vh1_, *vh2_, *vh3_;
+
+	TeleopInput(TeleopVesc *p_vesc1, TeleopVesc *p_vesc2, TeleopVesc *p_vesc3)
+	{	
+		vh1_ = p_vesc1;
+		vh2_ = p_vesc2;
+		vh3_ = p_vesc3;
+		joy_sub_ = nh_.subscribe<sensor_msgs::Joy>("joy", 10, &TeleopInput::joyCallback, this);
+		keyboard_input_ = nh_.subscribe<geometry_msgs::Twist>("cmd_vel", 10, &TeleopInput::keyboardCallback, this);
+	}
+
+private:
+	void joyCallback(const sensor_msgs::Joy::ConstPtr& joy);
+	void keyboardCallback(const geometry_msgs::Twist::ConstPtr& cmd_vel);
+
+	ros::NodeHandle nh_;
+	ros::Subscriber joy_sub_, keyboard_input_;
 };
 
 #endif
