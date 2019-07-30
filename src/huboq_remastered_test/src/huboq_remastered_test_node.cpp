@@ -1,5 +1,7 @@
 /*
- * huboq_remastered_ver1_node.cpp
+ * huboq_remastered_test_node.cpp
+ *
+ *  sleeper count project
  * 
  *  Created on: Nov. 23, 2018
  *      Author: cdi
@@ -7,33 +9,11 @@
 
 #include "vesc_control.h"
 
-/*
- * HuboQ Remastered
- * 
- * VESC1 
- * #0 - Left Wheel
- * #1 - Right Wheel
- * 
- * VESC2
- * #0 - LHR
- * #1 - LHP1
- * #2 - LHP2
- * #3 - LHK1
- * #4 - LHK2
- * 
- * VESC3
- * #0 - LAP
- * #1 - LAR
- * #2 - LAY
- * 
- */
-
 // Settings
 #define VESC_ID_0				0
 #define VESC_ID_1				1
-#define VESC_ID_2				2
-#define VESC_ID_3				3
-#define VESC_ID_4				4
+//#define VESC_ID_2				2
+//#define VESC_ID_3				3
 #define VESC_ID_START			VESC_ID_0
 #define VESC_ID_END				VESC_ID_1	// Change this depend on your condition
 #define CAN_FORWARD_OFF			0
@@ -58,6 +38,7 @@
 //#define PRINT_SENSOR_CORE
 //#define PRINT_SENSOR_CUSTOMS
 
+//void TeleopVesc::keyboardCallback(const geometry_msgs::Twist::ConstPtr& cmd_vel)
 void TeleopInput::keyboardCallback(const geometry_msgs::Twist::ConstPtr& cmd_vel)
 {
 	/*
@@ -78,6 +59,7 @@ void TeleopInput::keyboardCallback(const geometry_msgs::Twist::ConstPtr& cmd_vel
 	*/
 }
 
+//void TeleopVesc::joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
 void TeleopInput::joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
 {
 	static int joy_cont_mode;
@@ -94,10 +76,10 @@ void TeleopInput::joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
 		joy_cmd_brake = 0;
 	}
 	else {
-		joy_cmd_forward = (joy->axes[3]);
-		joy_cmd_steering = (joy->axes[2]);
+		joy_cmd_forward = -(joy->axes[1]);
+		joy_cmd_steering = (joy->axes[0]);
 	}
-
+	
 	// enable
 	if(joy->buttons[1]==0) {
 		if(joy_cont_mode!=0) {
@@ -121,7 +103,6 @@ void TeleopInput::joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
 		//
 		vh1_->duty[0] = -(0.2*joy_cmd_forward + 0.1*joy_cmd_steering);
 		vh1_->duty[1] = +(0.2*joy_cmd_forward - 0.1*joy_cmd_steering);
-		vh2_->duty[0] = 0.1*joy->axes[1];
 		break;
 	case 2:
 		//
@@ -281,12 +262,12 @@ void TeleopVesc::setDutyCycleOut()
 	{
 		if(this->port_name=="/dev/ttyVESC1")
 		{
-			// duty
+			// current
 			for(int i=VESC_ID_START; i<=VESC_ID_END; i++) {
 				if(i==0) can_forw = CAN_FORWARD_OFF;
 				else     can_forw = CAN_FORWARD_ON;
-				setCmdMsg(this->duty[i], can_forw, i);
-				this->vesc_cmd_duty.publish(cmd_msg);
+				setCmdMsg(duty[i], can_forw, i);
+				vesc_cmd_duty.publish(cmd_msg);
 			}
 		}
 		else if(this->port_name=="/dev/ttyVESC2")
@@ -331,7 +312,32 @@ void TeleopVesc::setPositionOut()
 		}
 	}
 }
+double duty_limit(double input_duty)
+{
+	double duty_limit = 0.95;
+	double output_duty;
 
+	if(input_duty>=duty_limit)	output_duty = duty_limit;
+	else if(input_duty<=-duty_limit)	output_duty = -duty_limit;
+	else output_duty = input_duty;
+
+	return output_duty;
+}
+void fixed_wheel_jacobian(double vx, double wz, double *duty1, double *duty2)
+{
+	static double radius_wheel = 0.2;
+	static double alpha = 0.52;
+	static double VEL2DUTY = 0.02;
+	static int MOTOR_DIR[2] = {-1, 1};
+	double u1, u2;
+
+	u1 = MOTOR_DIR[0]*(1.0*vx + alpha*wz)/radius_wheel;
+	u2 = MOTOR_DIR[1]*(1.0*vx - alpha*wz)/radius_wheel;
+
+	*duty1 = duty_limit(u1*VEL2DUTY);
+	*duty2 = duty_limit(u2*VEL2DUTY);
+
+}
 /*
  * Main Function
  * 
@@ -341,23 +347,22 @@ int main(int argc, char **argv)
   ros::init(argc, argv, "vesc_control_node");
 
   // loop freq
-  int rate_hz = 250;	//hz
+  int rate_hz = 100;	//hz
 
   // TeleopVesc Class
-  TeleopVesc *teleop_vesc1 = new TeleopVesc(2, "/dev/ttyVESC1"); 
-  TeleopVesc *teleop_vesc2 = new TeleopVesc(1, "/dev/ttyVESC2"); 
+  //const int num_of_vesc = VESC_ID_END+1;//4;
+  //TeleopVesc *teleop_vesc = new TeleopVesc(num_of_vesc); 
+  TeleopVesc *teleop_vesc = new TeleopVesc(2, "/dev/ttyVESC1"); 
 
 // TeleopInput Class
-  TeleopInput tele_input(teleop_vesc1, teleop_vesc2, NULL);
+  TeleopInput tele_input(teleop_vesc, NULL, NULL);
 
   // ROS Loop
   int cnt_lp = 0;
   ros::Rate loop_rate(rate_hz); //Hz
   ROS_INFO("Start Tele-operation");
-  teleop_vesc1->enable.data = true;
-  teleop_vesc2->enable.data = true;
-  teleop_vesc1->startTime = ros::Time::now();
-  teleop_vesc2->startTime = ros::Time::now();
+  teleop_vesc->enable.data = true;
+  teleop_vesc->startTime = ros::Time::now();
   while (ros::ok())
   { 
 		// read encoder data.
@@ -389,13 +394,13 @@ int main(int argc, char **argv)
 		//teleop_vesc->setSpeedOut();
 
 		// // // duty example (0.005~0.95)
+		//fixed_wheel_jacobian(teleop_vesc->speed[0], teleop_vesc->speed[1],
+		//			  &(teleop_vesc->duty[0]), &(teleop_vesc->duty[1]));
 		//teleop_vesc->duty[0] = duty[0];
 		//teleop_vesc->duty[1] = duty[1];
 		//teleop_vesc->duty[2] = 0.1;
 		// teleop_vesc->duty[3] = 0.5;
-		teleop_vesc1->setDutyCycleOut();
-
-		//teleop_vesc2->setDutyCycleOut();
+		teleop_vesc->setDutyCycleOut();
 		//ROS_INFO("duty_0:%.2f, duty_1:%.2f", teleop_vesc->duty[0], teleop_vesc->duty[1]);
 
 		// // position example (0~360 deg)

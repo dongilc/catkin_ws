@@ -1,0 +1,20 @@
+<launch>
+ <!-- VESC driver parameters -->
+  <arg name="node_name" default="vesc_driver_node" />
+  <arg name="port" default="/dev/ttyACM0" />
+
+  <!-- VESC driver node -->
+  <node pkg="vesc_driver" type="vesc_driver_node" name="$(arg node_name)" output="screen">
+    <param name="port" value="$(arg port)" />
+  </node>
+
+  <!-- joy node -->
+  <node respawn="true" pkg="joy" type="joy_node" name="joy_teleop" output="screen">
+    <param name="dev" type="string" value="/dev/input/js0" />
+    <param name="deadzone" value="0.1" />
+  </node>
+
+ <!-- huboq_remastered_test node -->
+  <node pkg="huboq_remastered_test" type="huboq_remastered_test_node" name="huboq_remastered_test_node" output="screen"/>
+
+ </launch>

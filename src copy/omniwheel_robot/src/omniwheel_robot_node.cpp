@@ -1,41 +1,18 @@
 /*
- * huboq_remastered_ver1_node.cpp
- * 
- *  Created on: Nov. 23, 2018
+ * omniwheel_robot_node.cpp
+ *
+ *  Created on: Oct 29, 2018
  *      Author: cdi
  */
 
 #include "vesc_control.h"
 
-/*
- * HuboQ Remastered
- * 
- * VESC1 
- * #0 - Left Wheel
- * #1 - Right Wheel
- * 
- * VESC2
- * #0 - LHR
- * #1 - LHP1
- * #2 - LHP2
- * #3 - LHK1
- * #4 - LHK2
- * 
- * VESC3
- * #0 - LAP
- * #1 - LAR
- * #2 - LAY
- * 
- */
-
 // Settings
 #define VESC_ID_0				0
 #define VESC_ID_1				1
 #define VESC_ID_2				2
-#define VESC_ID_3				3
-#define VESC_ID_4				4
 #define VESC_ID_START			VESC_ID_0
-#define VESC_ID_END				VESC_ID_1	// Change this depend on your condition
+#define VESC_ID_END				VESC_ID_2	// Change this depend on your condition
 #define CAN_FORWARD_OFF			0
 #define CAN_FORWARD_ON			1
 #define BRAKE_CURRENT			10.
@@ -57,85 +34,6 @@
 // Uncomment this only when you want to see the below infomations.
 //#define PRINT_SENSOR_CORE
 //#define PRINT_SENSOR_CUSTOMS
-
-void TeleopInput::keyboardCallback(const geometry_msgs::Twist::ConstPtr& cmd_vel)
-{
-	/*
-	//ROS_INFO("lin x:%.2f, y:%.2f, z:%.2f", cmd_vel->linear.x, cmd_vel->linear.y, cmd_vel->linear.z);
-	//ROS_INFO("ang x:%.2f, y:%.2f, z:%.2f", cmd_vel->angular.x, cmd_vel->angular.y, cmd_vel->angular.z);
-	dps[0] = cmd_vel->linear.x*2.;//cmd_vel->linear.x*200.;
-	speed[0] = cmd_vel->angular.z*1.;
-	if(cmd_vel->angular.z < 0) {
-		enable.data = false;
-		dps[0] = 0.;
-		speed[0] = 0.;
-	}
-	else 
-	{
-		startTime = ros::Time::now();
-		enable.data = true;
-	}
-	*/
-}
-
-void TeleopInput::joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
-{
-	static int joy_cont_mode;
-	double joy_cmd_forward, joy_cmd_steering, joy_cmd_brake;
-
-	//ROS_INFO("%.3f, %.3f, %.3f, %.3f", joy->axes[0], joy->axes[1], joy->axes[2], joy->axes[3]);
-	//ROS_INFO("%d, %d", joy->buttons[0], joy->buttons[1]);
-
-	// xbox initial value ignore
-	std_msgs::Header jh = joy->header;
-	if(jh.seq<10) {
-		joy_cmd_forward = 0;
-		joy_cmd_steering = 0;
-		joy_cmd_brake = 0;
-	}
-	else {
-		joy_cmd_forward = (joy->axes[3]);
-		joy_cmd_steering = (joy->axes[2]);
-	}
-
-	// enable
-	if(joy->buttons[1]==0) {
-		if(joy_cont_mode!=0) {
-			joy_cont_mode = 0;
-			ROS_INFO("Control Disabled");
-		}
-	}
-	else if(joy->buttons[1]==1) {
-		if(joy_cont_mode!=1) {
-			joy_cont_mode = 1;
-			ROS_INFO("Duty Control Mode");
-		}
-	}
-
-	switch (joy_cont_mode) {
-	case 0:
-		//default mode
-		vh1_->duty[0] = vh1_->duty[1] = 0.;
-		break;
-	case 1:
-		//
-		vh1_->duty[0] = -(0.2*joy_cmd_forward + 0.1*joy_cmd_steering);
-		vh1_->duty[1] = +(0.2*joy_cmd_forward - 0.1*joy_cmd_steering);
-		vh2_->duty[0] = 0.1*joy->axes[1];
-		break;
-	case 2:
-		//
-
-		break;
-	case 3:
-		//
-		break;
-
-	default:
-		//
-		break;
-	}
-}
 
 void TeleopVesc::customsCallback(const vesc_msgs::VescGetCustomApp::ConstPtr& custom_rx_msg)
 {
@@ -277,23 +175,14 @@ void TeleopVesc::setDutyCycleOut()
 	int id;
 	int can_forw = 0;
 
-	if(this->enable.data)
+	if(enable.data)
 	{
-		if(this->port_name=="/dev/ttyVESC1")
-		{
-			// duty
-			for(int i=VESC_ID_START; i<=VESC_ID_END; i++) {
-				if(i==0) can_forw = CAN_FORWARD_OFF;
-				else     can_forw = CAN_FORWARD_ON;
-				setCmdMsg(this->duty[i], can_forw, i);
-				this->vesc_cmd_duty.publish(cmd_msg);
-			}
-		}
-		else if(this->port_name=="/dev/ttyVESC2")
-		{
-			// duty
-			setCmdMsg(this->duty[0], 0, 0);
-			this->vesc_cmd_duty.publish(cmd_msg);
+		// current
+		for(int i=VESC_ID_START; i<=VESC_ID_END; i++) {
+			if(i==0) can_forw = CAN_FORWARD_OFF;
+			else     can_forw = CAN_FORWARD_ON;
+			setCmdMsg(duty[i], can_forw, i);
+			vesc_cmd_duty.publish(cmd_msg);
 		}
 	}
 }
@@ -332,6 +221,124 @@ void TeleopVesc::setPositionOut()
 	}
 }
 
+void TeleopVesc::joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
+{
+	double joy_cmd_forward, joy_cmd_lateral, joy_cmd_steering, joy_cmd_brake;
+
+	// xbox initial value ignore
+	std_msgs::Header jh = joy->header;
+	if(jh.seq<10) {
+		joy_cmd_forward = 0;
+		joy_cmd_steering = 0;
+		joy_cmd_brake = 0;
+	}
+	else {
+		joy_cmd_forward = (joy->axes[JR_X]);
+		joy_cmd_lateral = (joy->axes[JR_Y]);
+		joy_cmd_steering = (joy->axes[JL_Y])*(5.0);
+		joy_cmd_brake = (joy->axes[RT]-1)/(-2.0);
+	}
+
+	speed[0] = joy_cmd_forward;
+	speed[1] = joy_cmd_lateral;
+	speed[2] = joy_cmd_steering;
+
+/*
+	// enable
+	if(joy->axes[RT]==-1)   {
+		if(enable.data == false) {
+			enable.data = true;
+			if(ctm_state==0)	ctm_state = 1;	// init
+			ROS_INFO("Control Enabled, State:%d", ctm_state);
+		}
+		else if(enable.data == true) {
+			enable.data = false;
+			if(ctm_state==2)	ctm_state = 3;	// end
+			ROS_INFO("Control Disabled, State:%d", ctm_state);
+		}
+	}
+/*
+	// cruise
+	// command set
+	if(joy->buttons[RB]) {
+		if(cruise.data == false) {
+			cruise.data = true;
+			ROS_INFO("Cruise On");
+		}
+		else
+		{
+			cruise.data = false;
+			ROS_INFO("Cruise Off");
+		}
+	}/*
+	else if(joy->buttons[BT_X])	{
+		if(joy_cont_mode!=1) {
+			joy_cont_mode = 1;
+			ROS_INFO("Computed Torque Control Mode");
+		}
+	}
+	else if(joy->buttons[BT_Y])	{
+		joy_cont_mode = 2;
+	}
+	else if(joy->buttons[BT_B])	{
+		joy_cont_mode = 3;
+	}*/
+
+/*
+	switch (joy_cont_mode) {
+	case 0:
+		//default mode
+		if(cruise.data==false) {
+			speed[0] = (15000.0*joy_cmd_forward - 3000.0*joy_cmd_steering);
+			speed[1] = -(15000.0*joy_cmd_forward + 3000.0*joy_cmd_steering);
+		}
+		break;
+	case 1:
+		break;
+	case 2:
+		//
+
+		break;
+	case 3:
+		//
+		break;
+
+	default:
+		//
+		break;
+	}
+	*/
+}
+
+double duty_limit(double input_duty)
+{
+	double duty_limit = 0.95;
+	double output_duty;
+
+	if(input_duty>=duty_limit)	output_duty = duty_limit;
+	else if(input_duty<=-duty_limit)	output_duty = -duty_limit;
+	else output_duty = input_duty;
+
+	return output_duty;
+}
+
+void omni_jacobian(double vx, double vy, double wz, double *duty1, double *duty2, double *duty3)
+{
+	// robot parameter
+	static double radius_wheel = 24./1000.;
+	static double d = 120./1000.;
+	static double VEL2DUTY = 0.02;
+	double u1, u2, u3;
+
+	u1 = (1.0*vx - d*wz)/radius_wheel;
+	u2 = (-0.5*vx + sqrt(3.)/2.*vy - d*wz)/radius_wheel;
+	u3 = (-0.5*vx - sqrt(3.)/2.*vy - d*wz)/radius_wheel;
+
+	*duty1 = duty_limit(u1*VEL2DUTY);
+	*duty2 = duty_limit(u2*VEL2DUTY);
+	*duty3 = duty_limit(u3*VEL2DUTY);
+}
+
 /*
  * Main Function
  * 
@@ -341,32 +348,27 @@ int main(int argc, char **argv)
   ros::init(argc, argv, "vesc_control_node");
 
   // loop freq
-  int rate_hz = 250;	//hz
+  int rate_hz = 50;	//hz
 
   // TeleopVesc Class
-  TeleopVesc *teleop_vesc1 = new TeleopVesc(2, "/dev/ttyVESC1"); 
-  TeleopVesc *teleop_vesc2 = new TeleopVesc(1, "/dev/ttyVESC2"); 
-
-// TeleopInput Class
-  TeleopInput tele_input(teleop_vesc1, teleop_vesc2, NULL);
-
+  const int num_of_vesc = VESC_ID_END+1;
+  TeleopVesc *teleop_vesc = new TeleopVesc(num_of_vesc);
+  teleop_vesc->enable.data = false;
+  
   // ROS Loop
-  int cnt_lp = 0;
+  int cnt_loop = 0;
   ros::Rate loop_rate(rate_hz); //Hz
   ROS_INFO("Start Tele-operation");
-  teleop_vesc1->enable.data = true;
-  teleop_vesc2->enable.data = true;
-  teleop_vesc1->startTime = ros::Time::now();
-  teleop_vesc2->startTime = ros::Time::now();
   while (ros::ok())
-  { 
+  {
+		teleop_vesc->enable.data = true;
+
 		// read encoder data.
-		//teleop_vesc->requestCustoms();
+		teleop_vesc->requestCustoms();
 		//ROS_INFO("rps_0:%.2f(dps_0:%.2f), rad_0:%.2f", teleop_vesc->rps[0], teleop_vesc->rps[0]*RPS2DPS, teleop_vesc->rad[0]);
 		//ROS_INFO("rps_1:%.2f(dps_1:%.2f), rad_1:%.2f", teleop_vesc->rps[1], teleop_vesc->rps[1]*RPS2DPS, teleop_vesc->rad[1]);
 		//ROS_INFO("rps_2:%.2f(dps_2:%.2f), rad_2:%.2f", teleop_vesc->rps[2], teleop_vesc->rps[2]*RPS2DPS, teleop_vesc->rad[2]);
-		//ROS_INFO("rps_3:%.2f(dps_3:%.2f), rad_3:%.2f", teleop_vesc->rps[3], teleop_vesc->rps[3]*RPS2DPS, teleop_vesc->rad[3]);
-
+	
 		// current example (A)
 		//teleop_vesc->current[0] = 4.0;
 		//teleop_vesc->current[1] = 4.0;
@@ -382,21 +384,19 @@ int main(int argc, char **argv)
 		// teleop_vesc->setBrakeOut();
 
 		// // speed example (erpm = rev/min*polepair, polepair=Encoder Ratio@vesc_tool)
-		//teleop_vesc->speed[0] = -20000.;//-(15000.0 - 5000.0);
-		//teleop_vesc->speed[1] = 5000.;//(15000.0 + 5000.0);
+		//teleop_vesc->speed[0] = 0.//-(15000.0 - 5000.0);
+		//teleop_vesc->speed[1] = 1000.//(15000.0 + 5000.0);
 		// teleop_vesc->speed[2] = -1000.0;
 		// teleop_vesc->speed[3] = 5000.0;
 		//teleop_vesc->setSpeedOut();
 
 		// // // duty example (0.005~0.95)
-		//teleop_vesc->duty[0] = duty[0];
-		//teleop_vesc->duty[1] = duty[1];
-		//teleop_vesc->duty[2] = 0.1;
-		// teleop_vesc->duty[3] = 0.5;
-		teleop_vesc1->setDutyCycleOut();
-
-		//teleop_vesc2->setDutyCycleOut();
-		//ROS_INFO("duty_0:%.2f, duty_1:%.2f", teleop_vesc->duty[0], teleop_vesc->duty[1]);
+		omni_jacobian(teleop_vesc->speed[0], teleop_vesc->speed[1], teleop_vesc->speed[2],
+					  &(teleop_vesc->duty[0]), &(teleop_vesc->duty[1]), &(teleop_vesc->duty[2]));
+		teleop_vesc->duty[0] = teleop_vesc->duty[0];//*sin(2*M_PI*1.*cnt_loop/rate_hz);
+		teleop_vesc->duty[1] = teleop_vesc->duty[1];//*sin(2*M_PI*1.*cnt_loop/rate_hz);
+		teleop_vesc->duty[2] = teleop_vesc->duty[2];//*sin(2*M_PI*1.*cnt_loop/rate_hz);
+		teleop_vesc->setDutyCycleOut();
 
 		// // position example (0~360 deg)
 		//teleop_vesc->position[0] = 0.;
@@ -406,9 +406,8 @@ int main(int argc, char **argv)
 		//teleop_vesc->setPositionOut();
 
 		// Custom example
-		//freq = teleop_vesc->speed[0];
-		//teleop_vesc->custom_cmd_type[0] = COMM_SET_DPS;
-		//teleop_vesc->custom_cmd_value[0] = teleop_vesc->dps[0]*amplitude*2*M_PI*freq*cos(2*M_PI*freq*(ros::Time::now() - teleop_vesc->startTime).toSec());
+		//teleop_vesc->custom_cmd_type[0] = COMM_SET_DUTY;
+		//teleop_vesc->custom_cmd_value[0] = 0.6;
 		//teleop_vesc->custom_cmd_type[1] = COMM_SET_DPS;
 		//teleop_vesc->custom_cmd_value[1] = 1000.;
 		//teleop_vesc->custom_cmd_type[2] = COMM_SET_DPS;
@@ -421,6 +420,7 @@ int main(int argc, char **argv)
 
 		ros::spinOnce();
 		loop_rate.sleep();
+		cnt_loop++;
   }
 
   return 0;

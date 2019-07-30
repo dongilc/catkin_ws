@@ -1,0 +1,36 @@
+<launch>
+ <!-- VESC driver parameters -->
+  <arg name="node_name" default="vesc_driver_node" />
+  <arg name="port" default="/dev/ttyACM0" />
+
+  <!-- VESC driver node -->
+  <node pkg="vesc_driver" type="vesc_driver_node" name="$(arg node_name)" output="screen">
+    <param name="port" value="$(arg port)" />
+  </node>
+  
+ <!-- joy node -->
+  <node respawn="true" pkg="joy" type="joy_node" name="joy_teleop" output="screen">
+    <param name="dev" type="string" value="/dev/input/js0" />
+    <param name="deadzone" value="0.3" />
+  </node>
+
+ <!-- imu node -->
+  <!-- <arg name="razor_config_file" default="$(find razor_imu_9dof)/config/my_razor.yaml"/> -->
+  <!-- <node pkg="razor_imu_9dof" type="imu_node.py" name="imu_node" output="screen">  -->
+  <!--     <rosparam file="$(arg razor_config_file)" command="load"/> -->
+  <!-- </node> -->
+  <!--   <node pkg="razor_imu_9dof" type="display_3D_visualization.py" name="display_3D_visualization_node" output="screen"> -->
+  <!--   </node>  -->
+
+ <!-- rplidar node-->
+  <!-- node name="rplidarNode"          pkg="rplidar_ros"  type="rplidarNode" output="screen"-->
+  <!-- param name="serial_port"         type="string" value="/dev/ttyUSB0"/-->  
+  <!-- param name="serial_baudrate"     type="int"    value="115200"/-->
+  <!-- param name="frame_id"            type="string" value="laser"/-->
+  <!-- param name="inverted"            type="bool"   value="false"/-->
+  <!-- param name="angle_compensate"    type="bool"   value="true"/-->
+  <!-- /node-->
+
+ <!-- amg_proto1 node -->
+  <node pkg="amg_p1" type="amg_p1_node" name="amg_p1_node" output="screen"/>
+</launch>
