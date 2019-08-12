@@ -1,0 +1,3 @@
+<launch>
+  <node name="odom_pub" pkg="sim_odom" type="odom.py" output="screen" />
+</launch>

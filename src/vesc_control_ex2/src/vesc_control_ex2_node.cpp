@@ -317,8 +317,8 @@ int main(int argc, char **argv)
 		//teleop_vesc->custom_cmd_value[0] = teleop_vesc->dps[0]*amplitude*2*M_PI*freq*cos(2*M_PI*freq*(ros::Time::now() - teleop_vesc->startTime).toSec());
 		teleop_vesc->custom_cmd_type[0] = COMM_SET_DPS;
 		teleop_vesc->custom_cmd_value[0] = 100.;
-		//teleop_vesc->custom_cmd_type[1] = COMM_SET_DPS;
-		//teleop_vesc->custom_cmd_value[1] = 1000.;
+		teleop_vesc->custom_cmd_type[1] = COMM_SET_DPS;
+		teleop_vesc->custom_cmd_value[1] = 1000.;
 		//teleop_vesc->custom_cmd_type[2] = COMM_SET_DPS;
 		//teleop_vesc->custom_cmd_value[2] = -1000.;
 		//teleop_vesc->custom_cmd_type[3] = COMM_SET_DPS;

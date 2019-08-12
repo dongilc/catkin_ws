@@ -1,0 +1,23 @@
+<!--
+@file mainstate_example.launch
+@author Nathan Estill
+@date 2019-02-23
+Sets up behavior parameters and launches MainState class
+-->
+<!--
+<launch>
+
+<rosparam command="load" file="$(find [your package])/config/[your_behavior_config].yaml" />
+<node pkg="state_controller" type="MainState" name="mainstate" output="screen"/>
+
+add any nodes here that you need to interface with twists
+
+</launch>
+-->
+<launch>
+
+<rosparam command="load" file="$(find state_controller)/config/example_behaviors.yaml" />
+<node pkg="state_controller" type="MainState" name="mainstate" output="screen"/>
+<include file="$(find state_controller)/launch/teleop.launch"/>
+
+</launch>

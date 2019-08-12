@@ -1,0 +1,7 @@
+<launch>
+  <!--Start up teleop-->
+  <include file="$(find gravl)/launch/bringup.launch>
+
+  <!--Start up waypoint following-->
+  <include file="$(find gravl)/launch/waypoint.launch" ns="waypoint">
+</launch>

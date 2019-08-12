@@ -1,0 +1,5 @@
+<launch>
+  <!-- This brings up waypoint following -->
+  <include file="$(find gravl)/launch/rtk.launch" />
+  <node pkg="gravl" type="gps.py" name="converter"/>
+</launch>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>sim_localization</name>
+  <version>0.0.0</version>
+  <description>Robot pose estimation package for simulation use</description>
+  <maintainer email="aphung@todo.todo">Amy Phung</maintainer>
+  <license>MIT</license>
+  <author >Amy Phung</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>tf2_ros</build_depend>
+  <build_depend>nav_msgs</build_depend>
+
+  <exec_depend>robot_localization</exec_depend>
+  <exec_depend>roscpp</exec_depend>
+</package>

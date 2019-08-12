@@ -1,0 +1,23 @@
+<!--
+Tractor minimal ROSlaunch file
+@brief: Runs tractor with basic safety, teleop, lidar. No map-level reference of
+position or sensor data
+@version: 2.0
+-->
+
+<launch>
+  <!-- Teleop -->
+  <include file="$(find gravl)/launch/teleop.launch"/>
+  <!-- Laser -->
+  <include file="$(find gravl)/launch/lidar.launch"/>
+  <!-- Imu -->
+  <!-- TODO -->
+  <!-- State Controller -->
+  <include file="$(find gravl)/launch/mainstate.launch"/>
+  <!-- Hindbrain -->
+  <include file="$(find gravl)/launch/hindbrain.launch"/>
+  <!-- Safety Node -->
+  <!-- TODO -->
+  <!-- Static Transforms -->
+  <include file="$(find gravl)/launch/localization.launch"/>
+</launch>

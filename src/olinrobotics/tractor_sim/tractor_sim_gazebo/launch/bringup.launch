@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<!-- bringup.launch
+Use Gazebo to simulate a tractor with a three-point hitch attachment, odometry,
+and RVIZ data visualization
+
+Requires packages found at https://github.com/olinrobotics/tractor_sim_packages
+-->
+
+<launch>
+  <include file="$(find tractor_sim_gazebo)/launch/bringup_min.launch"/>
+  <include file="$(find tractor_sim_gazebo)/launch/sim_odometry.launch"/>
+  <include file="$(find tractor_sim_description)/launch/tractor_sim_rviz.launch"/>
+</launch>

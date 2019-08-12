@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<package>
+  <name>tractor_sim_description</name>
+  <version>0.1.3</version>
+  <description>
+    tractor_sim_description contains the description (3D model,
+    kinematics, mass, etc.) of a tractor with Ackermann steering.
+  </description>
+  <maintainer email="amy.phung@students.olin.edu">
+    Amy Phung
+  </maintainer>
+  <license>Apache 2.0</license>
+
+  <url type="website">https://github.com/olinrobotics/gravl/wiki/Gazebo-Simulation</url>
+  <url type="repository">https://github.com/olinrobotics/tractor_sim</url>
+
+  <author email="amy.phung@students.olin.edu">Amy Phung</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>gazebo_ros_control</run_depend>
+  <run_depend>hardware_interface</run_depend>
+  <run_depend>joint_state_publisher</run_depend>
+  <run_depend>robot_state_publisher</run_depend>
+  <run_depend>rviz</run_depend>
+  <run_depend>transmission_interface</run_depend>
+  <run_depend>xacro</run_depend>
+
+  <export>
+    <architecture_independent/>
+  </export>
+</package>

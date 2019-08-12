@@ -1,0 +1,5 @@
+# Example behaviors yaml file
+# behaviors/[name_of_behavior]: '[priority]'
+behaviors/safety: '0'
+behaviors/teleop: '1'
+behaviors/ptrack: '2'

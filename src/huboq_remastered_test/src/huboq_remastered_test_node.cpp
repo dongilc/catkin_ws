@@ -260,7 +260,7 @@ void TeleopVesc::setDutyCycleOut()
 
 	if(this->enable.data)
 	{
-		if(this->port_name=="/dev/ttyVESC1")
+		if(this->port_name=="/dev/ttyACM0")
 		{
 			// current
 			for(int i=VESC_ID_START; i<=VESC_ID_END; i++) {
@@ -352,7 +352,7 @@ int main(int argc, char **argv)
   // TeleopVesc Class
   //const int num_of_vesc = VESC_ID_END+1;//4;
   //TeleopVesc *teleop_vesc = new TeleopVesc(num_of_vesc); 
-  TeleopVesc *teleop_vesc = new TeleopVesc(2, "/dev/ttyVESC1"); 
+  TeleopVesc *teleop_vesc = new TeleopVesc(2, "/dev/ttyACM0"); 
 
 // TeleopInput Class
   TeleopInput tele_input(teleop_vesc, NULL, NULL);
@@ -396,8 +396,8 @@ int main(int argc, char **argv)
 		// // // duty example (0.005~0.95)
 		//fixed_wheel_jacobian(teleop_vesc->speed[0], teleop_vesc->speed[1],
 		//			  &(teleop_vesc->duty[0]), &(teleop_vesc->duty[1]));
-		//teleop_vesc->duty[0] = duty[0];
-		//teleop_vesc->duty[1] = duty[1];
+		teleop_vesc->duty[0] = 0.2;//duty[0];
+		teleop_vesc->duty[1] = 0.2;//duty[1];
 		//teleop_vesc->duty[2] = 0.1;
 		// teleop_vesc->duty[3] = 0.5;
 		teleop_vesc->setDutyCycleOut();
