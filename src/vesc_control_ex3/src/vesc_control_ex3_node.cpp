@@ -401,9 +401,9 @@ int main(int argc, char **argv)
 
 		// Custom example
 		teleop_vesc1->custom_cmd_type[0] = COMM_SET_DPS;
-		teleop_vesc1->custom_cmd_value[0] = 1000.;//(500)*.2*M_PI*(2.0)*cos(2*M_PI*(2.0)*(ros::Time::now() - teleop_vesc1->startTime).toSec());
+		teleop_vesc1->custom_cmd_value[0] = 100.;//(500)*.2*M_PI*(2.0)*cos(2*M_PI*(2.0)*(ros::Time::now() - teleop_vesc1->startTime).toSec());
 		teleop_vesc1->custom_cmd_type[1] = COMM_SET_DPS;
-		teleop_vesc1->custom_cmd_value[1] = 1000.;
+		teleop_vesc1->custom_cmd_value[1] = 10.;
 		//teleop_vesc->custom_cmd_type[2] = COMM_SET_DPS;
 		//teleop_vesc->custom_cmd_value[2] = -1000.;
 		//teleop_vesc->custom_cmd_type[3] = COMM_SET_DPS;
