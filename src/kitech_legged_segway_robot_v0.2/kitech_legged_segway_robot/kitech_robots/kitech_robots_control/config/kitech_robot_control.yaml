@@ -1,0 +1,26 @@
+kitech_robot:
+    joint_state_controller:
+      type: joint_state_controller/JointStateController
+      publish_rate: 1000
+    
+    main_controller:
+      type: kitech_controllers/MainController
+      joints:
+        - LF_HAA_joint
+        - LF_HFE_joint
+        - LF_KFE_joint
+
+        - RF_HAA_joint
+        - RF_HFE_joint
+        - RF_KFE_joint
+
+        - LH_HAA_joint
+        - LH_HFE_joint
+        - LH_KFE_joint
+
+        - RH_HAA_joint
+        - RH_HFE_joint
+        - RH_KFE_joint
+
+        - left_wheel_joint
+        - right_wheel_joint

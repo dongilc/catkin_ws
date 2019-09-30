@@ -1,0 +1,14 @@
+<launch>
+  <rosparam file="$(find kitech_robots_control)/config/kitech_robot_control.yaml" command="load"/>
+  
+  <!-- joy node -->
+  <node respawn="true" pkg="joy" type="joy_node" name="joy_teleop" output="screen">
+    <param name="dev" type="string" value="/dev/input/js0" />
+    <param name="deadzone" value="0.1" />
+  </node>
+
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" ns="/kitech_robot" args="joint_state_controller main_controller"/>
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" ns="/kitech_robot"/>
+</launch>

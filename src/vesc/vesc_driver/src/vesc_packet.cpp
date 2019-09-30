@@ -770,7 +770,6 @@ VescPacketSetCustomAppData::VescPacketSetCustomAppData(const vesc_msgs::VescSetC
 #endif
 {
   int cnt=1;
-  int32_t v;
 
 	*(payload_.first + cnt++) = static_cast<uint8_t>(5);	// model : USB = 5
   *(payload_.first + cnt++) = static_cast<uint8_t>(custom_set_msg->num_of_id);
@@ -780,8 +779,8 @@ VescPacketSetCustomAppData::VescPacketSetCustomAppData(const vesc_msgs::VescSetC
     *(payload_.first + cnt++) = static_cast<uint8_t>(custom_set_msg->id_set[i]);
     *(payload_.first + cnt++) = static_cast<uint8_t>(custom_set_msg->comm_set[i]);
 
-    v = static_cast<int32_t>(custom_set_msg->value_set[i]);
-
+    int32_t v = static_cast<int32_t>(custom_set_msg->value_set[i] * 1000.);
+  
     //printf("id=%d, comm_set=%d, value=%d \n", custom_set_msg->id_set[i],custom_set_msg->comm_set[i],  v);
 
     *(payload_.first + cnt++) = static_cast<uint8_t>((static_cast<uint32_t>(v) >> 24) & 0xFF);

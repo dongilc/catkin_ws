@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <!-- body marcro definition -->
+    <xacro:macro name="kitech_robot_leg" params="name reflect_FH reflect_RL RL rotate">
+
+        <joint name="${name}_HAA_joint" type="revolute">
+            <origin xyz="${reflect_FH*0.816} ${reflect_RL*0.17} 0.37085"/> 
+            <parent link="body" />
+            <child link="${name}_limb_0" />
+            <axis xyz="1 0 0" />
+            <limit effort="50000" velocity="2000"
+            lower="${-PI}"
+            upper="${PI}" />
+            <!-- <dynamics damping="0.2" friction="0.2"/> -->
+        </joint>
+
+        <link name="${name}_limb_0">
+            <inertial>
+                <origin xyz="${reflect_FH*(-0.218617)} 0.0 -0.000024" />
+                <mass value="11.381" />
+                <inertia ixx="0.027746" ixy="0.0" ixz="0.0"
+                    iyy="0.331276" iyz="0.0"
+                    izz="0.308905" />
+            </inertial>
+            <visual>
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 ${rotate*PI} 0.0"/>
+                <geometry>
+                    <mesh filename="package://kitech_robots_description/mesh/for_VREP/Limb_0.stl" scale="0.001 0.001 0.001"/>
+                </geometry>
+            </visual>
+            <collision>
+                <origin xyz="${reflect_FH*(-0.215)} 0.0 0.0" rpy="0.0 0.0 0.0" />
+                <geometry>
+                    <box size="0.58 0.054 0.16" />
+                </geometry>
+            </collision>
+        </link>
+
+
+        <joint name="${name}_HFE_joint" type="revolute">
+            <origin xyz="0.0 ${reflect_RL*0.11} 0.0" />
+            <parent link="${name}_limb_0" />
+            <child link="${name}_limb_1" />
+            <axis xyz="0 1 0" />
+            <limit effort="50000" velocity="2000" 
+            lower="${(reflect_FH + 1)*(-PI/2)}"
+            upper="${(reflect_FH - 1)*(-PI/2)}" />
+            <!-- <dynamics damping="0.2" friction="0.2"/> -->
+        </joint>
+
+        <link name="${name}_limb_1">
+            <inertial>
+                <origin xyz="${reflect_FH*(-0.146209)} ${reflect_RL*(0.004659)} 0.007285" />
+                <mass value="24.551" />
+                <inertia ixx="0.096263" ixy="${reflect_RL*(-0.00973)}" ixz="-0.013271"
+                    iyy="0.395041" iyz="${reflect_RL*(0.00026)}"
+                    izz="0.42336" />
+            </inertial>
+            <visual>
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 ${rotate*PI}"/>
+                <geometry>
+                    <mesh filename="package://kitech_robots_description/mesh/for_VREP/Limb_1_${RL}.stl" scale="0.001 0.001 0.001"/>
+                </geometry>
+            </visual>
+            <collision>
+                <origin xyz="${reflect_FH*(-0.205)} ${reflect_RL*0.013} 0.0125" rpy="0.0 0.0 ${rotate*PI}" />
+                <geometry>
+                    <box size="0.53 0.196 0.155" />
+                </geometry>
+            </collision>
+        </link>
+
+
+        <joint name="${name}_KFE_joint" type="revolute">
+            <origin xyz="${reflect_FH*(-0.45)} 0.0 -0.03" />
+            <parent link="${name}_limb_1" />
+            <child link="${name}_limb_2" />
+            <axis xyz="0 1 0" />
+            <limit effort="5000" velocity="2000"
+            lower="${(reflect_FH - 1)*(PI/2)}"
+            upper="${(reflect_FH + 1)*(PI/2)}" />
+            <!-- <dynamics damping="0.2" friction="0.2"/> -->
+        </joint>
+
+        <link name="${name}_limb_2">
+            <inertial>
+                <origin xyz="${reflect_FH*(0.114799)} ${reflect_RL*(-0.000014)} -0.044794" />
+                <mass value="6.629" />
+                <inertia ixx="0.009829" ixy="0.0" ixz="0.012479"
+                    iyy="0.107571" iyz="0.0"
+                    izz="0.103829" />
+            </inertial>
+            <visual>
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 ${rotate*PI}"/>
+                <geometry>
+                    <mesh filename="package://kitech_robots_description/mesh/for_VREP/Limb_2.stl" scale="0.001 0.001 0.001"/>
+                </geometry>
+            </visual>
+            <collision>
+                <origin xyz="${reflect_FH*(0.171323)} 0.0 -0.036283" rpy="0.0 0.0 ${rotate*PI}" />
+                <geometry>
+                    <box size="0.497 0.095 0.153" />
+                </geometry>
+            </collision>
+        </link>
+
+
+        <joint name="${name}_foot" type="fixed">
+            <origin xyz="${reflect_FH*(0.4187)} 0.0 -0.044234" />
+            <parent link="${name}_limb_2" />
+            <child link="${name}_foot" />
+        </joint>
+
+        <link name="${name}_foot">
+            <inertial>
+                <origin xyz="${reflect_FH*(0.0442)} ${reflect_RL*(0.000028)} -0.012672" />
+                <mass value="0.2" />
+                <inertia ixx="0.000083" ixy="0.0" ixz="0.0"
+                    iyy="0.000146" iyz="0.0"
+                    izz="0.000131" />
+            </inertial>
+            <visual>
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 ${rotate*PI}"/>
+                <geometry>
+                    <mesh filename="package://kitech_robots_description/mesh/for_VREP/Foot.stl" scale="0.001 0.001 0.001"/>
+                </geometry>
+            </visual>
+            <collision>
+                <origin xyz="${reflect_FH*(0.05)} 0.0 -0.013252" rpy="${PI/2} 0.0 ${rotate*PI}" />
+                <geometry>
+                    <cylinder length="0.05" radius="0.035" />
+                </geometry>
+            </collision>
+        </link>
+
+
+	    <transmission name="${name}_HAA_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="${name}_HAA_joint">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="${name}_HAA_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+
+        <transmission name="${name}_HFE_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="${name}_HFE_joint">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="${name}_HFE_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+
+        <transmission name="${name}_KFE_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="${name}_KFE_joint">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="${name}_KFE_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+
+    </xacro:macro>
+
+</robot>
+

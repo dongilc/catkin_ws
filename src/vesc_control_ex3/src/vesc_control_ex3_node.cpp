@@ -28,6 +28,8 @@
  * 
  */
 
+// COM Port
+
 // Settings
 #define CAN_FORWARD_OFF			0
 #define CAN_FORWARD_ON			1
@@ -42,6 +44,7 @@
 #define COMM_SET_POS			9
 #define COMM_SET_HANDBRAKE		10
 #define COMM_SET_DPS			38
+#define COMM_SET_GOTO			39
 
 // Conversions
 #define RAD2DEG         		180.0/M_PI  // radian to deg
@@ -272,7 +275,7 @@ void TeleopVesc::setDutyCycleOut()
 
 	if(this->enable.data)
 	{
-		if(this->port_name=="/dev/ttyACM0")
+		if(this->port_name=="/dev/ttyACM1")
 		{
 			// duty
 			for(int i=0; i<(this->NO_VESC); i++) {
@@ -337,7 +340,7 @@ int main(int argc, char **argv)
   int rate_hz = 250;	//hz
 
   // TeleopVesc Class
-  TeleopVesc *teleop_vesc1 = new TeleopVesc(2, "/dev/ttyACM0"); 
+  TeleopVesc *teleop_vesc1 = new TeleopVesc(1, "/dev/ttyACM0"); 
   //TeleopVesc *teleop_vesc2 = new TeleopVesc(1, "/dev/ttyACM1"); 
 
 // TeleopInput Class
@@ -400,10 +403,12 @@ int main(int argc, char **argv)
 		//teleop_vesc->setPositionOut();
 
 		// Custom example
-		teleop_vesc1->custom_cmd_type[0] = COMM_SET_DPS;
-		teleop_vesc1->custom_cmd_value[0] = 100.;//(500)*.2*M_PI*(2.0)*cos(2*M_PI*(2.0)*(ros::Time::now() - teleop_vesc1->startTime).toSec());
-		teleop_vesc1->custom_cmd_type[1] = COMM_SET_DPS;
-		teleop_vesc1->custom_cmd_value[1] = 10.;
+		//teleop_vesc1->custom_cmd_type[0] = COMM_SET_DPS;
+		//teleop_vesc1->custom_cmd_value[0] = -48.*60.; //29000.; //48.;//(500)*.2*M_PI*(2.0)*cos(2*M_PI*(2.0)*(ros::Time::now() - teleop_vesc1->startTime).toSec());
+		teleop_vesc1->custom_cmd_type[0] = COMM_SET_GOTO;
+		teleop_vesc1->custom_cmd_value[0] = 360.*8.*0.; //48.;//(500)*.2*M_PI*(2.0)*cos(2*M_PI*(2.0)*(ros::Time::now() - teleop_vesc1->startTime).toSec());/
+		//teleop_vesc1->custom_cmd_type[1] = COMM_SET_DPS;
+		//teleop_vesc1->custom_cmd_value[1] = 10.;
 		//teleop_vesc->custom_cmd_type[2] = COMM_SET_DPS;
 		//teleop_vesc->custom_cmd_value[2] = -1000.;
 		//teleop_vesc->custom_cmd_type[3] = COMM_SET_DPS;

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package>
+  <name>kitech_robots_control</name>
+  <version>0.0.0</version>
+  <description>The kitech_robots_control package</description>
+
+  <maintainer email="kjy880527@gmail.com">Jungyeong Kim</maintainer>
+  <maintainer email="jh_seo88@kitech.re.kr">Jaehong Seo</maintainer>
+
+  <license>KITECH</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>controller_manager</run_depend>
+  <run_depend>joint_state_controller</run_depend>
+  <run_depend>robot_state_publisher</run_depend>
+  <run_depend>rqt_gui</run_depend>
+  <run_depend>kitech_controllers</run_depend>
+</package>

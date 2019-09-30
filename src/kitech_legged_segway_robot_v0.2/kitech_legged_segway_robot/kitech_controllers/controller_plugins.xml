@@ -1,0 +1,7 @@
+<library path="lib/libkitech_controllers">
+    <class name="kitech_controllers/MainController" type="kitech_controllers::MainController" base_class_type="controller_interface::ControllerBase">
+        <description>
+	        KITECH Controllers::Main Controller
+        </description>
+    </class>
+</library>

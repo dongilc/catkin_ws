@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <!-- body marcro definition -->
+    <xacro:macro name="kitech_robot_body">
+
+        <!-- <link name="world"/>
+        <joint name="fixed_to_world" type="fixed">
+            <origin xyz="0 0 0"/>
+            <parent link="world"/>
+            <child link="base_footprint"/>
+        </joint> -->
+
+        <!-- BASE-FOOTPRINT -->
+        <!-- base_footprint is a fictitious link(frame) that is on the ground right below body origin -->
+        <link name="base_footprint">
+        <inertial>
+            <origin xyz="0 0 0" />
+            <mass value="0.0001" />
+            <inertia ixx="0.0001" ixy="0.0" ixz="0.0"
+                iyy="0.0001" iyz="0.0" 
+                izz="0.0001" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        </link>
+
+        <joint name="footprint_body" type="fixed">
+            <origin xyz="0 0 0.5" rpy="0 0 0" />
+            <parent link="base_footprint" />
+            <child link="body" />
+        </joint>
+
+        <link name="body">
+        <inertial>
+            <origin xyz="0.062594 0.0 0.457496" rpy="0 0 0" />
+            <mass value="118.1" />
+            <inertia ixx="6.4387768" ixy="-0.0007626" ixz="-0.7441046"
+                iyy="46.1852065" iyz="-0.0011013"
+                izz="48.0676973" />
+        </inertial>
+        <visual>
+            <origin xyz="0.0 0.0 0.46585" />
+            <geometry>
+                <mesh filename="package://kitech_robots_description/mesh/for_VREP/Body_with_wheel_plate.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0.059 0.0 0.425" />
+            <geometry>
+                <box size="2.27 0.83 0.702" />
+            </geometry>
+        </collision>
+        </link>
+
+    </xacro:macro>
+
+</robot>

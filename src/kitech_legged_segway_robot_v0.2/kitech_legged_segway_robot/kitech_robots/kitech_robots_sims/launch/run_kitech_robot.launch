@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <include file="$(find kitech_robots_sims)/launch/world.launch"/>
+
+  <include file="$(find kitech_robots_sims)/launch/spawn_kitech_robot.launch"/>
+  
+  <include file="$(find kitech_robots_control)/launch/kitech_robot_control.launch"/>
+
+</launch>

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<package>
+  <name>kitech_controllers</name>
+  <version>0.0.0</version>
+  <description>The kitech_controllers package</description>
+
+  <maintainer email="kjy880527@gmail.com">Jungyeong Kim</maintainer>
+  <maintainer email="jh_seo88@kitech.re.kr">Jaehong Seo</maintainer>
+
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>controller_interface</build_depend>
+  <build_depend>urdf</build_depend>
+  <build_depend>control_msgs</build_depend>
+  <build_depend>kdl_parser</build_depend>
+  <build_depend>realtime_tools</build_depend>
+  <build_depend>angles</build_depend>
+  <build_depend>message_generation</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>joy</build_depend>
+  <build_depend>std_msgs</build_depend>
+  
+  <run_depend>controller_interface</run_depend>
+  <run_depend>urdf</run_depend>
+  <run_depend>control_msgs</run_depend>
+  <run_depend>kdl_parser</run_depend>
+  <run_depend>realtime_tools</run_depend>
+  <run_depend>angles</run_depend>
+  <!-- <run_depend>message_runtime</run_depend> -->
+  <run_depend>message_generation</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>joy</run_depend>
+  <run_depend>std_msgs</run_depend>
+
+   <export>
+    <controller_interface plugin="${prefix}/controller_plugins.xml" />
+  </export>
+
+</package>
+

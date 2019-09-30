@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+
+<robot name="kitech_robot" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:property name="PI" value="3.1415926535897931"/>
+
+    <!-- ros_control plugin-->
+    <xacro:include filename="$(find kitech_robots_description)/urdf/kitech_robot.gazebo.xacro" />
+
+    <!-- kitech robot Body -->
+    <xacro:include filename="$(find kitech_robots_description)/urdf/kitech_robot_body.xacro" />
+    <xacro:include filename="$(find kitech_robots_description)/urdf/kitech_robot_leg.xacro" />
+    <xacro:include filename="$(find kitech_robots_description)/urdf/kitech_robot_wheel.xacro" />
+
+    <!--Using the macros defined above -->
+    <!-- body -->
+    <xacro:kitech_robot_body />
+    
+    <!-- leg -->
+    <xacro:kitech_robot_leg
+        name="LF"
+        reflect_FH="1"
+        reflect_RL="1"
+        RL="left"
+        rotate="0">
+    </xacro:kitech_robot_leg>
+
+    <xacro:kitech_robot_leg
+        name="RF"
+        reflect_FH="1"
+        reflect_RL="-1"
+        RL="right"
+        rotate="0">
+    </xacro:kitech_robot_leg>
+
+    <xacro:kitech_robot_leg
+        name="LH"
+        reflect_FH="-1"
+        reflect_RL="1"
+        RL="right"
+        rotate="1">
+    </xacro:kitech_robot_leg>
+
+    <xacro:kitech_robot_leg
+        name="RH"
+        reflect_FH="-1"
+        reflect_RL="-1"
+        RL="left"
+        rotate="1">
+    </xacro:kitech_robot_leg>
+
+    <!-- wheel -->
+    <xacro:kitech_robot_wheel
+        name="left"
+        reflect="1"
+        rotate="0">
+    </xacro:kitech_robot_wheel>
+
+    <xacro:kitech_robot_wheel
+        name="right"
+        reflect="-1"
+        rotate="1">
+    </xacro:kitech_robot_wheel>
+
+</robot>
