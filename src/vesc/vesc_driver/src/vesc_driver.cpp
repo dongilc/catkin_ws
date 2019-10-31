@@ -199,6 +199,10 @@ void VescDriver::vescPacketCallback(const boost::shared_ptr<VescPacket const>& p
 	custom_msg->enc_rad.clear();
 	custom_msg->enc_rps.push_back(custom_data->enc_rps());
 	custom_msg->enc_rad.push_back(custom_data->enc_rad());
+  //custom_msg->enc_dps.clear();
+	//custom_msg->enc_deg.clear();
+	//custom_msg->enc_dps.push_back(custom_data->enc_dps());
+	//custom_msg->enc_deg.push_back(custom_data->enc_deg());
 
 	// can dev
 	custom_msg->send_mode_index2 = custom_data->send_mode_2();
@@ -209,6 +213,8 @@ void VescDriver::vescPacketCallback(const boost::shared_ptr<VescPacket const>& p
 		custom_msg->can_id.push_back(custom_data->can_id(i));
 		custom_msg->enc_rps.push_back(custom_data->enc_rps_can(i));
 		custom_msg->enc_rad.push_back(custom_data->enc_rad_can(i));
+    //custom_msg->enc_dps.push_back(custom_data->enc_dps_can(i));
+		//custom_msg->enc_deg.push_back(custom_data->enc_deg_can(i));
 	}
 
 	//

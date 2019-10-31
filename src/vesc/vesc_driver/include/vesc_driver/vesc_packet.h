@@ -214,6 +214,8 @@ public:
 
   double enc_rps() const;
   double enc_rad() const;
+  //double enc_dps() const;
+  //double enc_deg() const;
 
   int send_mode_2() const;
   int can_devs_num() const;
@@ -221,6 +223,8 @@ public:
   int can_id(int id) const;
   double enc_rps_can(int id) const;
   double enc_rad_can(int id) const;
+  //double enc_dps_can(int id) const;
+  //double enc_deg_can(int id) const;
 
 };
 

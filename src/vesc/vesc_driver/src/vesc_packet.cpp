@@ -712,6 +712,22 @@ double VescPacketCustomApp::enc_rad() const
                                    static_cast<uint32_t>(*(payload_.first + 60)));
   return static_cast<double>(v) / 100.0;
 }
+// double VescPacketCustomApp::enc_dps() const
+// {
+//   int32_t v = static_cast<int32_t>((static_cast<uint32_t>(*(payload_.first + 53)) << 24) +
+//                                    (static_cast<uint32_t>(*(payload_.first + 54)) << 16) +
+//                                    (static_cast<uint32_t>(*(payload_.first + 55)) << 8) +
+//                                    static_cast<uint32_t>(*(payload_.first + 56)));
+//   return static_cast<double>(v) / 1000.0;
+// }
+// double VescPacketCustomApp::enc_deg() const
+// {
+//   int32_t v = static_cast<int32_t>((static_cast<uint32_t>(*(payload_.first + 57)) << 24) +
+//                                    (static_cast<uint32_t>(*(payload_.first + 58)) << 16) +
+//                                    (static_cast<uint32_t>(*(payload_.first + 59)) << 8) +
+//                                    static_cast<uint32_t>(*(payload_.first + 60)));
+//   return static_cast<double>(v) / 1000.0;
+// }
 int VescPacketCustomApp::send_mode_2() const
 {
 	return *(payload_.first + 61);
@@ -741,6 +757,22 @@ double VescPacketCustomApp::enc_rad_can(int id) const
                                    static_cast<uint32_t>(*(payload_.first + 71 + (id)*9)));
   return static_cast<double>(v) / 100.0;
 }
+// double VescPacketCustomApp::enc_dps_can(int id) const
+// {
+//   int32_t v = static_cast<int32_t>((static_cast<uint32_t>(*(payload_.first + 64 + (id)*9)) << 24) +
+//                                    (static_cast<uint32_t>(*(payload_.first + 65 + (id)*9)) << 16) +
+//                                    (static_cast<uint32_t>(*(payload_.first + 66 + (id)*9)) << 8) +
+//                                    static_cast<uint32_t>(*(payload_.first + 67 + (id)*9)));
+//   return static_cast<double>(v) / 1000.0;
+// }
+// double VescPacketCustomApp::enc_deg_can(int id) const
+// {
+//   int32_t v = static_cast<int32_t>((static_cast<uint32_t>(*(payload_.first + 68 + (id)*9)) << 24) +
+//                                    (static_cast<uint32_t>(*(payload_.first + 69 + (id)*9)) << 16) +
+//                                    (static_cast<uint32_t>(*(payload_.first + 70 + (id)*9)) << 8) +
+//                                    static_cast<uint32_t>(*(payload_.first + 71 + (id)*9)));
+//   return static_cast<double>(v) / 1000.0;
+// }
 
 //cdi
 #if defined(FW_3_38) || defined(FW_3_40)
@@ -779,7 +811,33 @@ VescPacketSetCustomAppData::VescPacketSetCustomAppData(const vesc_msgs::VescSetC
     *(payload_.first + cnt++) = static_cast<uint8_t>(custom_set_msg->id_set[i]);
     *(payload_.first + cnt++) = static_cast<uint8_t>(custom_set_msg->comm_set[i]);
 
-    int32_t v = static_cast<int32_t>(custom_set_msg->value_set[i] * 1000.);
+    int32_t v = 0;
+    switch(custom_set_msg->comm_set[i]) {
+        case COMM_SET_DUTY:
+          v = static_cast<int32_t>(custom_set_msg->value_set[i] * 100000.0);
+          break;
+        case COMM_SET_CURRENT:
+          v = static_cast<int32_t>(custom_set_msg->value_set[i] * 1000.0);
+          break;
+        case COMM_SET_CURRENT_BRAKE:
+          v = static_cast<int32_t>(custom_set_msg->value_set[i] * 1000.0);
+          break;
+        case COMM_SET_RPM:
+          v = static_cast<int32_t>(custom_set_msg->value_set[i]);
+          break;
+        case COMM_SET_POS:
+          v = static_cast<int32_t>(custom_set_msg->value_set[i] * 1000000.0);
+          break;
+        case COMM_SET_DPS:
+          v = static_cast<int32_t>(custom_set_msg->value_set[i] * 1000.0);
+          break;
+        case COMM_SET_GOTO:
+          v = static_cast<int32_t>(custom_set_msg->value_set[i] * 1000.0);
+          break;
+        default:
+          v = 0;
+          break;
+    }
   
     //printf("id=%d, comm_set=%d, value=%d \n", custom_set_msg->id_set[i],custom_set_msg->comm_set[i],  v);
 

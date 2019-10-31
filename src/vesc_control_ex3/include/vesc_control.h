@@ -30,6 +30,7 @@ public:
 	double* current;
 	double* speed;
 	double* dps;
+	double* deg;
 	double* duty;
 	double* position;
 	double* enc_deg;
@@ -55,6 +56,7 @@ public:
 		current = new double[NO_VESC];
 		speed = new double[NO_VESC];
 		dps = new double[NO_VESC];
+		deg = new double[NO_VESC];
 		duty = new double[NO_VESC];
 		position = new double[NO_VESC];
 		enc_deg = new double[NO_VESC];
@@ -70,6 +72,7 @@ public:
 			current[i] = 0.;
 			speed[i] = 0.;
 			dps[i] = 0.;
+			deg[i] = 0.;
 			duty[i] = 0.;
 			position[i] = 0.;
 			enc_deg[i] = 0.;
@@ -110,6 +113,7 @@ public:
 		delete[] current;
 		delete[] speed;
 		delete[] dps;
+		delete[] deg;
 		delete[] duty;
 		delete[] position;
 		delete[] enc_deg;

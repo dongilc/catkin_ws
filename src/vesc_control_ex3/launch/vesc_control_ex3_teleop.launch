@@ -23,7 +23,12 @@
     <param name="deadzone" value="0.1" />
   </node>
 
- <!-- vesc_control_ex3_node -->
+  <!-- Teleop Keyboard -->
+  <!-- <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop"> -->
+    <!-- <remap from="cmd_vel" to="robot0/cmd_vel"/> -->
+  <!-- </node> -->
+
+  <!-- vesc_control_ex3_node -->
   <node pkg="vesc_control_ex3" type="vesc_control_ex3_node" name="vesc_control_ex3_node" output="screen"/>
 
  </launch>
