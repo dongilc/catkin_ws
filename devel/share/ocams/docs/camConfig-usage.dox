@@ -1,0 +1,11 @@
+\subsubsection usage Usage
+\verbatim
+<node name="ocams" pkg="ocams" type="ocams">
+  <param name="exposure" type="int" value="100" />
+  <param name="gain" type="int" value="32" />
+  <param name="wb_blue" type="int" value="200" />
+  <param name="wb_red" type="int" value="150" />
+  <param name="auto_exposure" type="bool" value="True" />
+</node>
+\endverbatim
+

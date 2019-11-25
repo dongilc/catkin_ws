@@ -214,6 +214,7 @@ public:
 
   double enc_rps() const;
   double enc_rad() const;
+  int app_status_code() const;
   //double enc_dps() const;
   //double enc_deg() const;
 

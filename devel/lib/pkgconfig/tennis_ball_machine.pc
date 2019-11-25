@@ -1,0 +1,8 @@
+prefix=/home/cdi/SynologyDrive/workspace/catkin_ws/devel
+
+Name: tennis_ball_machine
+Description: Description of tennis_ball_machine
+Version: 0.0.1
+Cflags: 
+Libs: -L/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib -ltennis_ball_machine
+Requires: joy roscpp std_msgs vesc_msgs

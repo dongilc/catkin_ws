@@ -1,0 +1,8 @@
+prefix=/home/cdi/SynologyDrive/workspace/catkin_ws/devel
+
+Name: kitech_robots_description
+Description: Description of kitech_robots_description
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib 
+Requires: 

@@ -1,0 +1,8 @@
+prefix=/home/cdi/SynologyDrive/workspace/catkin_ws/install
+
+Name: huboq_urdf_pkg
+Description: Description of huboq_urdf_pkg
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/cdi/SynologyDrive/workspace/catkin_ws/install/lib 
+Requires: 

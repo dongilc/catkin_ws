@@ -1,0 +1,8 @@
+prefix=/home/cdi/SynologyDrive/workspace/catkin_ws/install
+
+Name: omniwheel_robot
+Description: Description of omniwheel_robot
+Version: 0.0.1
+Cflags: 
+Libs: -L/home/cdi/SynologyDrive/workspace/catkin_ws/install/lib -lomniwheel_robot
+Requires: joy roscpp std_msgs vesc_msgs

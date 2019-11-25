@@ -1,0 +1,15 @@
+(cl:defpackage vesc_msgs-msg
+  (:use )
+  (:export
+   "<VESCGETCUSTOMAPP>"
+   "VESCGETCUSTOMAPP"
+   "<VESCSETCOMMAND>"
+   "VESCSETCOMMAND"
+   "<VESCSETCUSTOMAPP>"
+   "VESCSETCUSTOMAPP"
+   "<VESCSTATE>"
+   "VESCSTATE"
+   "<VESCSTATESTAMPED>"
+   "VESCSTATESTAMPED"
+  ))
+

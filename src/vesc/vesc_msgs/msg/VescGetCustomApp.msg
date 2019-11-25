@@ -26,6 +26,7 @@ float64 pid_pos_now    		 # pid position now (deg) 0~360
 # Raw Encoder Data
 float64[] enc_rps		     # Encoder Read Raw Data (No Delay, rad/sec) 
 float64[] enc_rad			 # Encoder Read Raw Data (No Delay, rad)
+int32 app_status_code        # application status code
 
 # CAN Status Data 
 int32 send_mode_index2

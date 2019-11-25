@@ -199,6 +199,7 @@ void VescDriver::vescPacketCallback(const boost::shared_ptr<VescPacket const>& p
 	custom_msg->enc_rad.clear();
 	custom_msg->enc_rps.push_back(custom_data->enc_rps());
 	custom_msg->enc_rad.push_back(custom_data->enc_rad());
+  custom_msg->app_status_code = custom_data->app_status_code();
   //custom_msg->enc_dps.clear();
 	//custom_msg->enc_deg.clear();
 	//custom_msg->enc_dps.push_back(custom_data->enc_dps());
