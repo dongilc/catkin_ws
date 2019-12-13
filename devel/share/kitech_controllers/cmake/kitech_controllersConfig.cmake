@@ -67,14 +67,14 @@ set(kitech_controllers_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(kitech_controllers_SOURCE_PREFIX /home/cdi/SynologyDrive/workspace/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers)
-  set(kitech_controllers_DEVEL_PREFIX /home/cdi/SynologyDrive/workspace/catkin_ws/devel)
+  set(kitech_controllers_SOURCE_PREFIX /home/nvidia/workspace/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers)
+  set(kitech_controllers_DEVEL_PREFIX /home/nvidia/workspace/catkin_ws/devel)
   set(kitech_controllers_INSTALL_PREFIX "")
   set(kitech_controllers_PREFIX ${kitech_controllers_DEVEL_PREFIX})
 else()
   set(kitech_controllers_SOURCE_PREFIX "")
   set(kitech_controllers_DEVEL_PREFIX "")
-  set(kitech_controllers_INSTALL_PREFIX /home/cdi/SynologyDrive/workspace/catkin_ws/install)
+  set(kitech_controllers_INSTALL_PREFIX /home/nvidia/workspace/catkin_ws/install)
   set(kitech_controllers_PREFIX ${kitech_controllers_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(kitech_controllers_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/cdi/SynologyDrive/workspace/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/include " STREQUAL " ")
+if(NOT "/home/nvidia/workspace/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/include " STREQUAL " ")
   set(kitech_controllers_INCLUDE_DIRS "")
-  set(_include_dirs "/home/cdi/SynologyDrive/workspace/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/include")
+  set(_include_dirs "/home/nvidia/workspace/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/cdi/SynologyDrive/workspace/catkin_ws/src/kitech_legged_segway_rob
         message(FATAL_ERROR "Project 'kitech_controllers' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'kitech_controllers' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/cdi/SynologyDrive/workspace/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'kitech_controllers' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/nvidia/workspace/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/${idir}'.  ${_report}")
     endif()
     _list_append_unique(kitech_controllers_INCLUDE_DIRS ${include})
   endforeach()
@@ -131,7 +131,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/nvidia/workspace/catkin_ws/devel/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

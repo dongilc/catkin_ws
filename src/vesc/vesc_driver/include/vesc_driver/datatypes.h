@@ -572,7 +572,8 @@ typedef enum {
 	COMM_NRF_START_PAIRING,
 	COMM_SET_DPS,	//cdi
 	COMM_SET_GOTO,	//cdi
-	COMM_SET_FINDHOME	//cdi
+	COMM_SET_FINDHOME,	//cdi
+	COMM_SET_DUTY_PAIR	//cdi
 } COMM_PACKET_ID;
 
 // CAN commands
@@ -595,6 +596,7 @@ typedef enum {
 	CAN_PACKET_SET_DPS,				//cdi
 	CAN_PACKET_SET_GOTO,			//cdi
 	CAN_PACKET_SET_FINDHOME,	//cdi
+	CAN_PACKET_SET_DUTY_PAIR,	//cdi
 	CAN_PACKET_SET_REBOOT		//cdi
 } CAN_PACKET_ID;
 

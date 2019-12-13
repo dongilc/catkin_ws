@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/vesc_control_ex3_node.dir/src/vesc_control_ex3_node.cpp.o"
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/vesc_control_ex3/vesc_control_ex3_node.pdb"
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/vesc_control_ex3/vesc_control_ex3_node"
+  "/home/nvidia/workspace/catkin_ws/devel/lib/vesc_control_ex3/vesc_control_ex3_node.pdb"
+  "/home/nvidia/workspace/catkin_ws/devel/lib/vesc_control_ex3/vesc_control_ex3_node"
 )
 
 # Per-language clean rules from dependency scanning.

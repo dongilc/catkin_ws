@@ -192,38 +192,42 @@ public:
   int send_mode_1() const;
   int fwMajor() const;
   int fwMinor() const;
+  int controller_id() const;
 
   // GET_VALUE Returns
-  double temp_fet_filtered() const;
-  double temp_motor_filtered() const;
-  double current_motor() const;
-  double current_in() const;
-  double foc_d_axis_current() const;
-  double foc_q_axis_current() const;
-  double rpm() const;
-  double v_in() const;
-  double duty_now() const;
-  double amp_hours() const;
-  double amp_hours_charged() const;
-  double watt_hours() const;
-  double watt_hours_charged() const;
-  double tachometer() const;
-  double tachometer_abs() const;
+  // double temp_fet_filtered() const;
+  // double temp_motor_filtered() const;
+  // double current_motor() const;
+  // double current_in() const;
+  // double foc_d_axis_current() const;
+  // double foc_q_axis_current() const;
+  // double rpm() const;
+  // double v_in() const;
+  // double duty_now() const;
+  // double amp_hours() const;
+  // double amp_hours_charged() const;
+  // double watt_hours() const;
+  // double watt_hours_charged() const;
+  // double tachometer() const;
+  // double tachometer_abs() const;
   int fault_code() const;
-  double pid_pos_now() const;
+  // double pid_pos_now() const;
+  int app_status_code() const;
 
   double enc_rps() const;
-  double enc_rad() const;
-  int app_status_code() const;
+  //double enc_rad() const;
+  double current() const; //191201
+  double duty() const;    //191201
   //double enc_dps() const;
   //double enc_deg() const;
 
   int send_mode_2() const;
   int can_devs_num() const;
-
   int can_id(int id) const;
   double enc_rps_can(int id) const;
-  double enc_rad_can(int id) const;
+  //double enc_rad_can(int id) const;
+  double current_can(int id) const; //191201
+  double duty_can(int id) const;    //191201
   //double enc_dps_can(int id) const;
   //double enc_deg_can(int id) const;
 

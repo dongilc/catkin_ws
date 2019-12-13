@@ -1,16 +1,16 @@
 
 "use strict";
 
-let VescSetCommand = require('./VescSetCommand.js');
-let VescStateStamped = require('./VescStateStamped.js');
-let VescState = require('./VescState.js');
 let VescGetCustomApp = require('./VescGetCustomApp.js');
+let VescSetCommand = require('./VescSetCommand.js');
+let VescState = require('./VescState.js');
 let VescSetCustomApp = require('./VescSetCustomApp.js');
+let VescStateStamped = require('./VescStateStamped.js');
 
 module.exports = {
-  VescSetCommand: VescSetCommand,
-  VescStateStamped: VescStateStamped,
-  VescState: VescState,
   VescGetCustomApp: VescGetCustomApp,
+  VescSetCommand: VescSetCommand,
+  VescState: VescState,
   VescSetCustomApp: VescSetCustomApp,
+  VescStateStamped: VescStateStamped,
 };

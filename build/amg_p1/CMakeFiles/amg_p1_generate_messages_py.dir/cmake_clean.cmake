@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
   "CMakeFiles/amg_p1_generate_messages_py"
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/_MP_Message.py"
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/_LA_Message.py"
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/_CTM_Message.py"
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/__init__.py"
+  "/home/nvidia/workspace/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/_CTM_Message.py"
+  "/home/nvidia/workspace/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/_LA_Message.py"
+  "/home/nvidia/workspace/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/_MP_Message.py"
+  "/home/nvidia/workspace/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/__init__.py"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,8 +1,8 @@
-prefix=/home/cdi/SynologyDrive/workspace/catkin_ws/devel
+prefix=/home/nvidia/workspace/catkin_ws/devel
 
 Name: diff_wheel_platform
 Description: Description of diff_wheel_platform
 Version: 0.0.1
-Cflags: -I/home/cdi/SynologyDrive/workspace/catkin_ws/devel/include
-Libs: -L/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib -ldiff_wheel_platform
+Cflags: -I/home/nvidia/workspace/catkin_ws/devel/include
+Libs: -L/home/nvidia/workspace/catkin_ws/devel/lib -ldiff_wheel_platform
 Requires: joy roscpp std_msgs vesc_msgs

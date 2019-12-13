@@ -8,7 +8,7 @@ import struct
 import std_msgs.msg
 
 class VescGetCustomApp(genpy.Message):
-  _md5sum = "90215f495cfc9bdca67860d224bb3fe7"
+  _md5sum = "daa4967cc5ef43655bd186c327b3176d"
   _type = "vesc_msgs/VescGetCustomApp"
   _has_header = True #flag to mark the presence of a Header object
   _full_text = """# VESCuino CDI CUSTOM_APP RX Messages
@@ -21,30 +21,35 @@ int32 fw_ver_major
 int32 fw_ver_minor
 
 # Original Get Value Data
-float64 voltage_input        # input voltage (volt)
-float64 temperature_pcb      # temperature of printed circuit board (degrees Celsius)
-float64 current_motor        # motor current (ampere)
-float64 current_input        # input current (ampere)
-float64 speed                # motor electrical speed (revolutions per minute) 
-float64 duty_cycle           # duty cycle (0 to 1)
-float64 charge_drawn         # electric charge drawn from input (ampere-hour)
-float64 charge_regen         # electric charge regenerated to input (ampere-hour)
-float64 energy_drawn         # energy drawn from input (watt-hour)
-float64 energy_regen         # energy regenerated to input (watt-hour)
-float64 displacement         # net tachometer (counts)
-float64 distance_traveled    # total tachnometer (counts)
+#float64 voltage_input        # input voltage (volt)
+#float64 temperature_pcb      # temperature of printed circuit board (degrees Celsius)
+#float64 current_motor        # motor current (ampere)
+#float64 current_input        # input current (ampere)
+#float64 speed                # motor electrical speed (revolutions per minute) 
+#float64 duty_cycle           # duty cycle (0 to 1)
+#float64 charge_drawn         # electric charge drawn from input (ampere-hour)
+#float64 charge_regen         # electric charge regenerated to input (ampere-hour)
+#float64 energy_drawn         # energy drawn from input (watt-hour)
+#float64 energy_regen         # energy regenerated to input (watt-hour)
+#float64 displacement         # net tachometer (counts)
+#float64 distance_traveled    # total tachnometer (counts)
 int32   fault_code
-float64 pid_pos_now    		 # pid position now (deg) 0~360
+#float64 pid_pos_now    		 # pid position now (deg) 0~360
 
-# Raw Encoder Data
-float64[] enc_rps		     # Encoder Read Raw Data (No Delay, rad/sec) 
-float64[] enc_rad			 # Encoder Read Raw Data (No Delay, rad)
 int32 app_status_code        # application status code
 
 # CAN Status Data 
 int32 send_mode_index2
-int32 can_dev_num
+int32 can_devs_num
 int32[] can_id
+int32[] custom_status
+
+# Raw Encoder Data
+float64[] enc_rps		     # Encoder Read Raw Data (No Delay, rad/sec) 
+float64[] enc_rad			 # Encoder Read Raw Data (No Delay, rad)
+float64[] current			 # can status - current
+float64[] duty			     # can status - duty
+
 ================================================================================
 MSG: std_msgs/Header
 # Standard metadata for higher-level stamped data types.
@@ -59,10 +64,12 @@ uint32 seq
 # time-handling sugar is provided by the client library
 time stamp
 #Frame this data is associated with
+# 0: no frame
+# 1: global frame
 string frame_id
 """
-  __slots__ = ['header','send_mode_index1','fw_ver_major','fw_ver_minor','voltage_input','temperature_pcb','current_motor','current_input','speed','duty_cycle','charge_drawn','charge_regen','energy_drawn','energy_regen','displacement','distance_traveled','fault_code','pid_pos_now','enc_rps','enc_rad','app_status_code','send_mode_index2','can_dev_num','can_id']
-  _slot_types = ['std_msgs/Header','int32','int32','int32','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','int32','float64','float64[]','float64[]','int32','int32','int32','int32[]']
+  __slots__ = ['header','send_mode_index1','fw_ver_major','fw_ver_minor','fault_code','app_status_code','send_mode_index2','can_devs_num','can_id','custom_status','enc_rps','enc_rad','current','duty']
+  _slot_types = ['std_msgs/Header','int32','int32','int32','int32','int32','int32','int32','int32[]','int32[]','float64[]','float64[]','float64[]','float64[]']
 
   def __init__(self, *args, **kwds):
     """
@@ -72,7 +79,7 @@ string frame_id
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       header,send_mode_index1,fw_ver_major,fw_ver_minor,voltage_input,temperature_pcb,current_motor,current_input,speed,duty_cycle,charge_drawn,charge_regen,energy_drawn,energy_regen,displacement,distance_traveled,fault_code,pid_pos_now,enc_rps,enc_rad,app_status_code,send_mode_index2,can_dev_num,can_id
+       header,send_mode_index1,fw_ver_major,fw_ver_minor,fault_code,app_status_code,send_mode_index2,can_devs_num,can_id,custom_status,enc_rps,enc_rad,current,duty
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -89,71 +96,41 @@ string frame_id
         self.fw_ver_major = 0
       if self.fw_ver_minor is None:
         self.fw_ver_minor = 0
-      if self.voltage_input is None:
-        self.voltage_input = 0.
-      if self.temperature_pcb is None:
-        self.temperature_pcb = 0.
-      if self.current_motor is None:
-        self.current_motor = 0.
-      if self.current_input is None:
-        self.current_input = 0.
-      if self.speed is None:
-        self.speed = 0.
-      if self.duty_cycle is None:
-        self.duty_cycle = 0.
-      if self.charge_drawn is None:
-        self.charge_drawn = 0.
-      if self.charge_regen is None:
-        self.charge_regen = 0.
-      if self.energy_drawn is None:
-        self.energy_drawn = 0.
-      if self.energy_regen is None:
-        self.energy_regen = 0.
-      if self.displacement is None:
-        self.displacement = 0.
-      if self.distance_traveled is None:
-        self.distance_traveled = 0.
       if self.fault_code is None:
         self.fault_code = 0
-      if self.pid_pos_now is None:
-        self.pid_pos_now = 0.
-      if self.enc_rps is None:
-        self.enc_rps = []
-      if self.enc_rad is None:
-        self.enc_rad = []
       if self.app_status_code is None:
         self.app_status_code = 0
       if self.send_mode_index2 is None:
         self.send_mode_index2 = 0
-      if self.can_dev_num is None:
-        self.can_dev_num = 0
+      if self.can_devs_num is None:
+        self.can_devs_num = 0
       if self.can_id is None:
         self.can_id = []
+      if self.custom_status is None:
+        self.custom_status = []
+      if self.enc_rps is None:
+        self.enc_rps = []
+      if self.enc_rad is None:
+        self.enc_rad = []
+      if self.current is None:
+        self.current = []
+      if self.duty is None:
+        self.duty = []
     else:
       self.header = std_msgs.msg.Header()
       self.send_mode_index1 = 0
       self.fw_ver_major = 0
       self.fw_ver_minor = 0
-      self.voltage_input = 0.
-      self.temperature_pcb = 0.
-      self.current_motor = 0.
-      self.current_input = 0.
-      self.speed = 0.
-      self.duty_cycle = 0.
-      self.charge_drawn = 0.
-      self.charge_regen = 0.
-      self.energy_drawn = 0.
-      self.energy_regen = 0.
-      self.displacement = 0.
-      self.distance_traveled = 0.
       self.fault_code = 0
-      self.pid_pos_now = 0.
-      self.enc_rps = []
-      self.enc_rad = []
       self.app_status_code = 0
       self.send_mode_index2 = 0
-      self.can_dev_num = 0
+      self.can_devs_num = 0
       self.can_id = []
+      self.custom_status = []
+      self.enc_rps = []
+      self.enc_rad = []
+      self.current = []
+      self.duty = []
 
   def _get_types(self):
     """
@@ -176,7 +153,15 @@ string frame_id
         length = len(_x)
       buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self
-      buff.write(_get_struct_3i12did().pack(_x.send_mode_index1, _x.fw_ver_major, _x.fw_ver_minor, _x.voltage_input, _x.temperature_pcb, _x.current_motor, _x.current_input, _x.speed, _x.duty_cycle, _x.charge_drawn, _x.charge_regen, _x.energy_drawn, _x.energy_regen, _x.displacement, _x.distance_traveled, _x.fault_code, _x.pid_pos_now))
+      buff.write(_get_struct_7i().pack(_x.send_mode_index1, _x.fw_ver_major, _x.fw_ver_minor, _x.fault_code, _x.app_status_code, _x.send_mode_index2, _x.can_devs_num))
+      length = len(self.can_id)
+      buff.write(_struct_I.pack(length))
+      pattern = '<%si'%length
+      buff.write(struct.pack(pattern, *self.can_id))
+      length = len(self.custom_status)
+      buff.write(_struct_I.pack(length))
+      pattern = '<%si'%length
+      buff.write(struct.pack(pattern, *self.custom_status))
       length = len(self.enc_rps)
       buff.write(_struct_I.pack(length))
       pattern = '<%sd'%length
@@ -185,12 +170,14 @@ string frame_id
       buff.write(_struct_I.pack(length))
       pattern = '<%sd'%length
       buff.write(struct.pack(pattern, *self.enc_rad))
-      _x = self
-      buff.write(_get_struct_3i().pack(_x.app_status_code, _x.send_mode_index2, _x.can_dev_num))
-      length = len(self.can_id)
+      length = len(self.current)
       buff.write(_struct_I.pack(length))
-      pattern = '<%si'%length
-      buff.write(struct.pack(pattern, *self.can_id))
+      pattern = '<%sd'%length
+      buff.write(struct.pack(pattern, *self.current))
+      length = len(self.duty)
+      buff.write(_struct_I.pack(length))
+      pattern = '<%sd'%length
+      buff.write(struct.pack(pattern, *self.duty))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -218,8 +205,22 @@ string frame_id
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 120
-      (_x.send_mode_index1, _x.fw_ver_major, _x.fw_ver_minor, _x.voltage_input, _x.temperature_pcb, _x.current_motor, _x.current_input, _x.speed, _x.duty_cycle, _x.charge_drawn, _x.charge_regen, _x.energy_drawn, _x.energy_regen, _x.displacement, _x.distance_traveled, _x.fault_code, _x.pid_pos_now,) = _get_struct_3i12did().unpack(str[start:end])
+      end += 28
+      (_x.send_mode_index1, _x.fw_ver_major, _x.fw_ver_minor, _x.fault_code, _x.app_status_code, _x.send_mode_index2, _x.can_devs_num,) = _get_struct_7i().unpack(str[start:end])
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      pattern = '<%si'%length
+      start = end
+      end += struct.calcsize(pattern)
+      self.can_id = struct.unpack(pattern, str[start:end])
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      pattern = '<%si'%length
+      start = end
+      end += struct.calcsize(pattern)
+      self.custom_status = struct.unpack(pattern, str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
@@ -234,17 +235,20 @@ string frame_id
       start = end
       end += struct.calcsize(pattern)
       self.enc_rad = struct.unpack(pattern, str[start:end])
-      _x = self
-      start = end
-      end += 12
-      (_x.app_status_code, _x.send_mode_index2, _x.can_dev_num,) = _get_struct_3i().unpack(str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
-      pattern = '<%si'%length
+      pattern = '<%sd'%length
       start = end
       end += struct.calcsize(pattern)
-      self.can_id = struct.unpack(pattern, str[start:end])
+      self.current = struct.unpack(pattern, str[start:end])
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      pattern = '<%sd'%length
+      start = end
+      end += struct.calcsize(pattern)
+      self.duty = struct.unpack(pattern, str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -266,7 +270,15 @@ string frame_id
         length = len(_x)
       buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self
-      buff.write(_get_struct_3i12did().pack(_x.send_mode_index1, _x.fw_ver_major, _x.fw_ver_minor, _x.voltage_input, _x.temperature_pcb, _x.current_motor, _x.current_input, _x.speed, _x.duty_cycle, _x.charge_drawn, _x.charge_regen, _x.energy_drawn, _x.energy_regen, _x.displacement, _x.distance_traveled, _x.fault_code, _x.pid_pos_now))
+      buff.write(_get_struct_7i().pack(_x.send_mode_index1, _x.fw_ver_major, _x.fw_ver_minor, _x.fault_code, _x.app_status_code, _x.send_mode_index2, _x.can_devs_num))
+      length = len(self.can_id)
+      buff.write(_struct_I.pack(length))
+      pattern = '<%si'%length
+      buff.write(self.can_id.tostring())
+      length = len(self.custom_status)
+      buff.write(_struct_I.pack(length))
+      pattern = '<%si'%length
+      buff.write(self.custom_status.tostring())
       length = len(self.enc_rps)
       buff.write(_struct_I.pack(length))
       pattern = '<%sd'%length
@@ -275,12 +287,14 @@ string frame_id
       buff.write(_struct_I.pack(length))
       pattern = '<%sd'%length
       buff.write(self.enc_rad.tostring())
-      _x = self
-      buff.write(_get_struct_3i().pack(_x.app_status_code, _x.send_mode_index2, _x.can_dev_num))
-      length = len(self.can_id)
+      length = len(self.current)
       buff.write(_struct_I.pack(length))
-      pattern = '<%si'%length
-      buff.write(self.can_id.tostring())
+      pattern = '<%sd'%length
+      buff.write(self.current.tostring())
+      length = len(self.duty)
+      buff.write(_struct_I.pack(length))
+      pattern = '<%sd'%length
+      buff.write(self.duty.tostring())
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -309,8 +323,22 @@ string frame_id
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 120
-      (_x.send_mode_index1, _x.fw_ver_major, _x.fw_ver_minor, _x.voltage_input, _x.temperature_pcb, _x.current_motor, _x.current_input, _x.speed, _x.duty_cycle, _x.charge_drawn, _x.charge_regen, _x.energy_drawn, _x.energy_regen, _x.displacement, _x.distance_traveled, _x.fault_code, _x.pid_pos_now,) = _get_struct_3i12did().unpack(str[start:end])
+      end += 28
+      (_x.send_mode_index1, _x.fw_ver_major, _x.fw_ver_minor, _x.fault_code, _x.app_status_code, _x.send_mode_index2, _x.can_devs_num,) = _get_struct_7i().unpack(str[start:end])
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      pattern = '<%si'%length
+      start = end
+      end += struct.calcsize(pattern)
+      self.can_id = numpy.frombuffer(str[start:end], dtype=numpy.int32, count=length)
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      pattern = '<%si'%length
+      start = end
+      end += struct.calcsize(pattern)
+      self.custom_status = numpy.frombuffer(str[start:end], dtype=numpy.int32, count=length)
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
@@ -325,17 +353,20 @@ string frame_id
       start = end
       end += struct.calcsize(pattern)
       self.enc_rad = numpy.frombuffer(str[start:end], dtype=numpy.float64, count=length)
-      _x = self
-      start = end
-      end += 12
-      (_x.app_status_code, _x.send_mode_index2, _x.can_dev_num,) = _get_struct_3i().unpack(str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
-      pattern = '<%si'%length
+      pattern = '<%sd'%length
       start = end
       end += struct.calcsize(pattern)
-      self.can_id = numpy.frombuffer(str[start:end], dtype=numpy.int32, count=length)
+      self.current = numpy.frombuffer(str[start:end], dtype=numpy.float64, count=length)
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      pattern = '<%sd'%length
+      start = end
+      end += struct.calcsize(pattern)
+      self.duty = numpy.frombuffer(str[start:end], dtype=numpy.float64, count=length)
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -350,15 +381,9 @@ def _get_struct_3I():
     if _struct_3I is None:
         _struct_3I = struct.Struct("<3I")
     return _struct_3I
-_struct_3i = None
-def _get_struct_3i():
-    global _struct_3i
-    if _struct_3i is None:
-        _struct_3i = struct.Struct("<3i")
-    return _struct_3i
-_struct_3i12did = None
-def _get_struct_3i12did():
-    global _struct_3i12did
-    if _struct_3i12did is None:
-        _struct_3i12did = struct.Struct("<3i12did")
-    return _struct_3i12did
+_struct_7i = None
+def _get_struct_7i():
+    global _struct_7i
+    if _struct_7i is None:
+        _struct_7i = struct.Struct("<7i")
+    return _struct_7i

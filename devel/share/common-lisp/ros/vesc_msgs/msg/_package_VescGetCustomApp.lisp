@@ -7,44 +7,24 @@
           FW_VER_MAJOR
           FW_VER_MINOR-VAL
           FW_VER_MINOR
-          VOLTAGE_INPUT-VAL
-          VOLTAGE_INPUT
-          TEMPERATURE_PCB-VAL
-          TEMPERATURE_PCB
-          CURRENT_MOTOR-VAL
-          CURRENT_MOTOR
-          CURRENT_INPUT-VAL
-          CURRENT_INPUT
-          SPEED-VAL
-          SPEED
-          DUTY_CYCLE-VAL
-          DUTY_CYCLE
-          CHARGE_DRAWN-VAL
-          CHARGE_DRAWN
-          CHARGE_REGEN-VAL
-          CHARGE_REGEN
-          ENERGY_DRAWN-VAL
-          ENERGY_DRAWN
-          ENERGY_REGEN-VAL
-          ENERGY_REGEN
-          DISPLACEMENT-VAL
-          DISPLACEMENT
-          DISTANCE_TRAVELED-VAL
-          DISTANCE_TRAVELED
           FAULT_CODE-VAL
           FAULT_CODE
-          PID_POS_NOW-VAL
-          PID_POS_NOW
-          ENC_RPS-VAL
-          ENC_RPS
-          ENC_RAD-VAL
-          ENC_RAD
           APP_STATUS_CODE-VAL
           APP_STATUS_CODE
           SEND_MODE_INDEX2-VAL
           SEND_MODE_INDEX2
-          CAN_DEV_NUM-VAL
-          CAN_DEV_NUM
+          CAN_DEVS_NUM-VAL
+          CAN_DEVS_NUM
           CAN_ID-VAL
           CAN_ID
+          CUSTOM_STATUS-VAL
+          CUSTOM_STATUS
+          ENC_RPS-VAL
+          ENC_RPS
+          ENC_RAD-VAL
+          ENC_RAD
+          CURRENT-VAL
+          CURRENT
+          DUTY-VAL
+          DUTY
 ))

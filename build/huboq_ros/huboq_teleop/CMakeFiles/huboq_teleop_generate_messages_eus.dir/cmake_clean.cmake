@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/huboq_teleop_generate_messages_eus"
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/devel/share/roseus/ros/huboq_teleop/manifest.l"
+  "/home/nvidia/workspace/catkin_ws/devel/share/roseus/ros/huboq_teleop/manifest.l"
 )
 
 # Per-language clean rules from dependency scanning.

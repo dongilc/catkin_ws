@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/vesc_msgs_generate_messages_cpp"
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/devel/include/vesc_msgs/VescState.h"
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/devel/include/vesc_msgs/VescSetCommand.h"
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/devel/include/vesc_msgs/VescGetCustomApp.h"
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/devel/include/vesc_msgs/VescSetCustomApp.h"
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/devel/include/vesc_msgs/VescStateStamped.h"
+  "/home/nvidia/workspace/catkin_ws/devel/include/vesc_msgs/VescGetCustomApp.h"
+  "/home/nvidia/workspace/catkin_ws/devel/include/vesc_msgs/VescSetCommand.h"
+  "/home/nvidia/workspace/catkin_ws/devel/include/vesc_msgs/VescSetCustomApp.h"
+  "/home/nvidia/workspace/catkin_ws/devel/include/vesc_msgs/VescStateStamped.h"
+  "/home/nvidia/workspace/catkin_ws/devel/include/vesc_msgs/VescState.h"
 )
 
 # Per-language clean rules from dependency scanning.

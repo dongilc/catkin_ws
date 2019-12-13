@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/tennis_ball_machine_node.dir/src/tennis_ball_machine_node.cpp.o"
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/tennis_ball_machine/tennis_ball_machine_node.pdb"
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/tennis_ball_machine/tennis_ball_machine_node"
+  "/home/nvidia/workspace/catkin_ws/devel/lib/tennis_ball_machine/tennis_ball_machine_node.pdb"
+  "/home/nvidia/workspace/catkin_ws/devel/lib/tennis_ball_machine/tennis_ball_machine_node"
 )
 
 # Per-language clean rules from dependency scanning.

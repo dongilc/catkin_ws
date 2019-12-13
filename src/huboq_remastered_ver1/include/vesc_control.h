@@ -34,8 +34,15 @@ public:
 	double* position;
 	double* enc_deg;
 	double* brake;
+	double* current_status;
+	double* duty_status;
+	int*	controller_id;
 	int*    custom_cmd_type;
 	double* custom_cmd_value;
+	int* 	custom_status;
+	int* 	last_custom_status;
+	int 	app_status_code;
+	int 	last_app_status_code;
 
 	ros::Time startTime;
 	std_msgs::Bool enable;
@@ -59,8 +66,13 @@ public:
 		position = new double[NO_VESC];
 		enc_deg = new double[NO_VESC];
 		brake = new double[NO_VESC];
+		current_status = new double[NO_VESC];
+		duty_status = new double[NO_VESC];
+		controller_id = new int[NO_VESC];
 		custom_cmd_type = new int[NO_VESC];
 		custom_cmd_value = new double[NO_VESC];
+		custom_status = new int[NO_VESC];
+		last_custom_status = new int[NO_VESC];
 
 		// init
 		for(int i=0; i<NO_VESC; i++) {
@@ -74,8 +86,12 @@ public:
 			position[i] = 0.;
 			enc_deg[i] = 0.;
 			brake[i] = 0.;
-			custom_cmd_type[i] = 0.;
-			custom_cmd_value[i] = 0.;
+			current_status[i] = 0.;
+			duty_status[i] = 0.;
+			controller_id[i] = 0;
+			custom_cmd_type[i] = 0;
+			custom_status[i] = 0;
+			last_custom_status[i] = 0;
 		}
 
 		// Publisher
@@ -114,8 +130,13 @@ public:
 		delete[] position;
 		delete[] enc_deg;
 		delete[] brake;
+		delete[] current_status;
+		delete[] duty_status;
+		delete[] controller_id;
 		delete[] custom_cmd_type;
 		delete[] custom_cmd_value;
+		delete[] custom_status;
+		delete[] last_custom_status;
 	}
 
 	void setCmdMsg(double data, int send_can, int can_id);

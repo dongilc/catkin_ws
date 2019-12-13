@@ -1,8 +1,8 @@
-# Install script for directory: /home/cdi/SynologyDrive/workspace/catkin_ws/src/huboq_ros/huboq_urdf_pkg
+# Install script for directory: /home/nvidia/workspace/catkin_ws/src/huboq_ros/huboq_urdf_pkg
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/cdi/SynologyDrive/workspace/catkin_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/nvidia/workspace/catkin_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -32,23 +32,18 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
   set(CMAKE_INSTALL_SO_NO_EXE "1")
 endif()
 
-# Is this installation the result of a crosscompile?
-if(NOT DEFINED CMAKE_CROSSCOMPILING)
-  set(CMAKE_CROSSCOMPILING "FALSE")
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/nvidia/workspace/catkin_ws/build/huboq_ros/huboq_urdf_pkg/catkin_generated/installspace/huboq_urdf_pkg.pc")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/cdi/SynologyDrive/workspace/catkin_ws/build/huboq_ros/huboq_urdf_pkg/catkin_generated/installspace/huboq_urdf_pkg.pc")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/huboq_urdf_pkg/cmake" TYPE FILE FILES
-    "/home/cdi/SynologyDrive/workspace/catkin_ws/build/huboq_ros/huboq_urdf_pkg/catkin_generated/installspace/huboq_urdf_pkgConfig.cmake"
-    "/home/cdi/SynologyDrive/workspace/catkin_ws/build/huboq_ros/huboq_urdf_pkg/catkin_generated/installspace/huboq_urdf_pkgConfig-version.cmake"
+    "/home/nvidia/workspace/catkin_ws/build/huboq_ros/huboq_urdf_pkg/catkin_generated/installspace/huboq_urdf_pkgConfig.cmake"
+    "/home/nvidia/workspace/catkin_ws/build/huboq_ros/huboq_urdf_pkg/catkin_generated/installspace/huboq_urdf_pkgConfig-version.cmake"
     )
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/huboq_urdf_pkg" TYPE FILE FILES "/home/cdi/SynologyDrive/workspace/catkin_ws/src/huboq_ros/huboq_urdf_pkg/package.xml")
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/huboq_urdf_pkg" TYPE FILE FILES "/home/nvidia/workspace/catkin_ws/src/huboq_ros/huboq_urdf_pkg/package.xml")
 endif()
 

@@ -179,27 +179,40 @@ void VescDriver::vescPacketCallback(const boost::shared_ptr<VescPacket const>& p
 	custom_msg->send_mode_index1 = custom_data->send_mode_1();
 	custom_msg->fw_ver_major = custom_data->fwMajor();
 	custom_msg->fw_ver_minor = custom_data->fwMinor();
-	custom_msg->voltage_input = custom_data->v_in();
-	custom_msg->temperature_pcb = custom_data->temp_fet_filtered();
-	custom_msg->current_motor = custom_data->current_motor();
-	custom_msg->current_input = custom_data->current_in();
-	custom_msg->speed = custom_data->rpm();
-	custom_msg->duty_cycle = custom_data->duty_now();
-	custom_msg->charge_drawn = custom_data->amp_hours();
-	custom_msg->charge_regen = custom_data->amp_hours_charged();
-	custom_msg->energy_drawn = custom_data->watt_hours();
-	custom_msg->energy_regen = custom_data->watt_hours_charged();
-	custom_msg->displacement = custom_data->tachometer();
-	custom_msg->distance_traveled = custom_data->tachometer_abs();
+	// custom_msg->voltage_input = custom_data->v_in();
+	// custom_msg->temperature_pcb = custom_data->temp_fet_filtered();
+	// custom_msg->current_motor = custom_data->current_motor();
+	// custom_msg->current_input = custom_data->current_in();
+	// custom_msg->speed = custom_data->rpm();
+	// custom_msg->duty_cycle = custom_data->duty_now();
+	// custom_msg->charge_drawn = custom_data->amp_hours();
+	// custom_msg->charge_regen = custom_data->amp_hours_charged();
+	// custom_msg->energy_drawn = custom_data->watt_hours();
+	// custom_msg->energy_regen = custom_data->watt_hours_charged();
+	// custom_msg->displacement = custom_data->tachometer();
+	// custom_msg->distance_traveled = custom_data->tachometer_abs();
 	custom_msg->fault_code = custom_data->fault_code();
-	custom_msg->pid_pos_now = custom_data->pid_pos_now();
+	//custom_msg->pid_pos_now = custom_data->pid_pos_now();
+  
+  custom_msg->app_status_code = custom_data->app_status_code();
 
-	//
+  custom_msg->can_id.clear();
 	custom_msg->enc_rps.clear();
 	custom_msg->enc_rad.clear();
+  custom_msg->current.clear();
+  custom_msg->duty.clear();
+  custom_msg->custom_status.clear();
+
+  custom_msg->can_id.push_back(custom_data->controller_id());
 	custom_msg->enc_rps.push_back(custom_data->enc_rps());
-	custom_msg->enc_rad.push_back(custom_data->enc_rad());
-  custom_msg->app_status_code = custom_data->app_status_code();
+	//custom_msg->enc_rad.push_back(custom_data->enc_rad());
+  custom_msg->current.push_back(custom_data->current());  //191201
+  custom_msg->duty.push_back(custom_data->duty());  //191201
+
+  int number = custom_msg->app_status_code;
+  custom_msg->custom_status.push_back((int)(number % 10));
+  number /= 10;
+
   //custom_msg->enc_dps.clear();
 	//custom_msg->enc_deg.clear();
 	//custom_msg->enc_dps.push_back(custom_data->enc_dps());
@@ -207,15 +220,18 @@ void VescDriver::vescPacketCallback(const boost::shared_ptr<VescPacket const>& p
 
 	// can dev
 	custom_msg->send_mode_index2 = custom_data->send_mode_2();
-	custom_msg->can_dev_num = custom_data->can_devs_num();
+	custom_msg->can_devs_num = custom_data->can_devs_num();
 
-	custom_msg->can_id.clear();
-	for(int i=0; i<custom_msg->can_dev_num; i++) {
+	for(int i=0; i<custom_msg->can_devs_num; i++) {
 		custom_msg->can_id.push_back(custom_data->can_id(i));
 		custom_msg->enc_rps.push_back(custom_data->enc_rps_can(i));
-		custom_msg->enc_rad.push_back(custom_data->enc_rad_can(i));
+		//custom_msg->enc_rad.push_back(custom_data->enc_rad_can(i));
+    custom_msg->current.push_back(custom_data->current_can(i)); //191201
+    custom_msg->duty.push_back(custom_data->duty_can(i));    //191201
     //custom_msg->enc_dps.push_back(custom_data->enc_dps_can(i));
 		//custom_msg->enc_deg.push_back(custom_data->enc_deg_can(i));
+    custom_msg->custom_status.push_back((int)(number % 10));
+    number /= 10;
 	}
 
 	//

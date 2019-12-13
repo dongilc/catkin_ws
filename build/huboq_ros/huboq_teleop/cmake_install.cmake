@@ -1,8 +1,8 @@
-# Install script for directory: /home/cdi/SynologyDrive/workspace/catkin_ws/src/huboq_ros/huboq_teleop
+# Install script for directory: /home/nvidia/workspace/catkin_ws/src/huboq_ros/huboq_teleop
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/cdi/SynologyDrive/workspace/catkin_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/nvidia/workspace/catkin_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -32,43 +32,38 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
   set(CMAKE_INSTALL_SO_NO_EXE "1")
 endif()
 
-# Is this installation the result of a crosscompile?
-if(NOT DEFINED CMAKE_CROSSCOMPILING)
-  set(CMAKE_CROSSCOMPILING "FALSE")
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/huboq_teleop/cmake" TYPE FILE FILES "/home/nvidia/workspace/catkin_ws/build/huboq_ros/huboq_teleop/catkin_generated/installspace/huboq_teleop-msg-paths.cmake")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/huboq_teleop/cmake" TYPE FILE FILES "/home/cdi/SynologyDrive/workspace/catkin_ws/build/huboq_ros/huboq_teleop/catkin_generated/installspace/huboq_teleop-msg-paths.cmake")
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/nvidia/workspace/catkin_ws/devel/share/roseus/ros/huboq_teleop")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/cdi/SynologyDrive/workspace/catkin_ws/devel/share/roseus/ros/huboq_teleop")
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  execute_process(COMMAND "/usr/bin/python" -m compileall "/home/nvidia/workspace/catkin_ws/devel/lib/python2.7/dist-packages/huboq_teleop")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python2" -m compileall "/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/python2.7/dist-packages/huboq_teleop")
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/nvidia/workspace/catkin_ws/devel/lib/python2.7/dist-packages/huboq_teleop")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/python2.7/dist-packages/huboq_teleop")
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/nvidia/workspace/catkin_ws/build/huboq_ros/huboq_teleop/catkin_generated/installspace/huboq_teleop.pc")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/cdi/SynologyDrive/workspace/catkin_ws/build/huboq_ros/huboq_teleop/catkin_generated/installspace/huboq_teleop.pc")
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/huboq_teleop/cmake" TYPE FILE FILES "/home/nvidia/workspace/catkin_ws/build/huboq_ros/huboq_teleop/catkin_generated/installspace/huboq_teleop-msg-extras.cmake")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/huboq_teleop/cmake" TYPE FILE FILES "/home/cdi/SynologyDrive/workspace/catkin_ws/build/huboq_ros/huboq_teleop/catkin_generated/installspace/huboq_teleop-msg-extras.cmake")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/huboq_teleop/cmake" TYPE FILE FILES
-    "/home/cdi/SynologyDrive/workspace/catkin_ws/build/huboq_ros/huboq_teleop/catkin_generated/installspace/huboq_teleopConfig.cmake"
-    "/home/cdi/SynologyDrive/workspace/catkin_ws/build/huboq_ros/huboq_teleop/catkin_generated/installspace/huboq_teleopConfig-version.cmake"
+    "/home/nvidia/workspace/catkin_ws/build/huboq_ros/huboq_teleop/catkin_generated/installspace/huboq_teleopConfig.cmake"
+    "/home/nvidia/workspace/catkin_ws/build/huboq_ros/huboq_teleop/catkin_generated/installspace/huboq_teleopConfig-version.cmake"
     )
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/huboq_teleop" TYPE FILE FILES "/home/cdi/SynologyDrive/workspace/catkin_ws/src/huboq_ros/huboq_teleop/package.xml")
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/huboq_teleop" TYPE FILE FILES "/home/nvidia/workspace/catkin_ws/src/huboq_ros/huboq_teleop/package.xml")
 endif()
 

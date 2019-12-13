@@ -1,8 +1,8 @@
-# Install script for directory: /home/cdi/SynologyDrive/workspace/catkin_ws/src/ocams
+# Install script for directory: /home/nvidia/workspace/catkin_ws/src/ocams
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/cdi/SynologyDrive/workspace/catkin_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/nvidia/workspace/catkin_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -32,39 +32,34 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
   set(CMAKE_INSTALL_SO_NO_EXE "1")
 endif()
 
-# Is this installation the result of a crosscompile?
-if(NOT DEFINED CMAKE_CROSSCOMPILING)
-  set(CMAKE_CROSSCOMPILING "FALSE")
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/ocams" TYPE FILE FILES "/home/nvidia/workspace/catkin_ws/devel/include/ocams/camConfig.h")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/ocams" TYPE FILE FILES "/home/cdi/SynologyDrive/workspace/catkin_ws/devel/include/ocams/camConfig.h")
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/ocams" TYPE FILE FILES "/home/nvidia/workspace/catkin_ws/devel/lib/python2.7/dist-packages/ocams/__init__.py")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/ocams" TYPE FILE FILES "/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/python2.7/dist-packages/ocams/__init__.py")
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  execute_process(COMMAND "/usr/bin/python" -m compileall "/home/nvidia/workspace/catkin_ws/devel/lib/python2.7/dist-packages/ocams/cfg")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python2" -m compileall "/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/python2.7/dist-packages/ocams/cfg")
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/ocams" TYPE DIRECTORY FILES "/home/nvidia/workspace/catkin_ws/devel/lib/python2.7/dist-packages/ocams/cfg")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/ocams" TYPE DIRECTORY FILES "/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/python2.7/dist-packages/ocams/cfg")
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/nvidia/workspace/catkin_ws/build/ocams/catkin_generated/installspace/ocams.pc")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/cdi/SynologyDrive/workspace/catkin_ws/build/ocams/catkin_generated/installspace/ocams.pc")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ocams/cmake" TYPE FILE FILES
-    "/home/cdi/SynologyDrive/workspace/catkin_ws/build/ocams/catkin_generated/installspace/ocamsConfig.cmake"
-    "/home/cdi/SynologyDrive/workspace/catkin_ws/build/ocams/catkin_generated/installspace/ocamsConfig-version.cmake"
+    "/home/nvidia/workspace/catkin_ws/build/ocams/catkin_generated/installspace/ocamsConfig.cmake"
+    "/home/nvidia/workspace/catkin_ws/build/ocams/catkin_generated/installspace/ocamsConfig-version.cmake"
     )
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ocams" TYPE FILE FILES "/home/cdi/SynologyDrive/workspace/catkin_ws/src/ocams/package.xml")
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ocams" TYPE FILE FILES "/home/nvidia/workspace/catkin_ws/src/ocams/package.xml")
 endif()
 

@@ -1,8 +1,8 @@
-# Install script for directory: /home/cdi/SynologyDrive/workspace/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_robots/kitech_robots_control
+# Install script for directory: /home/nvidia/workspace/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_robots/kitech_robots_control
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/cdi/SynologyDrive/workspace/catkin_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/nvidia/workspace/catkin_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -30,10 +30,5 @@ endif()
 # Install shared libraries without execute permission?
 if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
   set(CMAKE_INSTALL_SO_NO_EXE "1")
-endif()
-
-# Is this installation the result of a crosscompile?
-if(NOT DEFINED CMAKE_CROSSCOMPILING)
-  set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 

@@ -1,8 +1,8 @@
-prefix=/home/cdi/SynologyDrive/workspace/catkin_ws/install
+prefix=/home/nvidia/workspace/catkin_ws/install
 
 Name: huboq_teleop
 Description: Description of huboq_teleop
 Version: 0.0.1
 Cflags: 
-Libs: -L/home/cdi/SynologyDrive/workspace/catkin_ws/install/lib -lhuboq_teleop
+Libs: -L/home/nvidia/workspace/catkin_ws/install/lib -lhuboq_teleop
 Requires: joy roscpp std_msgs

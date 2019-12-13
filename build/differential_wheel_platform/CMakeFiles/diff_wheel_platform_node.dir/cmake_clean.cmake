@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/diff_wheel_platform_node.dir/src/diff_wheel_platform_node.cpp.o"
   "CMakeFiles/diff_wheel_platform_node.dir/src/computed_torque_control.cpp.o"
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/diff_wheel_platform/diff_wheel_platform_node.pdb"
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/diff_wheel_platform/diff_wheel_platform_node"
+  "/home/nvidia/workspace/catkin_ws/devel/lib/diff_wheel_platform/diff_wheel_platform_node.pdb"
+  "/home/nvidia/workspace/catkin_ws/devel/lib/diff_wheel_platform/diff_wheel_platform_node"
 )
 
 # Per-language clean rules from dependency scanning.
