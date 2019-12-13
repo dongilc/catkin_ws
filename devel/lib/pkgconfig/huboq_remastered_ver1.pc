@@ -1,8 +1,8 @@
-prefix=/home/nvidia/workspace/catkin_ws/devel
+prefix=/home/cdi/SynologyDrive/workspace/catkin_ws/devel
 
 Name: huboq_remastered_ver1
 Description: Description of huboq_remastered_ver1
 Version: 0.0.1
 Cflags: 
-Libs: -L/home/nvidia/workspace/catkin_ws/devel/lib -lhuboq_remastered_ver1
+Libs: -L/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib -lhuboq_remastered_ver1
 Requires: joy roscpp std_msgs vesc_msgs

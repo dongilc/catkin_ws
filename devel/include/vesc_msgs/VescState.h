@@ -164,7 +164,7 @@ namespace message_traits
 
 
 // BOOLTRAITS {'IsFixedSize': True, 'IsMessage': True, 'HasHeader': False}
-// {'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'vesc_msgs': ['/home/nvidia/workspace/catkin_ws/src/vesc/vesc_msgs/msg']}
+// {'std_msgs': ['/opt/ros/melodic/share/std_msgs/cmake/../msg'], 'vesc_msgs': ['/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg']}
 
 // !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
@@ -231,33 +231,33 @@ struct Definition< ::vesc_msgs::VescState_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "# Vedder VESC open source motor controller state (telemetry)\n\
-\n\
-# fault codes\n\
-int32 FAULT_CODE_NONE=0\n\
-int32 FAULT_CODE_OVER_VOLTAGE=1\n\
-int32 FAULT_CODE_UNDER_VOLTAGE=2\n\
-int32 FAULT_CODE_DRV8302=3\n\
-int32 FAULT_CODE_ABS_OVER_CURRENT=4\n\
-int32 FAULT_CODE_OVER_TEMP_FET=5\n\
-int32 FAULT_CODE_OVER_TEMP_MOTOR=6\n\
-\n\
-float64 voltage_input        # input voltage (volt)\n\
-float64 temperature_pcb      # temperature of printed circuit board (degrees Celsius)\n\
-float64 current_motor        # motor current (ampere)\n\
-float64 current_input        # input current (ampere)\n\
-float64 speed                # motor electrical speed (revolutions per minute) \n\
-float64 duty_cycle           # duty cycle (0 to 1)\n\
-float64 charge_drawn         # electric charge drawn from input (ampere-hour)\n\
-float64 charge_regen         # electric charge regenerated to input (ampere-hour)\n\
-float64 energy_drawn         # energy drawn from input (watt-hour)\n\
-float64 energy_regen         # energy regenerated to input (watt-hour)\n\
-float64 displacement         # net tachometer (counts)\n\
-float64 distance_traveled    # total tachnometer (counts)\n\
-int32   fault_code\n\
-float64 pid_pos_now    		 # pid position now (deg) 0~360\n\
-int32   controller_id\n\
-";
+    return "# Vedder VESC open source motor controller state (telemetry)\n"
+"\n"
+"# fault codes\n"
+"int32 FAULT_CODE_NONE=0\n"
+"int32 FAULT_CODE_OVER_VOLTAGE=1\n"
+"int32 FAULT_CODE_UNDER_VOLTAGE=2\n"
+"int32 FAULT_CODE_DRV8302=3\n"
+"int32 FAULT_CODE_ABS_OVER_CURRENT=4\n"
+"int32 FAULT_CODE_OVER_TEMP_FET=5\n"
+"int32 FAULT_CODE_OVER_TEMP_MOTOR=6\n"
+"\n"
+"float64 voltage_input        # input voltage (volt)\n"
+"float64 temperature_pcb      # temperature of printed circuit board (degrees Celsius)\n"
+"float64 current_motor        # motor current (ampere)\n"
+"float64 current_input        # input current (ampere)\n"
+"float64 speed                # motor electrical speed (revolutions per minute) \n"
+"float64 duty_cycle           # duty cycle (0 to 1)\n"
+"float64 charge_drawn         # electric charge drawn from input (ampere-hour)\n"
+"float64 charge_regen         # electric charge regenerated to input (ampere-hour)\n"
+"float64 energy_drawn         # energy drawn from input (watt-hour)\n"
+"float64 energy_regen         # energy regenerated to input (watt-hour)\n"
+"float64 displacement         # net tachometer (counts)\n"
+"float64 distance_traveled    # total tachnometer (counts)\n"
+"int32   fault_code\n"
+"float64 pid_pos_now    		 # pid position now (deg) 0~360\n"
+"int32   controller_id\n"
+;
   }
 
   static const char* value(const ::vesc_msgs::VescState_<ContainerAllocator>&) { return value(); }

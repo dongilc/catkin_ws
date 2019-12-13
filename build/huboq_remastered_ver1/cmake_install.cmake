@@ -1,8 +1,8 @@
-# Install script for directory: /home/nvidia/workspace/catkin_ws/src/huboq_remastered_ver1
+# Install script for directory: /home/cdi/SynologyDrive/workspace/catkin_ws/src/huboq_remastered_ver1
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/nvidia/workspace/catkin_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/cdi/SynologyDrive/workspace/catkin_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -32,38 +32,43 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
   set(CMAKE_INSTALL_SO_NO_EXE "1")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/huboq_remastered_ver1/cmake" TYPE FILE FILES "/home/nvidia/workspace/catkin_ws/build/huboq_remastered_ver1/catkin_generated/installspace/huboq_remastered_ver1-msg-paths.cmake")
+# Is this installation the result of a crosscompile?
+if(NOT DEFINED CMAKE_CROSSCOMPILING)
+  set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/nvidia/workspace/catkin_ws/devel/share/roseus/ros/huboq_remastered_ver1")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/huboq_remastered_ver1/cmake" TYPE FILE FILES "/home/cdi/SynologyDrive/workspace/catkin_ws/build/huboq_remastered_ver1/catkin_generated/installspace/huboq_remastered_ver1-msg-paths.cmake")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  execute_process(COMMAND "/usr/bin/python" -m compileall "/home/nvidia/workspace/catkin_ws/devel/lib/python2.7/dist-packages/huboq_remastered_ver1")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/cdi/SynologyDrive/workspace/catkin_ws/devel/share/roseus/ros/huboq_remastered_ver1")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/nvidia/workspace/catkin_ws/devel/lib/python2.7/dist-packages/huboq_remastered_ver1")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  execute_process(COMMAND "/usr/bin/python2" -m compileall "/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/python2.7/dist-packages/huboq_remastered_ver1")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/nvidia/workspace/catkin_ws/build/huboq_remastered_ver1/catkin_generated/installspace/huboq_remastered_ver1.pc")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/python2.7/dist-packages/huboq_remastered_ver1")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/huboq_remastered_ver1/cmake" TYPE FILE FILES "/home/nvidia/workspace/catkin_ws/build/huboq_remastered_ver1/catkin_generated/installspace/huboq_remastered_ver1-msg-extras.cmake")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/cdi/SynologyDrive/workspace/catkin_ws/build/huboq_remastered_ver1/catkin_generated/installspace/huboq_remastered_ver1.pc")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/huboq_remastered_ver1/cmake" TYPE FILE FILES "/home/cdi/SynologyDrive/workspace/catkin_ws/build/huboq_remastered_ver1/catkin_generated/installspace/huboq_remastered_ver1-msg-extras.cmake")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/huboq_remastered_ver1/cmake" TYPE FILE FILES
-    "/home/nvidia/workspace/catkin_ws/build/huboq_remastered_ver1/catkin_generated/installspace/huboq_remastered_ver1Config.cmake"
-    "/home/nvidia/workspace/catkin_ws/build/huboq_remastered_ver1/catkin_generated/installspace/huboq_remastered_ver1Config-version.cmake"
+    "/home/cdi/SynologyDrive/workspace/catkin_ws/build/huboq_remastered_ver1/catkin_generated/installspace/huboq_remastered_ver1Config.cmake"
+    "/home/cdi/SynologyDrive/workspace/catkin_ws/build/huboq_remastered_ver1/catkin_generated/installspace/huboq_remastered_ver1Config-version.cmake"
     )
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/huboq_remastered_ver1" TYPE FILE FILES "/home/nvidia/workspace/catkin_ws/src/huboq_remastered_ver1/package.xml")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/huboq_remastered_ver1" TYPE FILE FILES "/home/cdi/SynologyDrive/workspace/catkin_ws/src/huboq_remastered_ver1/package.xml")
 endif()
 

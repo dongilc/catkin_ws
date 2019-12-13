@@ -1,7 +1,7 @@
 <launch>
   <!-- VESC driver parameters -->
   <arg name="node_name1" default="vesc_driver_node1" />
-  <arg name="port1" default="/dev/ttyACM0" />
+  <arg name="port1" default="/dev/ttyACM1" />
 
   <!-- VESC driver node -->
   <node pkg="vesc_driver" type="vesc_driver_node" name="$(arg node_name1)" output="screen">

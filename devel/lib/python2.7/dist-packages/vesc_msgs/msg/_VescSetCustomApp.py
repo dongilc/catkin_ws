@@ -122,7 +122,7 @@ int32       data_bytes"""
       start = end
       end += struct.calcsize(pattern)
       self.can_forward_set = struct.unpack(pattern, str[start:end])
-      self.can_forward_set = map(bool, self.can_forward_set)
+      self.can_forward_set = list(map(bool, self.can_forward_set))
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
@@ -198,7 +198,7 @@ int32       data_bytes"""
       start = end
       end += struct.calcsize(pattern)
       self.can_forward_set = numpy.frombuffer(str[start:end], dtype=numpy.bool, count=length)
-      self.can_forward_set = map(bool, self.can_forward_set)
+      self.can_forward_set = list(map(bool, self.can_forward_set))
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])

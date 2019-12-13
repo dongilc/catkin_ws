@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/nvidia/workspace/catkin_ws/src/amg_p1/src/amg_p1_node.cpp" "/home/nvidia/workspace/catkin_ws/build/amg_p1/CMakeFiles/amg_p1_node.dir/src/amg_p1_node.cpp.o"
-  "/home/nvidia/workspace/catkin_ws/src/amg_p1/src/computed_torque_control.cpp" "/home/nvidia/workspace/catkin_ws/build/amg_p1/CMakeFiles/amg_p1_node.dir/src/computed_torque_control.cpp.o"
-  "/home/nvidia/workspace/catkin_ws/src/amg_p1/src/lqr_motion_planner.cpp" "/home/nvidia/workspace/catkin_ws/build/amg_p1/CMakeFiles/amg_p1_node.dir/src/lqr_motion_planner.cpp.o"
-  "/home/nvidia/workspace/catkin_ws/src/amg_p1/src/mpc_motion_planner.cpp" "/home/nvidia/workspace/catkin_ws/build/amg_p1/CMakeFiles/amg_p1_node.dir/src/mpc_motion_planner.cpp.o"
+  "/home/cdi/SynologyDrive/workspace/catkin_ws/src/amg_p1/src/amg_p1_node.cpp" "/home/cdi/SynologyDrive/workspace/catkin_ws/build/amg_p1/CMakeFiles/amg_p1_node.dir/src/amg_p1_node.cpp.o"
+  "/home/cdi/SynologyDrive/workspace/catkin_ws/src/amg_p1/src/computed_torque_control.cpp" "/home/cdi/SynologyDrive/workspace/catkin_ws/build/amg_p1/CMakeFiles/amg_p1_node.dir/src/computed_torque_control.cpp.o"
+  "/home/cdi/SynologyDrive/workspace/catkin_ws/src/amg_p1/src/lqr_motion_planner.cpp" "/home/cdi/SynologyDrive/workspace/catkin_ws/build/amg_p1/CMakeFiles/amg_p1_node.dir/src/lqr_motion_planner.cpp.o"
+  "/home/cdi/SynologyDrive/workspace/catkin_ws/src/amg_p1/src/mpc_motion_planner.cpp" "/home/cdi/SynologyDrive/workspace/catkin_ws/build/amg_p1/CMakeFiles/amg_p1_node.dir/src/mpc_motion_planner.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -20,10 +20,10 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/nvidia/workspace/catkin_ws/devel/include"
-  "/home/nvidia/workspace/catkin_ws/src/amg_p1/include"
-  "/opt/ros/kinetic/include"
-  "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
+  "/home/cdi/SynologyDrive/workspace/catkin_ws/devel/include"
+  "/home/cdi/SynologyDrive/workspace/catkin_ws/src/amg_p1/include"
+  "/opt/ros/melodic/include"
+  "/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   )
 
 # Targets to which this target links.

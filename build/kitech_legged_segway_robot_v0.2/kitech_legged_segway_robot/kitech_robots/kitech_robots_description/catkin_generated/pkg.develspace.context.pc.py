@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "kitech_robots_description"
-PROJECT_SPACE_DIR = "/home/nvidia/workspace/catkin_ws/devel"
+PROJECT_SPACE_DIR = "/home/cdi/SynologyDrive/workspace/catkin_ws/devel"
 PROJECT_VERSION = "0.0.0"

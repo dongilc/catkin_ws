@@ -371,7 +371,7 @@ int main(int argc, char **argv)
   float value_goto = 0.;
 
   // TeleopVesc Class
-  TeleopVesc *teleop_vesc1 = new TeleopVesc(2, "/dev/ttyACM0"); 
+  TeleopVesc *teleop_vesc1 = new TeleopVesc(2, "/dev/ttyACM1"); 
   //TeleopVesc *teleop_vesc2 = new TeleopVesc(1, "/dev/ttyACM1"); 
 
 // TeleopInput Class

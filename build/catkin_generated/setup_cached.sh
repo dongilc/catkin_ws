@@ -7,8 +7,7 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/nvidia/workspace/catkin_ws/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/opt/ros/kinetic/lib:/opt/ros/kinetic/lib/aarch64-linux-gnu:/usr/local/cuda-9.0/lib64"
-export PWD="/home/nvidia/workspace/catkin_ws/build"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/nvidia/workspace/catkin_ws/devel/share/common-lisp"
-export ROS_PACKAGE_PATH="/home/nvidia/workspace/catkin_ws/src:$ROS_PACKAGE_PATH"
+export CMAKE_PREFIX_PATH="/home/cdi/SynologyDrive/workspace/catkin_ws/devel:$CMAKE_PREFIX_PATH"
+export PWD="/home/cdi/SynologyDrive/workspace/catkin_ws/build"
+export ROSLISP_PACKAGE_DIRECTORIES="/home/cdi/SynologyDrive/workspace/catkin_ws/devel/share/common-lisp"
+export ROS_PACKAGE_PATH="/home/cdi/SynologyDrive/workspace/catkin_ws/src:$ROS_PACKAGE_PATH"

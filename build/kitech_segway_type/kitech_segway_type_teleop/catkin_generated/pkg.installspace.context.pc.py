@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "joy;roscpp;std_msgs".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "-lkitech_segway_type_teleop".split(';') if "-lkitech_segway_type_teleop" != "" else []
 PROJECT_NAME = "kitech_segway_type_teleop"
-PROJECT_SPACE_DIR = "/home/nvidia/workspace/catkin_ws/install"
+PROJECT_SPACE_DIR = "/home/cdi/SynologyDrive/workspace/catkin_ws/install"
 PROJECT_VERSION = "0.0.1"

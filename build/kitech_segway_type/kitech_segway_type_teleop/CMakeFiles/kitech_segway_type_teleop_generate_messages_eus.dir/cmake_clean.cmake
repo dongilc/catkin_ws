@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/kitech_segway_type_teleop_generate_messages_eus"
-  "/home/nvidia/workspace/catkin_ws/devel/share/roseus/ros/kitech_segway_type_teleop/manifest.l"
+  "/home/cdi/SynologyDrive/workspace/catkin_ws/devel/share/roseus/ros/kitech_segway_type_teleop/manifest.l"
 )
 
 # Per-language clean rules from dependency scanning.

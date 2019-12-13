@@ -81,7 +81,7 @@ namespace message_traits
 
 
 // BOOLTRAITS {'IsFixedSize': True, 'IsMessage': True, 'HasHeader': False}
-// {'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'vesc_msgs': ['/home/nvidia/workspace/catkin_ws/src/vesc/vesc_msgs/msg']}
+// {'std_msgs': ['/opt/ros/melodic/share/std_msgs/cmake/../msg'], 'vesc_msgs': ['/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg']}
 
 // !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
@@ -148,10 +148,10 @@ struct Definition< ::vesc_msgs::VescSetCommand_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "float64 data\n\
-bool  send_can\n\
-uint8 can_id\n\
-";
+    return "float64 data\n"
+"bool  send_can\n"
+"uint8 can_id\n"
+;
   }
 
   static const char* value(const ::vesc_msgs::VescSetCommand_<ContainerAllocator>&) { return value(); }
