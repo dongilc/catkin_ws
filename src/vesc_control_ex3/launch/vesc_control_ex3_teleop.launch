@@ -9,13 +9,13 @@
   </node>
 
   <!-- VESC driver parameters -->
-  <arg name="node_name2" default="vesc_driver_node2" />
-  <arg name="port2" default="/dev/ttyACM2" />
+  <!--  <arg name="node_name2" default="vesc_driver_node2" /> -->
+  <!--  <arg name="port2" default="/dev/ttyACM2" /> -->
 
   <!-- VESC driver node -->
-  <node pkg="vesc_driver" type="vesc_driver_node" name="$(arg node_name2)" output="screen">
-    <param name="port" value="$(arg port2)" />
-  </node>
+  <!--  <node pkg="vesc_driver" type="vesc_driver_node" name="$(arg node_name2)" output="screen"> -->
+  <!--    <param name="port" value="$(arg port2)" /> -->
+  <!--  </node> -->
 
   <!-- joy node -->
   <node respawn="true" pkg="joy" type="joy_node" name="joy_teleop" output="screen">

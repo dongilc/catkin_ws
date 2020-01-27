@@ -7,7 +7,7 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/cdi/SynologyDrive/workspace/catkin_ws/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/opt/ros/melodic/lib"
+export PKG_CONFIG_PATH="/opt/ros/melodic/lib/pkgconfig"
 export PWD="/home/cdi/SynologyDrive/workspace/catkin_ws/build"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/cdi/SynologyDrive/workspace/catkin_ws/devel/share/common-lisp"
-export ROS_PACKAGE_PATH="/home/cdi/SynologyDrive/workspace/catkin_ws/src:$ROS_PACKAGE_PATH"
+export PYTHONPATH="/opt/ros/melodic/lib/python2.7/dist-packages"

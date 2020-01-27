@@ -14,8 +14,6 @@
 #include "vesc_driver/v8stdint.h"
 #include "vesc_msgs/VescSetCustomApp.h"	//cdi
 
-//#define DEBUG_VIEW_PACKET	//cdi
-
 namespace vesc_driver
 {
 
@@ -94,6 +92,8 @@ public:
 
   int fwMajor() const;
   int fwMinor() const;
+
+  int length() const;
 
 };
 
@@ -188,6 +188,8 @@ class VescPacketCustomApp : public VescPacket
 {
 public:
 	VescPacketCustomApp(boost::shared_ptr<VescFrame> raw);
+
+  int length() const;
 
   int send_mode_1() const;
   int fwMajor() const;
@@ -319,6 +321,24 @@ public:
 
   //  double servo_pos() const;
 };
+
+/*------------------------------------------------------------------------------------------------*/
+
+class VescPacketCommPrint : public VescPacket
+{
+public:
+  VescPacketCommPrint(boost::shared_ptr<VescFrame> raw);
+
+  int length() const;
+  int rxmsg1() const;
+  int rxmsg2() const;
+  int rxmsg3() const;
+  int rxmsg4() const;
+  int rxmsg5() const;
+
+};
+
+/*------------------------------------------------------------------------------------------------*/
 
 } // namespace vesc_driver
 

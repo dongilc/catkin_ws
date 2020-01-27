@@ -37,6 +37,7 @@
 #define BRAKE_THRESHOLD			8.	// bigger than (BRAKE_CURRENT/2)
 
 // COMM_SET Types
+#define COMM_ALIVE				30
 #define COMM_SET_DUTY			5
 #define COMM_SET_CURRENT		6
 #define COMM_SET_CURRENT_BRAKE	7
@@ -45,6 +46,8 @@
 #define COMM_SET_HANDBRAKE		10
 #define COMM_SET_DPS			38
 #define COMM_SET_GOTO			39
+#define COMM_SET_FINDHOME		40
+#define COMM_SET_DUTY_PAIR		41
 
 // Conversions
 #define RAD2DEG         		180.0/M_PI  // radian to deg
@@ -185,8 +188,8 @@ void TeleopVesc::customsCallback(const vesc_msgs::VescGetCustomApp::ConstPtr& cu
 #endif
 
 	for(int i=0; i<(this->NO_VESC); i++) {
-		rps[i] = custom_rx_msg->enc_rps[i];
-		rad[i] = custom_rx_msg->enc_rad[i];
+		this->rps[i] = custom_rx_msg->enc_rps[i];
+		this->rad[i] = custom_rx_msg->enc_rad[i];
 	}
 }
 
@@ -239,28 +242,27 @@ void TeleopVesc::requestCustoms()
 void TeleopVesc::setCustomOut()
 {
 	int num_of_id = 0;
-	int id;
 	int can_forw = 0;
+	int no_vesc = 0;
 
-	if(enable.data)
-	{
-		// Clear Custom Message
-		custom_tx_msg.id_set.clear();
-		custom_tx_msg.can_forward_set.clear();
-		custom_tx_msg.comm_set.clear();
-		custom_tx_msg.value_set.clear();
+	no_vesc = this->NO_VESC;
+	
+	// Clear Custom Message
+	custom_tx_msg.id_set.clear();
+	custom_tx_msg.can_forward_set.clear();
+	custom_tx_msg.comm_set.clear();
+	custom_tx_msg.value_set.clear();
 
-		// Custom Command
-		for(int i=0; i<(this->NO_VESC); i++) {
-			if(i==0) can_forw = CAN_FORWARD_OFF;
-			else     can_forw = CAN_FORWARD_ON;
-			setCustomMsg(i, can_forw, custom_cmd_type[i], custom_cmd_value[i]);
-			num_of_id++;
-		}
-		custom_tx_msg.num_of_id = num_of_id;
-		custom_tx_msg.data_bytes = 3 + 6*num_of_id;
-		vesc_cmd_set_customs.publish(custom_tx_msg);
+	// Custom Command
+	for(int i=0; i<no_vesc; i++) {
+		if(i==0) can_forw = CAN_FORWARD_OFF;
+		else     can_forw = CAN_FORWARD_ON;
+		setCustomMsg(i, can_forw, custom_cmd_type[i], custom_cmd_value[i]);
+		num_of_id++;
 	}
+	custom_tx_msg.num_of_id = num_of_id;
+	custom_tx_msg.data_bytes = 2 + 6*num_of_id;
+	vesc_cmd_set_customs.publish(custom_tx_msg);
 }
 
 void TeleopVesc::setCurrentOut()
@@ -275,7 +277,7 @@ void TeleopVesc::setCurrentOut()
 			if(i==0) can_forw = CAN_FORWARD_OFF;
 			else     can_forw = CAN_FORWARD_ON;
 			setCmdMsg(current[i], can_forw, i);
-			vesc_cmd_current.publish(cmd_msg);
+			this->vesc_cmd_current.publish(cmd_msg);
 		}
 	}
 }
@@ -371,7 +373,7 @@ int main(int argc, char **argv)
   float value_goto = 0.;
 
   // TeleopVesc Class
-  TeleopVesc *teleop_vesc1 = new TeleopVesc(2, "/dev/ttyACM1"); 
+  TeleopVesc *teleop_vesc1 = new TeleopVesc(1, "/dev/ttyACM1"); 
   //TeleopVesc *teleop_vesc2 = new TeleopVesc(1, "/dev/ttyACM1"); 
 
 // TeleopInput Class

@@ -3626,6 +3626,162 @@ vesc_control_ex3_generate_messages_eus/fast:
 .PHONY : vesc_control_ex3_generate_messages_eus/fast
 
 #=============================================================================
+# Target rules for targets named vesc_control_ex4_generate_messages_eus
+
+# Build rule for target.
+vesc_control_ex4_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 vesc_control_ex4_generate_messages_eus
+.PHONY : vesc_control_ex4_generate_messages_eus
+
+# fast build rule for target.
+vesc_control_ex4_generate_messages_eus/fast:
+	$(MAKE) -f vesc_control_ex4/CMakeFiles/vesc_control_ex4_generate_messages_eus.dir/build.make vesc_control_ex4/CMakeFiles/vesc_control_ex4_generate_messages_eus.dir/build
+.PHONY : vesc_control_ex4_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named vesc_control_ex4_generate_messages_lisp
+
+# Build rule for target.
+vesc_control_ex4_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 vesc_control_ex4_generate_messages_lisp
+.PHONY : vesc_control_ex4_generate_messages_lisp
+
+# fast build rule for target.
+vesc_control_ex4_generate_messages_lisp/fast:
+	$(MAKE) -f vesc_control_ex4/CMakeFiles/vesc_control_ex4_generate_messages_lisp.dir/build.make vesc_control_ex4/CMakeFiles/vesc_control_ex4_generate_messages_lisp.dir/build
+.PHONY : vesc_control_ex4_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named vesc_control_ex4_gencpp
+
+# Build rule for target.
+vesc_control_ex4_gencpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 vesc_control_ex4_gencpp
+.PHONY : vesc_control_ex4_gencpp
+
+# fast build rule for target.
+vesc_control_ex4_gencpp/fast:
+	$(MAKE) -f vesc_control_ex4/CMakeFiles/vesc_control_ex4_gencpp.dir/build.make vesc_control_ex4/CMakeFiles/vesc_control_ex4_gencpp.dir/build
+.PHONY : vesc_control_ex4_gencpp/fast
+
+#=============================================================================
+# Target rules for targets named vesc_control_ex4_generate_messages_py
+
+# Build rule for target.
+vesc_control_ex4_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 vesc_control_ex4_generate_messages_py
+.PHONY : vesc_control_ex4_generate_messages_py
+
+# fast build rule for target.
+vesc_control_ex4_generate_messages_py/fast:
+	$(MAKE) -f vesc_control_ex4/CMakeFiles/vesc_control_ex4_generate_messages_py.dir/build.make vesc_control_ex4/CMakeFiles/vesc_control_ex4_generate_messages_py.dir/build
+.PHONY : vesc_control_ex4_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named vesc_control_ex4_geneus
+
+# Build rule for target.
+vesc_control_ex4_geneus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 vesc_control_ex4_geneus
+.PHONY : vesc_control_ex4_geneus
+
+# fast build rule for target.
+vesc_control_ex4_geneus/fast:
+	$(MAKE) -f vesc_control_ex4/CMakeFiles/vesc_control_ex4_geneus.dir/build.make vesc_control_ex4/CMakeFiles/vesc_control_ex4_geneus.dir/build
+.PHONY : vesc_control_ex4_geneus/fast
+
+#=============================================================================
+# Target rules for targets named vesc_control_ex4_generate_messages
+
+# Build rule for target.
+vesc_control_ex4_generate_messages: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 vesc_control_ex4_generate_messages
+.PHONY : vesc_control_ex4_generate_messages
+
+# fast build rule for target.
+vesc_control_ex4_generate_messages/fast:
+	$(MAKE) -f vesc_control_ex4/CMakeFiles/vesc_control_ex4_generate_messages.dir/build.make vesc_control_ex4/CMakeFiles/vesc_control_ex4_generate_messages.dir/build
+.PHONY : vesc_control_ex4_generate_messages/fast
+
+#=============================================================================
+# Target rules for targets named vesc_control_ex4_generate_messages_cpp
+
+# Build rule for target.
+vesc_control_ex4_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 vesc_control_ex4_generate_messages_cpp
+.PHONY : vesc_control_ex4_generate_messages_cpp
+
+# fast build rule for target.
+vesc_control_ex4_generate_messages_cpp/fast:
+	$(MAKE) -f vesc_control_ex4/CMakeFiles/vesc_control_ex4_generate_messages_cpp.dir/build.make vesc_control_ex4/CMakeFiles/vesc_control_ex4_generate_messages_cpp.dir/build
+.PHONY : vesc_control_ex4_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named vesc_control_ex4_genlisp
+
+# Build rule for target.
+vesc_control_ex4_genlisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 vesc_control_ex4_genlisp
+.PHONY : vesc_control_ex4_genlisp
+
+# fast build rule for target.
+vesc_control_ex4_genlisp/fast:
+	$(MAKE) -f vesc_control_ex4/CMakeFiles/vesc_control_ex4_genlisp.dir/build.make vesc_control_ex4/CMakeFiles/vesc_control_ex4_genlisp.dir/build
+.PHONY : vesc_control_ex4_genlisp/fast
+
+#=============================================================================
+# Target rules for targets named vesc_control_ex4_generate_messages_nodejs
+
+# Build rule for target.
+vesc_control_ex4_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 vesc_control_ex4_generate_messages_nodejs
+.PHONY : vesc_control_ex4_generate_messages_nodejs
+
+# fast build rule for target.
+vesc_control_ex4_generate_messages_nodejs/fast:
+	$(MAKE) -f vesc_control_ex4/CMakeFiles/vesc_control_ex4_generate_messages_nodejs.dir/build.make vesc_control_ex4/CMakeFiles/vesc_control_ex4_generate_messages_nodejs.dir/build
+.PHONY : vesc_control_ex4_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named vesc_control_ex4_gennodejs
+
+# Build rule for target.
+vesc_control_ex4_gennodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 vesc_control_ex4_gennodejs
+.PHONY : vesc_control_ex4_gennodejs
+
+# fast build rule for target.
+vesc_control_ex4_gennodejs/fast:
+	$(MAKE) -f vesc_control_ex4/CMakeFiles/vesc_control_ex4_gennodejs.dir/build.make vesc_control_ex4/CMakeFiles/vesc_control_ex4_gennodejs.dir/build
+.PHONY : vesc_control_ex4_gennodejs/fast
+
+#=============================================================================
+# Target rules for targets named vesc_control_ex4_genpy
+
+# Build rule for target.
+vesc_control_ex4_genpy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 vesc_control_ex4_genpy
+.PHONY : vesc_control_ex4_genpy
+
+# fast build rule for target.
+vesc_control_ex4_genpy/fast:
+	$(MAKE) -f vesc_control_ex4/CMakeFiles/vesc_control_ex4_genpy.dir/build.make vesc_control_ex4/CMakeFiles/vesc_control_ex4_genpy.dir/build
+.PHONY : vesc_control_ex4_genpy/fast
+
+#=============================================================================
+# Target rules for targets named vesc_control_ex4_node
+
+# Build rule for target.
+vesc_control_ex4_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 vesc_control_ex4_node
+.PHONY : vesc_control_ex4_node
+
+# fast build rule for target.
+vesc_control_ex4_node/fast:
+	$(MAKE) -f vesc_control_ex4/CMakeFiles/vesc_control_ex4_node.dir/build.make vesc_control_ex4/CMakeFiles/vesc_control_ex4_node.dir/build
+.PHONY : vesc_control_ex4_node/fast
+
+#=============================================================================
 # Target rules for targets named vesc_driver_nodelet
 
 # Build rule for target.
@@ -4255,6 +4411,18 @@ help:
 	@echo "... vesc_control_ex3_gennodejs"
 	@echo "... vesc_control_ex3_genpy"
 	@echo "... vesc_control_ex3_generate_messages_eus"
+	@echo "... vesc_control_ex4_generate_messages_eus"
+	@echo "... vesc_control_ex4_generate_messages_lisp"
+	@echo "... vesc_control_ex4_gencpp"
+	@echo "... vesc_control_ex4_generate_messages_py"
+	@echo "... vesc_control_ex4_geneus"
+	@echo "... vesc_control_ex4_generate_messages"
+	@echo "... vesc_control_ex4_generate_messages_cpp"
+	@echo "... vesc_control_ex4_genlisp"
+	@echo "... vesc_control_ex4_generate_messages_nodejs"
+	@echo "... vesc_control_ex4_gennodejs"
+	@echo "... vesc_control_ex4_genpy"
+	@echo "... vesc_control_ex4_node"
 	@echo "... vesc_driver_nodelet"
 	@echo "... vesc_driver_node"
 	@echo "... vrep_skeleton_msg_and_srv_generate_messages_cpp"

@@ -110,7 +110,7 @@ VescPacketPtr VescPacketFactory::createPacket(const Buffer::const_iterator& begi
     }
     else {
       // no subclass constructor for this packet
-      return createFailed(num_bytes_needed, what, "Unkown payload type.");
+      return createFailed(num_bytes_needed, what, "Unknown payload type.");
     }
 
   }

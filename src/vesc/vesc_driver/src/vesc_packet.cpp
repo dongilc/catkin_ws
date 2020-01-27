@@ -129,6 +129,11 @@ VescPacketFWVersion::VescPacketFWVersion(boost::shared_ptr<VescFrame> raw) :
 {
 }
 
+int VescPacketFWVersion::length() const
+{
+  return *(payload_.first + 3);
+}
+
 int VescPacketFWVersion::fwMajor() const
 {
   return *(payload_.first + 1);
@@ -574,6 +579,11 @@ VescPacketRequestValues::VescPacketRequestValues() :
 VescPacketCustomApp::VescPacketCustomApp(boost::shared_ptr<VescFrame> raw) :
   VescPacket("CustomApp", raw)
 {
+}
+
+int VescPacketCustomApp::length() const
+{
+  return boost::distance(payload_);
 }
 
 int VescPacketCustomApp::send_mode_1() const
@@ -1186,5 +1196,48 @@ VescPacketSetServoPos::VescPacketSetServoPos(double servo_pos, int canf_flag, in
   *(frame_->end() - 3) = static_cast<uint8_t>(crc >> 8);
   *(frame_->end() - 2) = static_cast<uint8_t>(crc & 0xFF);
 }
+
+/*------------------------------------------------------------------------------------------------*/
+
+// Rx Part
+VescPacketCommPrint::VescPacketCommPrint(boost::shared_ptr<VescFrame> raw) :
+  VescPacket("CommPrint", raw)
+{
+}
+
+int VescPacketCommPrint::length() const
+{
+  return boost::distance(payload_);
+}
+
+int VescPacketCommPrint::rxmsg1() const
+{
+  return *(payload_.first + 1);
+}
+
+int VescPacketCommPrint::rxmsg2() const
+{
+  return *(payload_.first + 2);
+}
+
+int VescPacketCommPrint::rxmsg3() const
+{
+  return *(payload_.first + 3);
+}
+
+int VescPacketCommPrint::rxmsg4() const
+{
+  return *(payload_.first + 4);
+}
+
+int VescPacketCommPrint::rxmsg5() const
+{
+  return *(payload_.first + 5);
+}
+
+REGISTER_PACKET_TYPE(COMM_PRINT, VescPacketCommPrint)
+
+/*------------------------------------------------------------------------------------------------*/
+
 
 } // namespace vesc_driver
