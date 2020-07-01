@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "${prefix}/include".split(';') if "${prefix}/i
 PROJECT_CATKIN_DEPENDS = "joy;roscpp;std_msgs;vesc_msgs".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "-ldiff_wheel_platform".split(';') if "-ldiff_wheel_platform" != "" else []
 PROJECT_NAME = "diff_wheel_platform"
-PROJECT_SPACE_DIR = "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/install"
+PROJECT_SPACE_DIR = "/home/odroid/workspace/catkin_ws/install"
 PROJECT_VERSION = "0.0.1"

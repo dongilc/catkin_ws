@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/vesc_control_ex2_node.dir/src/vesc_control_ex2_node.cpp.o"
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/vesc_control_ex2/vesc_control_ex2_node.pdb"
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/vesc_control_ex2/vesc_control_ex2_node"
+  "/home/odroid/workspace/catkin_ws/devel/lib/vesc_control_ex2/vesc_control_ex2_node.pdb"
+  "/home/odroid/workspace/catkin_ws/devel/lib/vesc_control_ex2/vesc_control_ex2_node"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -48,25 +48,13 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/odroid/workspace/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build
+CMAKE_BINARY_DIR = /home/odroid/workspace/catkin_ws/build
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -92,15 +80,17 @@ install/local/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
 
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -113,17 +103,6 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -135,16 +114,37 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # The main all target
 all: cmake_check_build_system
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/CMakeFiles /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/progress.marks
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_type_teleop/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/CMakeFiles 0
+	cd /home/odroid/workspace/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/odroid/workspace/catkin_ws/build/CMakeFiles /home/odroid/workspace/catkin_ws/build/kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/progress.marks
+	cd /home/odroid/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_type_teleop/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/odroid/workspace/catkin_ws/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_type_teleop/clean
+	cd /home/odroid/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_type_teleop/clean
 .PHONY : clean
 
 # The main clean target
@@ -154,82 +154,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_type_teleop/preinstall
+	cd /home/odroid/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_type_teleop/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_type_teleop/preinstall
+	cd /home/odroid/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_type_teleop/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/odroid/workspace/catkin_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_eus.dir/rule:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_eus.dir/rule
-.PHONY : kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-kitech_segway_type_teleop_generate_messages_eus: kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_eus.dir/rule
-
-.PHONY : kitech_segway_type_teleop_generate_messages_eus
-
-# fast build rule for target.
-kitech_segway_type_teleop_generate_messages_eus/fast:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_eus.dir/build.make kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_eus.dir/build
-.PHONY : kitech_segway_type_teleop_generate_messages_eus/fast
-
-# Convenience name for target.
-kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_node.dir/rule:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_node.dir/rule
-.PHONY : kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_node.dir/rule
-
-# Convenience name for target.
-kitech_segway_type_teleop_node: kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_node.dir/rule
-
-.PHONY : kitech_segway_type_teleop_node
-
-# fast build rule for target.
-kitech_segway_type_teleop_node/fast:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_node.dir/build.make kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_node.dir/build
-.PHONY : kitech_segway_type_teleop_node/fast
-
-# Convenience name for target.
-kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_geneus.dir/rule:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_geneus.dir/rule
-.PHONY : kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_geneus.dir/rule
-
-# Convenience name for target.
-kitech_segway_type_teleop_geneus: kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_geneus.dir/rule
-
-.PHONY : kitech_segway_type_teleop_geneus
-
-# fast build rule for target.
-kitech_segway_type_teleop_geneus/fast:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_geneus.dir/build.make kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_geneus.dir/build
-.PHONY : kitech_segway_type_teleop_geneus/fast
-
-# Convenience name for target.
-kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_gencpp.dir/rule:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_gencpp.dir/rule
-.PHONY : kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_gencpp.dir/rule
-
-# Convenience name for target.
-kitech_segway_type_teleop_gencpp: kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_gencpp.dir/rule
-
-.PHONY : kitech_segway_type_teleop_gencpp
-
-# fast build rule for target.
-kitech_segway_type_teleop_gencpp/fast:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_gencpp.dir/build.make kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_gencpp.dir/build
-.PHONY : kitech_segway_type_teleop_gencpp/fast
-
-# Convenience name for target.
 kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_lisp.dir/rule:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_lisp.dir/rule
+	cd /home/odroid/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_lisp.dir/rule
 .PHONY : kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -239,12 +179,27 @@ kitech_segway_type_teleop_generate_messages_lisp: kitech_segway_type/kitech_segw
 
 # fast build rule for target.
 kitech_segway_type_teleop_generate_messages_lisp/fast:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_lisp.dir/build.make kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_lisp.dir/build
+	cd /home/odroid/workspace/catkin_ws/build && $(MAKE) -f kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_lisp.dir/build.make kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_lisp.dir/build
 .PHONY : kitech_segway_type_teleop_generate_messages_lisp/fast
 
 # Convenience name for target.
+kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_geneus.dir/rule:
+	cd /home/odroid/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_geneus.dir/rule
+.PHONY : kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_geneus.dir/rule
+
+# Convenience name for target.
+kitech_segway_type_teleop_geneus: kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_geneus.dir/rule
+
+.PHONY : kitech_segway_type_teleop_geneus
+
+# fast build rule for target.
+kitech_segway_type_teleop_geneus/fast:
+	cd /home/odroid/workspace/catkin_ws/build && $(MAKE) -f kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_geneus.dir/build.make kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_geneus.dir/build
+.PHONY : kitech_segway_type_teleop_geneus/fast
+
+# Convenience name for target.
 kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages.dir/rule:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages.dir/rule
+	cd /home/odroid/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages.dir/rule
 .PHONY : kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages.dir/rule
 
 # Convenience name for target.
@@ -254,42 +209,42 @@ kitech_segway_type_teleop_generate_messages: kitech_segway_type/kitech_segway_ty
 
 # fast build rule for target.
 kitech_segway_type_teleop_generate_messages/fast:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages.dir/build.make kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages.dir/build
+	cd /home/odroid/workspace/catkin_ws/build && $(MAKE) -f kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages.dir/build.make kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages.dir/build
 .PHONY : kitech_segway_type_teleop_generate_messages/fast
 
 # Convenience name for target.
-kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_genlisp.dir/rule:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_genlisp.dir/rule
-.PHONY : kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_genlisp.dir/rule
+kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_gencpp.dir/rule:
+	cd /home/odroid/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_gencpp.dir/rule
+.PHONY : kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_gencpp.dir/rule
 
 # Convenience name for target.
-kitech_segway_type_teleop_genlisp: kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_genlisp.dir/rule
+kitech_segway_type_teleop_gencpp: kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_gencpp.dir/rule
 
-.PHONY : kitech_segway_type_teleop_genlisp
+.PHONY : kitech_segway_type_teleop_gencpp
 
 # fast build rule for target.
-kitech_segway_type_teleop_genlisp/fast:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_genlisp.dir/build.make kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_genlisp.dir/build
-.PHONY : kitech_segway_type_teleop_genlisp/fast
+kitech_segway_type_teleop_gencpp/fast:
+	cd /home/odroid/workspace/catkin_ws/build && $(MAKE) -f kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_gencpp.dir/build.make kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_gencpp.dir/build
+.PHONY : kitech_segway_type_teleop_gencpp/fast
 
 # Convenience name for target.
-kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_py.dir/rule:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_py.dir/rule
-.PHONY : kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_py.dir/rule
+kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_eus.dir/rule:
+	cd /home/odroid/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_eus.dir/rule
+.PHONY : kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-kitech_segway_type_teleop_generate_messages_py: kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_py.dir/rule
+kitech_segway_type_teleop_generate_messages_eus: kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_eus.dir/rule
 
-.PHONY : kitech_segway_type_teleop_generate_messages_py
+.PHONY : kitech_segway_type_teleop_generate_messages_eus
 
 # fast build rule for target.
-kitech_segway_type_teleop_generate_messages_py/fast:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_py.dir/build.make kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_py.dir/build
-.PHONY : kitech_segway_type_teleop_generate_messages_py/fast
+kitech_segway_type_teleop_generate_messages_eus/fast:
+	cd /home/odroid/workspace/catkin_ws/build && $(MAKE) -f kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_eus.dir/build.make kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_eus.dir/build
+.PHONY : kitech_segway_type_teleop_generate_messages_eus/fast
 
 # Convenience name for target.
 kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_cpp.dir/rule:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_cpp.dir/rule
+	cd /home/odroid/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_cpp.dir/rule
 .PHONY : kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -299,42 +254,42 @@ kitech_segway_type_teleop_generate_messages_cpp: kitech_segway_type/kitech_segwa
 
 # fast build rule for target.
 kitech_segway_type_teleop_generate_messages_cpp/fast:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_cpp.dir/build.make kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_cpp.dir/build
+	cd /home/odroid/workspace/catkin_ws/build && $(MAKE) -f kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_cpp.dir/build.make kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_cpp.dir/build
 .PHONY : kitech_segway_type_teleop_generate_messages_cpp/fast
 
 # Convenience name for target.
-kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_genpy.dir/rule:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_genpy.dir/rule
-.PHONY : kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_genpy.dir/rule
+kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_py.dir/rule:
+	cd /home/odroid/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_py.dir/rule
+.PHONY : kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_py.dir/rule
 
 # Convenience name for target.
-kitech_segway_type_teleop_genpy: kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_genpy.dir/rule
+kitech_segway_type_teleop_generate_messages_py: kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_py.dir/rule
 
-.PHONY : kitech_segway_type_teleop_genpy
+.PHONY : kitech_segway_type_teleop_generate_messages_py
 
 # fast build rule for target.
-kitech_segway_type_teleop_genpy/fast:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_genpy.dir/build.make kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_genpy.dir/build
-.PHONY : kitech_segway_type_teleop_genpy/fast
+kitech_segway_type_teleop_generate_messages_py/fast:
+	cd /home/odroid/workspace/catkin_ws/build && $(MAKE) -f kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_py.dir/build.make kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_py.dir/build
+.PHONY : kitech_segway_type_teleop_generate_messages_py/fast
 
 # Convenience name for target.
-kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_gennodejs.dir/rule:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_gennodejs.dir/rule
-.PHONY : kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_gennodejs.dir/rule
+kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_genlisp.dir/rule:
+	cd /home/odroid/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_genlisp.dir/rule
+.PHONY : kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_genlisp.dir/rule
 
 # Convenience name for target.
-kitech_segway_type_teleop_gennodejs: kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_gennodejs.dir/rule
+kitech_segway_type_teleop_genlisp: kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_genlisp.dir/rule
 
-.PHONY : kitech_segway_type_teleop_gennodejs
+.PHONY : kitech_segway_type_teleop_genlisp
 
 # fast build rule for target.
-kitech_segway_type_teleop_gennodejs/fast:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_gennodejs.dir/build.make kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_gennodejs.dir/build
-.PHONY : kitech_segway_type_teleop_gennodejs/fast
+kitech_segway_type_teleop_genlisp/fast:
+	cd /home/odroid/workspace/catkin_ws/build && $(MAKE) -f kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_genlisp.dir/build.make kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_genlisp.dir/build
+.PHONY : kitech_segway_type_teleop_genlisp/fast
 
 # Convenience name for target.
 kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_nodejs.dir/rule:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_nodejs.dir/rule
+	cd /home/odroid/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_nodejs.dir/rule
 .PHONY : kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -344,8 +299,53 @@ kitech_segway_type_teleop_generate_messages_nodejs: kitech_segway_type/kitech_se
 
 # fast build rule for target.
 kitech_segway_type_teleop_generate_messages_nodejs/fast:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_nodejs.dir/build.make kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_nodejs.dir/build
+	cd /home/odroid/workspace/catkin_ws/build && $(MAKE) -f kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_nodejs.dir/build.make kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_generate_messages_nodejs.dir/build
 .PHONY : kitech_segway_type_teleop_generate_messages_nodejs/fast
+
+# Convenience name for target.
+kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_genpy.dir/rule:
+	cd /home/odroid/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_genpy.dir/rule
+.PHONY : kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_genpy.dir/rule
+
+# Convenience name for target.
+kitech_segway_type_teleop_genpy: kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_genpy.dir/rule
+
+.PHONY : kitech_segway_type_teleop_genpy
+
+# fast build rule for target.
+kitech_segway_type_teleop_genpy/fast:
+	cd /home/odroid/workspace/catkin_ws/build && $(MAKE) -f kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_genpy.dir/build.make kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_genpy.dir/build
+.PHONY : kitech_segway_type_teleop_genpy/fast
+
+# Convenience name for target.
+kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_gennodejs.dir/rule:
+	cd /home/odroid/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_gennodejs.dir/rule
+.PHONY : kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_gennodejs.dir/rule
+
+# Convenience name for target.
+kitech_segway_type_teleop_gennodejs: kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_gennodejs.dir/rule
+
+.PHONY : kitech_segway_type_teleop_gennodejs
+
+# fast build rule for target.
+kitech_segway_type_teleop_gennodejs/fast:
+	cd /home/odroid/workspace/catkin_ws/build && $(MAKE) -f kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_gennodejs.dir/build.make kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_gennodejs.dir/build
+.PHONY : kitech_segway_type_teleop_gennodejs/fast
+
+# Convenience name for target.
+kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_node.dir/rule:
+	cd /home/odroid/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_node.dir/rule
+.PHONY : kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_node.dir/rule
+
+# Convenience name for target.
+kitech_segway_type_teleop_node: kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_node.dir/rule
+
+.PHONY : kitech_segway_type_teleop_node
+
+# fast build rule for target.
+kitech_segway_type_teleop_node/fast:
+	cd /home/odroid/workspace/catkin_ws/build && $(MAKE) -f kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_node.dir/build.make kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_node.dir/build
+.PHONY : kitech_segway_type_teleop_node/fast
 
 src/kitech_segway_type_teleop_node.o: src/kitech_segway_type_teleop_node.cpp.o
 
@@ -353,7 +353,7 @@ src/kitech_segway_type_teleop_node.o: src/kitech_segway_type_teleop_node.cpp.o
 
 # target to build an object file
 src/kitech_segway_type_teleop_node.cpp.o:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_node.dir/build.make kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_node.dir/src/kitech_segway_type_teleop_node.cpp.o
+	cd /home/odroid/workspace/catkin_ws/build && $(MAKE) -f kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_node.dir/build.make kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_node.dir/src/kitech_segway_type_teleop_node.cpp.o
 .PHONY : src/kitech_segway_type_teleop_node.cpp.o
 
 src/kitech_segway_type_teleop_node.i: src/kitech_segway_type_teleop_node.cpp.i
@@ -362,7 +362,7 @@ src/kitech_segway_type_teleop_node.i: src/kitech_segway_type_teleop_node.cpp.i
 
 # target to preprocess a source file
 src/kitech_segway_type_teleop_node.cpp.i:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_node.dir/build.make kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_node.dir/src/kitech_segway_type_teleop_node.cpp.i
+	cd /home/odroid/workspace/catkin_ws/build && $(MAKE) -f kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_node.dir/build.make kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_node.dir/src/kitech_segway_type_teleop_node.cpp.i
 .PHONY : src/kitech_segway_type_teleop_node.cpp.i
 
 src/kitech_segway_type_teleop_node.s: src/kitech_segway_type_teleop_node.cpp.s
@@ -371,7 +371,7 @@ src/kitech_segway_type_teleop_node.s: src/kitech_segway_type_teleop_node.cpp.s
 
 # target to generate assembly for a file
 src/kitech_segway_type_teleop_node.cpp.s:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_node.dir/build.make kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_node.dir/src/kitech_segway_type_teleop_node.cpp.s
+	cd /home/odroid/workspace/catkin_ws/build && $(MAKE) -f kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_node.dir/build.make kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_node.dir/src/kitech_segway_type_teleop_node.cpp.s
 .PHONY : src/kitech_segway_type_teleop_node.cpp.s
 
 # Help Target
@@ -380,25 +380,25 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install"
-	@echo "... kitech_segway_type_teleop_generate_messages_eus"
-	@echo "... kitech_segway_type_teleop_node"
 	@echo "... install/strip"
-	@echo "... kitech_segway_type_teleop_geneus"
 	@echo "... install/local"
-	@echo "... kitech_segway_type_teleop_gencpp"
 	@echo "... kitech_segway_type_teleop_generate_messages_lisp"
+	@echo "... kitech_segway_type_teleop_geneus"
+	@echo "... install"
 	@echo "... kitech_segway_type_teleop_generate_messages"
-	@echo "... kitech_segway_type_teleop_genlisp"
-	@echo "... kitech_segway_type_teleop_generate_messages_py"
-	@echo "... list_install_components"
+	@echo "... kitech_segway_type_teleop_gencpp"
+	@echo "... kitech_segway_type_teleop_generate_messages_eus"
 	@echo "... kitech_segway_type_teleop_generate_messages_cpp"
-	@echo "... kitech_segway_type_teleop_genpy"
+	@echo "... kitech_segway_type_teleop_generate_messages_py"
 	@echo "... edit_cache"
-	@echo "... kitech_segway_type_teleop_gennodejs"
+	@echo "... rebuild_cache"
+	@echo "... kitech_segway_type_teleop_genlisp"
 	@echo "... test"
 	@echo "... kitech_segway_type_teleop_generate_messages_nodejs"
-	@echo "... rebuild_cache"
+	@echo "... kitech_segway_type_teleop_genpy"
+	@echo "... kitech_segway_type_teleop_gennodejs"
+	@echo "... kitech_segway_type_teleop_node"
+	@echo "... list_install_components"
 	@echo "... src/kitech_segway_type_teleop_node.o"
 	@echo "... src/kitech_segway_type_teleop_node.i"
 	@echo "... src/kitech_segway_type_teleop_node.s"
@@ -413,6 +413,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/odroid/workspace/catkin_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/install/setup.sh
+    local-name: /home/odroid/workspace/catkin_ws/install/setup.sh

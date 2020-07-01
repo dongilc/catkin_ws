@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/odroid/workspace/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build
+CMAKE_BINARY_DIR = /home/odroid/workspace/catkin_ws/build
 
 # Utility rule file for kitech_segway_type_teleop_gencpp.
 
@@ -63,10 +63,10 @@ kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleo
 .PHONY : kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_gencpp.dir/build
 
 kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_gencpp.dir/clean:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/kitech_segway_type/kitech_segway_type_teleop && $(CMAKE_COMMAND) -P CMakeFiles/kitech_segway_type_teleop_gencpp.dir/cmake_clean.cmake
+	cd /home/odroid/workspace/catkin_ws/build/kitech_segway_type/kitech_segway_type_teleop && $(CMAKE_COMMAND) -P CMakeFiles/kitech_segway_type_teleop_gencpp.dir/cmake_clean.cmake
 .PHONY : kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_gencpp.dir/clean
 
 kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_gencpp.dir/depend:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/kitech_segway_type/kitech_segway_type_teleop /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/kitech_segway_type/kitech_segway_type_teleop /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_gencpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/odroid/workspace/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/odroid/workspace/catkin_ws/src /home/odroid/workspace/catkin_ws/src/kitech_segway_type/kitech_segway_type_teleop /home/odroid/workspace/catkin_ws/build /home/odroid/workspace/catkin_ws/build/kitech_segway_type/kitech_segway_type_teleop /home/odroid/workspace/catkin_ws/build/kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_gencpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : kitech_segway_type/kitech_segway_type_teleop/CMakeFiles/kitech_segway_type_teleop_gencpp.dir/depend
 

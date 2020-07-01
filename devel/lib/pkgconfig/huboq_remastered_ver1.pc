@@ -1,4 +1,4 @@
-prefix=/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel
+prefix=/home/odroid/workspace/catkin_ws/devel
 
 Name: huboq_remastered_ver1
 Description: Description of huboq_remastered_ver1

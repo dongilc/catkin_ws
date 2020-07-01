@@ -1,4 +1,4 @@
-prefix=/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel
+prefix=/home/odroid/workspace/catkin_ws/devel
 
 Name: kitech_segway_type_teleop
 Description: Description of kitech_segway_type_teleop

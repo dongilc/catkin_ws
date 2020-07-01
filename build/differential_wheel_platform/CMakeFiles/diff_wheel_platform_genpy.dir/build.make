@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/odroid/workspace/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build
+CMAKE_BINARY_DIR = /home/odroid/workspace/catkin_ws/build
 
 # Utility rule file for diff_wheel_platform_genpy.
 
@@ -63,10 +63,10 @@ differential_wheel_platform/CMakeFiles/diff_wheel_platform_genpy.dir/build: diff
 .PHONY : differential_wheel_platform/CMakeFiles/diff_wheel_platform_genpy.dir/build
 
 differential_wheel_platform/CMakeFiles/diff_wheel_platform_genpy.dir/clean:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/differential_wheel_platform && $(CMAKE_COMMAND) -P CMakeFiles/diff_wheel_platform_genpy.dir/cmake_clean.cmake
+	cd /home/odroid/workspace/catkin_ws/build/differential_wheel_platform && $(CMAKE_COMMAND) -P CMakeFiles/diff_wheel_platform_genpy.dir/cmake_clean.cmake
 .PHONY : differential_wheel_platform/CMakeFiles/diff_wheel_platform_genpy.dir/clean
 
 differential_wheel_platform/CMakeFiles/diff_wheel_platform_genpy.dir/depend:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/differential_wheel_platform /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/differential_wheel_platform /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/differential_wheel_platform/CMakeFiles/diff_wheel_platform_genpy.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/odroid/workspace/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/odroid/workspace/catkin_ws/src /home/odroid/workspace/catkin_ws/src/differential_wheel_platform /home/odroid/workspace/catkin_ws/build /home/odroid/workspace/catkin_ws/build/differential_wheel_platform /home/odroid/workspace/catkin_ws/build/differential_wheel_platform/CMakeFiles/diff_wheel_platform_genpy.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : differential_wheel_platform/CMakeFiles/diff_wheel_platform_genpy.dir/depend
 

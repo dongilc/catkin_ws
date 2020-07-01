@@ -1,8 +1,8 @@
-prefix=/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel
+prefix=/home/odroid/workspace/catkin_ws/devel
 
 Name: vesc_msgs
 Description: Description of vesc_msgs
 Version: 0.0.1
-Cflags: -I/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/include
+Cflags: -I/home/odroid/workspace/catkin_ws/devel/include
 Libs: -L${prefix}/lib 
 Requires: std_msgs message_runtime

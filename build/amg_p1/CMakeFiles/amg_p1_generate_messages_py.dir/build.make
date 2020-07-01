@@ -43,49 +43,49 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/odroid/workspace/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build
+CMAKE_BINARY_DIR = /home/odroid/workspace/catkin_ws/build
 
 # Utility rule file for amg_p1_generate_messages_py.
 
 # Include the progress variables for this target.
 include amg_p1/CMakeFiles/amg_p1_generate_messages_py.dir/progress.make
 
-amg_p1/CMakeFiles/amg_p1_generate_messages_py: /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/_LA_Message.py
-amg_p1/CMakeFiles/amg_p1_generate_messages_py: /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/_MP_Message.py
-amg_p1/CMakeFiles/amg_p1_generate_messages_py: /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/_CTM_Message.py
-amg_p1/CMakeFiles/amg_p1_generate_messages_py: /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/__init__.py
+amg_p1/CMakeFiles/amg_p1_generate_messages_py: /home/odroid/workspace/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/_CTM_Message.py
+amg_p1/CMakeFiles/amg_p1_generate_messages_py: /home/odroid/workspace/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/_LA_Message.py
+amg_p1/CMakeFiles/amg_p1_generate_messages_py: /home/odroid/workspace/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/_MP_Message.py
+amg_p1/CMakeFiles/amg_p1_generate_messages_py: /home/odroid/workspace/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/__init__.py
 
 
-/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/_LA_Message.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
-/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/_LA_Message.py: /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/LA_Message.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG amg_p1/LA_Message"
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/amg_p1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/LA_Message.msg -Iamg_p1:/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p amg_p1 -o /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg
+/home/odroid/workspace/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/_CTM_Message.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
+/home/odroid/workspace/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/_CTM_Message.py: /home/odroid/workspace/catkin_ws/src/amg_p1/msg/CTM_Message.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/odroid/workspace/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG amg_p1/CTM_Message"
+	cd /home/odroid/workspace/catkin_ws/build/amg_p1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/odroid/workspace/catkin_ws/src/amg_p1/msg/CTM_Message.msg -Iamg_p1:/home/odroid/workspace/catkin_ws/src/amg_p1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p amg_p1 -o /home/odroid/workspace/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg
 
-/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/_MP_Message.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
-/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/_MP_Message.py: /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/MP_Message.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG amg_p1/MP_Message"
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/amg_p1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/MP_Message.msg -Iamg_p1:/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p amg_p1 -o /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg
+/home/odroid/workspace/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/_LA_Message.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
+/home/odroid/workspace/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/_LA_Message.py: /home/odroid/workspace/catkin_ws/src/amg_p1/msg/LA_Message.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/odroid/workspace/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG amg_p1/LA_Message"
+	cd /home/odroid/workspace/catkin_ws/build/amg_p1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/odroid/workspace/catkin_ws/src/amg_p1/msg/LA_Message.msg -Iamg_p1:/home/odroid/workspace/catkin_ws/src/amg_p1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p amg_p1 -o /home/odroid/workspace/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg
 
-/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/_CTM_Message.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
-/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/_CTM_Message.py: /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/CTM_Message.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python from MSG amg_p1/CTM_Message"
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/amg_p1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/CTM_Message.msg -Iamg_p1:/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p amg_p1 -o /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg
+/home/odroid/workspace/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/_MP_Message.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
+/home/odroid/workspace/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/_MP_Message.py: /home/odroid/workspace/catkin_ws/src/amg_p1/msg/MP_Message.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/odroid/workspace/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python from MSG amg_p1/MP_Message"
+	cd /home/odroid/workspace/catkin_ws/build/amg_p1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/odroid/workspace/catkin_ws/src/amg_p1/msg/MP_Message.msg -Iamg_p1:/home/odroid/workspace/catkin_ws/src/amg_p1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p amg_p1 -o /home/odroid/workspace/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg
 
-/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/__init__.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
-/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/__init__.py: /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/_LA_Message.py
-/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/__init__.py: /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/_MP_Message.py
-/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/__init__.py: /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/_CTM_Message.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python msg __init__.py for amg_p1"
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/amg_p1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg --initpy
+/home/odroid/workspace/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/__init__.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
+/home/odroid/workspace/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/__init__.py: /home/odroid/workspace/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/_CTM_Message.py
+/home/odroid/workspace/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/__init__.py: /home/odroid/workspace/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/_LA_Message.py
+/home/odroid/workspace/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/__init__.py: /home/odroid/workspace/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/_MP_Message.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/odroid/workspace/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python msg __init__.py for amg_p1"
+	cd /home/odroid/workspace/catkin_ws/build/amg_p1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/odroid/workspace/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg --initpy
 
 amg_p1_generate_messages_py: amg_p1/CMakeFiles/amg_p1_generate_messages_py
-amg_p1_generate_messages_py: /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/_LA_Message.py
-amg_p1_generate_messages_py: /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/_MP_Message.py
-amg_p1_generate_messages_py: /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/_CTM_Message.py
-amg_p1_generate_messages_py: /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/__init__.py
+amg_p1_generate_messages_py: /home/odroid/workspace/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/_CTM_Message.py
+amg_p1_generate_messages_py: /home/odroid/workspace/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/_LA_Message.py
+amg_p1_generate_messages_py: /home/odroid/workspace/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/_MP_Message.py
+amg_p1_generate_messages_py: /home/odroid/workspace/catkin_ws/devel/lib/python2.7/dist-packages/amg_p1/msg/__init__.py
 amg_p1_generate_messages_py: amg_p1/CMakeFiles/amg_p1_generate_messages_py.dir/build.make
 
 .PHONY : amg_p1_generate_messages_py
@@ -96,10 +96,10 @@ amg_p1/CMakeFiles/amg_p1_generate_messages_py.dir/build: amg_p1_generate_message
 .PHONY : amg_p1/CMakeFiles/amg_p1_generate_messages_py.dir/build
 
 amg_p1/CMakeFiles/amg_p1_generate_messages_py.dir/clean:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/amg_p1 && $(CMAKE_COMMAND) -P CMakeFiles/amg_p1_generate_messages_py.dir/cmake_clean.cmake
+	cd /home/odroid/workspace/catkin_ws/build/amg_p1 && $(CMAKE_COMMAND) -P CMakeFiles/amg_p1_generate_messages_py.dir/cmake_clean.cmake
 .PHONY : amg_p1/CMakeFiles/amg_p1_generate_messages_py.dir/clean
 
 amg_p1/CMakeFiles/amg_p1_generate_messages_py.dir/depend:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1 /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/amg_p1 /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/amg_p1/CMakeFiles/amg_p1_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/odroid/workspace/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/odroid/workspace/catkin_ws/src /home/odroid/workspace/catkin_ws/src/amg_p1 /home/odroid/workspace/catkin_ws/build /home/odroid/workspace/catkin_ws/build/amg_p1 /home/odroid/workspace/catkin_ws/build/amg_p1/CMakeFiles/amg_p1_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : amg_p1/CMakeFiles/amg_p1_generate_messages_py.dir/depend
 

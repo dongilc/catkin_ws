@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
   "CMakeFiles/amg_p1_generate_messages_eus"
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/share/roseus/ros/amg_p1/msg/LA_Message.l"
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/share/roseus/ros/amg_p1/msg/MP_Message.l"
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/share/roseus/ros/amg_p1/msg/CTM_Message.l"
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/share/roseus/ros/amg_p1/manifest.l"
+  "/home/odroid/workspace/catkin_ws/devel/share/roseus/ros/amg_p1/msg/CTM_Message.l"
+  "/home/odroid/workspace/catkin_ws/devel/share/roseus/ros/amg_p1/msg/LA_Message.l"
+  "/home/odroid/workspace/catkin_ws/devel/share/roseus/ros/amg_p1/msg/MP_Message.l"
+  "/home/odroid/workspace/catkin_ws/devel/share/roseus/ros/amg_p1/manifest.l"
 )
 
 # Per-language clean rules from dependency scanning.

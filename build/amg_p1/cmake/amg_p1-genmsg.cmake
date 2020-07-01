@@ -2,7 +2,7 @@
 
 message(STATUS "amg_p1: 3 messages, 0 services")
 
-set(MSG_I_FLAGS "-Iamg_p1:/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg;-Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg")
+set(MSG_I_FLAGS "-Iamg_p1:/home/odroid/workspace/catkin_ws/src/amg_p1/msg;-Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -17,19 +17,19 @@ add_custom_target(amg_p1_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/LA_Message.msg" NAME_WE)
+get_filename_component(_filename "/home/odroid/workspace/catkin_ws/src/amg_p1/msg/CTM_Message.msg" NAME_WE)
 add_custom_target(_amg_p1_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "amg_p1" "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/LA_Message.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "amg_p1" "/home/odroid/workspace/catkin_ws/src/amg_p1/msg/CTM_Message.msg" ""
 )
 
-get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/MP_Message.msg" NAME_WE)
+get_filename_component(_filename "/home/odroid/workspace/catkin_ws/src/amg_p1/msg/LA_Message.msg" NAME_WE)
 add_custom_target(_amg_p1_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "amg_p1" "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/MP_Message.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "amg_p1" "/home/odroid/workspace/catkin_ws/src/amg_p1/msg/LA_Message.msg" ""
 )
 
-get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/CTM_Message.msg" NAME_WE)
+get_filename_component(_filename "/home/odroid/workspace/catkin_ws/src/amg_p1/msg/MP_Message.msg" NAME_WE)
 add_custom_target(_amg_p1_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "amg_p1" "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/CTM_Message.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "amg_p1" "/home/odroid/workspace/catkin_ws/src/amg_p1/msg/MP_Message.msg" ""
 )
 
 #
@@ -39,19 +39,19 @@ add_custom_target(_amg_p1_generate_messages_check_deps_${_filename}
 ### Section generating for lang: gencpp
 ### Generating Messages
 _generate_msg_cpp(amg_p1
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/LA_Message.msg"
+  "/home/odroid/workspace/catkin_ws/src/amg_p1/msg/CTM_Message.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/amg_p1
 )
 _generate_msg_cpp(amg_p1
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/MP_Message.msg"
+  "/home/odroid/workspace/catkin_ws/src/amg_p1/msg/LA_Message.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/amg_p1
 )
 _generate_msg_cpp(amg_p1
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/CTM_Message.msg"
+  "/home/odroid/workspace/catkin_ws/src/amg_p1/msg/MP_Message.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/amg_p1
@@ -71,11 +71,11 @@ add_custom_target(amg_p1_generate_messages_cpp
 add_dependencies(amg_p1_generate_messages amg_p1_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/LA_Message.msg" NAME_WE)
+get_filename_component(_filename "/home/odroid/workspace/catkin_ws/src/amg_p1/msg/CTM_Message.msg" NAME_WE)
 add_dependencies(amg_p1_generate_messages_cpp _amg_p1_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/MP_Message.msg" NAME_WE)
+get_filename_component(_filename "/home/odroid/workspace/catkin_ws/src/amg_p1/msg/LA_Message.msg" NAME_WE)
 add_dependencies(amg_p1_generate_messages_cpp _amg_p1_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/CTM_Message.msg" NAME_WE)
+get_filename_component(_filename "/home/odroid/workspace/catkin_ws/src/amg_p1/msg/MP_Message.msg" NAME_WE)
 add_dependencies(amg_p1_generate_messages_cpp _amg_p1_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -88,19 +88,19 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS amg_p1_generate_messages_cpp)
 ### Section generating for lang: geneus
 ### Generating Messages
 _generate_msg_eus(amg_p1
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/LA_Message.msg"
+  "/home/odroid/workspace/catkin_ws/src/amg_p1/msg/CTM_Message.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/amg_p1
 )
 _generate_msg_eus(amg_p1
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/MP_Message.msg"
+  "/home/odroid/workspace/catkin_ws/src/amg_p1/msg/LA_Message.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/amg_p1
 )
 _generate_msg_eus(amg_p1
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/CTM_Message.msg"
+  "/home/odroid/workspace/catkin_ws/src/amg_p1/msg/MP_Message.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/amg_p1
@@ -120,11 +120,11 @@ add_custom_target(amg_p1_generate_messages_eus
 add_dependencies(amg_p1_generate_messages amg_p1_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/LA_Message.msg" NAME_WE)
+get_filename_component(_filename "/home/odroid/workspace/catkin_ws/src/amg_p1/msg/CTM_Message.msg" NAME_WE)
 add_dependencies(amg_p1_generate_messages_eus _amg_p1_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/MP_Message.msg" NAME_WE)
+get_filename_component(_filename "/home/odroid/workspace/catkin_ws/src/amg_p1/msg/LA_Message.msg" NAME_WE)
 add_dependencies(amg_p1_generate_messages_eus _amg_p1_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/CTM_Message.msg" NAME_WE)
+get_filename_component(_filename "/home/odroid/workspace/catkin_ws/src/amg_p1/msg/MP_Message.msg" NAME_WE)
 add_dependencies(amg_p1_generate_messages_eus _amg_p1_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -137,19 +137,19 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS amg_p1_generate_messages_eus)
 ### Section generating for lang: genlisp
 ### Generating Messages
 _generate_msg_lisp(amg_p1
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/LA_Message.msg"
+  "/home/odroid/workspace/catkin_ws/src/amg_p1/msg/CTM_Message.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/amg_p1
 )
 _generate_msg_lisp(amg_p1
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/MP_Message.msg"
+  "/home/odroid/workspace/catkin_ws/src/amg_p1/msg/LA_Message.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/amg_p1
 )
 _generate_msg_lisp(amg_p1
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/CTM_Message.msg"
+  "/home/odroid/workspace/catkin_ws/src/amg_p1/msg/MP_Message.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/amg_p1
@@ -169,11 +169,11 @@ add_custom_target(amg_p1_generate_messages_lisp
 add_dependencies(amg_p1_generate_messages amg_p1_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/LA_Message.msg" NAME_WE)
+get_filename_component(_filename "/home/odroid/workspace/catkin_ws/src/amg_p1/msg/CTM_Message.msg" NAME_WE)
 add_dependencies(amg_p1_generate_messages_lisp _amg_p1_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/MP_Message.msg" NAME_WE)
+get_filename_component(_filename "/home/odroid/workspace/catkin_ws/src/amg_p1/msg/LA_Message.msg" NAME_WE)
 add_dependencies(amg_p1_generate_messages_lisp _amg_p1_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/CTM_Message.msg" NAME_WE)
+get_filename_component(_filename "/home/odroid/workspace/catkin_ws/src/amg_p1/msg/MP_Message.msg" NAME_WE)
 add_dependencies(amg_p1_generate_messages_lisp _amg_p1_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -186,19 +186,19 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS amg_p1_generate_messages_lisp)
 ### Section generating for lang: gennodejs
 ### Generating Messages
 _generate_msg_nodejs(amg_p1
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/LA_Message.msg"
+  "/home/odroid/workspace/catkin_ws/src/amg_p1/msg/CTM_Message.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/amg_p1
 )
 _generate_msg_nodejs(amg_p1
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/MP_Message.msg"
+  "/home/odroid/workspace/catkin_ws/src/amg_p1/msg/LA_Message.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/amg_p1
 )
 _generate_msg_nodejs(amg_p1
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/CTM_Message.msg"
+  "/home/odroid/workspace/catkin_ws/src/amg_p1/msg/MP_Message.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/amg_p1
@@ -218,11 +218,11 @@ add_custom_target(amg_p1_generate_messages_nodejs
 add_dependencies(amg_p1_generate_messages amg_p1_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/LA_Message.msg" NAME_WE)
+get_filename_component(_filename "/home/odroid/workspace/catkin_ws/src/amg_p1/msg/CTM_Message.msg" NAME_WE)
 add_dependencies(amg_p1_generate_messages_nodejs _amg_p1_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/MP_Message.msg" NAME_WE)
+get_filename_component(_filename "/home/odroid/workspace/catkin_ws/src/amg_p1/msg/LA_Message.msg" NAME_WE)
 add_dependencies(amg_p1_generate_messages_nodejs _amg_p1_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/CTM_Message.msg" NAME_WE)
+get_filename_component(_filename "/home/odroid/workspace/catkin_ws/src/amg_p1/msg/MP_Message.msg" NAME_WE)
 add_dependencies(amg_p1_generate_messages_nodejs _amg_p1_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -235,19 +235,19 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS amg_p1_generate_messages_nodejs)
 ### Section generating for lang: genpy
 ### Generating Messages
 _generate_msg_py(amg_p1
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/LA_Message.msg"
+  "/home/odroid/workspace/catkin_ws/src/amg_p1/msg/CTM_Message.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/amg_p1
 )
 _generate_msg_py(amg_p1
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/MP_Message.msg"
+  "/home/odroid/workspace/catkin_ws/src/amg_p1/msg/LA_Message.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/amg_p1
 )
 _generate_msg_py(amg_p1
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/CTM_Message.msg"
+  "/home/odroid/workspace/catkin_ws/src/amg_p1/msg/MP_Message.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/amg_p1
@@ -267,11 +267,11 @@ add_custom_target(amg_p1_generate_messages_py
 add_dependencies(amg_p1_generate_messages amg_p1_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/LA_Message.msg" NAME_WE)
+get_filename_component(_filename "/home/odroid/workspace/catkin_ws/src/amg_p1/msg/CTM_Message.msg" NAME_WE)
 add_dependencies(amg_p1_generate_messages_py _amg_p1_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/MP_Message.msg" NAME_WE)
+get_filename_component(_filename "/home/odroid/workspace/catkin_ws/src/amg_p1/msg/LA_Message.msg" NAME_WE)
 add_dependencies(amg_p1_generate_messages_py _amg_p1_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/msg/CTM_Message.msg" NAME_WE)
+get_filename_component(_filename "/home/odroid/workspace/catkin_ws/src/amg_p1/msg/MP_Message.msg" NAME_WE)
 add_dependencies(amg_p1_generate_messages_py _amg_p1_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

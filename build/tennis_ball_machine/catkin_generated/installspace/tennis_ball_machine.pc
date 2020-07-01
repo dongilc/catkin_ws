@@ -1,4 +1,4 @@
-prefix=/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/install
+prefix=/home/odroid/workspace/catkin_ws/install
 
 Name: tennis_ball_machine
 Description: Description of tennis_ball_machine

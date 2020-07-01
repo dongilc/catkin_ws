@@ -3,8 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/vesc_ackermann_nodelet.dir/src/ackermann_to_vesc.cpp.o"
   "CMakeFiles/vesc_ackermann_nodelet.dir/src/vesc_to_odom_nodelet.cpp.o"
   "CMakeFiles/vesc_ackermann_nodelet.dir/src/vesc_to_odom.cpp.o"
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_ackermann_nodelet.pdb"
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_ackermann_nodelet.so"
+  "/home/odroid/workspace/catkin_ws/devel/lib/libvesc_ackermann_nodelet.pdb"
+  "/home/odroid/workspace/catkin_ws/devel/lib/libvesc_ackermann_nodelet.so"
 )
 
 # Per-language clean rules from dependency scanning.

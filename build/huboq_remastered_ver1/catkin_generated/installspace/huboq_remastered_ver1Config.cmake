@@ -67,14 +67,14 @@ set(huboq_remastered_ver1_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(huboq_remastered_ver1_SOURCE_PREFIX /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/huboq_remastered_ver1)
-  set(huboq_remastered_ver1_DEVEL_PREFIX /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel)
+  set(huboq_remastered_ver1_SOURCE_PREFIX /home/odroid/workspace/catkin_ws/src/huboq_remastered_ver1)
+  set(huboq_remastered_ver1_DEVEL_PREFIX /home/odroid/workspace/catkin_ws/devel)
   set(huboq_remastered_ver1_INSTALL_PREFIX "")
   set(huboq_remastered_ver1_PREFIX ${huboq_remastered_ver1_DEVEL_PREFIX})
 else()
   set(huboq_remastered_ver1_SOURCE_PREFIX "")
   set(huboq_remastered_ver1_DEVEL_PREFIX "")
-  set(huboq_remastered_ver1_INSTALL_PREFIX /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/install)
+  set(huboq_remastered_ver1_INSTALL_PREFIX /home/odroid/workspace/catkin_ws/install)
   set(huboq_remastered_ver1_PREFIX ${huboq_remastered_ver1_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/install/lib;/opt/ros/melodic/lib)
+    foreach(path /home/odroid/workspace/catkin_ws/install/lib;/home/odroid/workspace/catkin_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

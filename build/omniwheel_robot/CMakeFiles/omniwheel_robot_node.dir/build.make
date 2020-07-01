@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/odroid/workspace/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build
+CMAKE_BINARY_DIR = /home/odroid/workspace/catkin_ws/build
 
 # Include any dependencies generated for this target.
 include omniwheel_robot/CMakeFiles/omniwheel_robot_node.dir/depend.make
@@ -58,17 +58,17 @@ include omniwheel_robot/CMakeFiles/omniwheel_robot_node.dir/progress.make
 include omniwheel_robot/CMakeFiles/omniwheel_robot_node.dir/flags.make
 
 omniwheel_robot/CMakeFiles/omniwheel_robot_node.dir/src/omniwheel_robot_node.cpp.o: omniwheel_robot/CMakeFiles/omniwheel_robot_node.dir/flags.make
-omniwheel_robot/CMakeFiles/omniwheel_robot_node.dir/src/omniwheel_robot_node.cpp.o: /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/omniwheel_robot/src/omniwheel_robot_node.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object omniwheel_robot/CMakeFiles/omniwheel_robot_node.dir/src/omniwheel_robot_node.cpp.o"
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/omniwheel_robot && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/omniwheel_robot_node.dir/src/omniwheel_robot_node.cpp.o -c /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/omniwheel_robot/src/omniwheel_robot_node.cpp
+omniwheel_robot/CMakeFiles/omniwheel_robot_node.dir/src/omniwheel_robot_node.cpp.o: /home/odroid/workspace/catkin_ws/src/omniwheel_robot/src/omniwheel_robot_node.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/odroid/workspace/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object omniwheel_robot/CMakeFiles/omniwheel_robot_node.dir/src/omniwheel_robot_node.cpp.o"
+	cd /home/odroid/workspace/catkin_ws/build/omniwheel_robot && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/omniwheel_robot_node.dir/src/omniwheel_robot_node.cpp.o -c /home/odroid/workspace/catkin_ws/src/omniwheel_robot/src/omniwheel_robot_node.cpp
 
 omniwheel_robot/CMakeFiles/omniwheel_robot_node.dir/src/omniwheel_robot_node.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/omniwheel_robot_node.dir/src/omniwheel_robot_node.cpp.i"
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/omniwheel_robot && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/omniwheel_robot/src/omniwheel_robot_node.cpp > CMakeFiles/omniwheel_robot_node.dir/src/omniwheel_robot_node.cpp.i
+	cd /home/odroid/workspace/catkin_ws/build/omniwheel_robot && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/odroid/workspace/catkin_ws/src/omniwheel_robot/src/omniwheel_robot_node.cpp > CMakeFiles/omniwheel_robot_node.dir/src/omniwheel_robot_node.cpp.i
 
 omniwheel_robot/CMakeFiles/omniwheel_robot_node.dir/src/omniwheel_robot_node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/omniwheel_robot_node.dir/src/omniwheel_robot_node.cpp.s"
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/omniwheel_robot && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/omniwheel_robot/src/omniwheel_robot_node.cpp -o CMakeFiles/omniwheel_robot_node.dir/src/omniwheel_robot_node.cpp.s
+	cd /home/odroid/workspace/catkin_ws/build/omniwheel_robot && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/odroid/workspace/catkin_ws/src/omniwheel_robot/src/omniwheel_robot_node.cpp -o CMakeFiles/omniwheel_robot_node.dir/src/omniwheel_robot_node.cpp.s
 
 omniwheel_robot/CMakeFiles/omniwheel_robot_node.dir/src/omniwheel_robot_node.cpp.o.requires:
 
@@ -88,32 +88,32 @@ omniwheel_robot_node_OBJECTS = \
 # External object files for target omniwheel_robot_node
 omniwheel_robot_node_EXTERNAL_OBJECTS =
 
-/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: omniwheel_robot/CMakeFiles/omniwheel_robot_node.dir/src/omniwheel_robot_node.cpp.o
-/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: omniwheel_robot/CMakeFiles/omniwheel_robot_node.dir/build.make
-/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: /opt/ros/melodic/lib/libroscpp.so
-/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: /opt/ros/melodic/lib/librosconsole.so
-/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: /opt/ros/melodic/lib/librosconsole_log4cxx.so
-/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: /opt/ros/melodic/lib/librosconsole_backend_interface.so
-/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: /opt/ros/melodic/lib/libxmlrpcpp.so
-/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: /opt/ros/melodic/lib/libroscpp_serialization.so
-/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: /opt/ros/melodic/lib/librostime.so
-/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: /opt/ros/melodic/lib/libcpp_common.so
-/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
-/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: omniwheel_robot/CMakeFiles/omniwheel_robot_node.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node"
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/omniwheel_robot && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/omniwheel_robot_node.dir/link.txt --verbose=$(VERBOSE)
+/home/odroid/workspace/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: omniwheel_robot/CMakeFiles/omniwheel_robot_node.dir/src/omniwheel_robot_node.cpp.o
+/home/odroid/workspace/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: omniwheel_robot/CMakeFiles/omniwheel_robot_node.dir/build.make
+/home/odroid/workspace/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: /opt/ros/melodic/lib/libroscpp.so
+/home/odroid/workspace/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: /usr/lib/arm-linux-gnueabihf/libboost_filesystem.so
+/home/odroid/workspace/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: /opt/ros/melodic/lib/librosconsole.so
+/home/odroid/workspace/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: /opt/ros/melodic/lib/librosconsole_log4cxx.so
+/home/odroid/workspace/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: /opt/ros/melodic/lib/librosconsole_backend_interface.so
+/home/odroid/workspace/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: /usr/lib/arm-linux-gnueabihf/liblog4cxx.so
+/home/odroid/workspace/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: /usr/lib/arm-linux-gnueabihf/libboost_regex.so
+/home/odroid/workspace/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: /opt/ros/melodic/lib/libxmlrpcpp.so
+/home/odroid/workspace/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: /opt/ros/melodic/lib/libroscpp_serialization.so
+/home/odroid/workspace/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: /opt/ros/melodic/lib/librostime.so
+/home/odroid/workspace/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: /opt/ros/melodic/lib/libcpp_common.so
+/home/odroid/workspace/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: /usr/lib/arm-linux-gnueabihf/libboost_system.so
+/home/odroid/workspace/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: /usr/lib/arm-linux-gnueabihf/libboost_thread.so
+/home/odroid/workspace/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: /usr/lib/arm-linux-gnueabihf/libboost_chrono.so
+/home/odroid/workspace/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: /usr/lib/arm-linux-gnueabihf/libboost_date_time.so
+/home/odroid/workspace/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: /usr/lib/arm-linux-gnueabihf/libboost_atomic.so
+/home/odroid/workspace/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: /usr/lib/arm-linux-gnueabihf/libpthread.so
+/home/odroid/workspace/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: /usr/lib/arm-linux-gnueabihf/libconsole_bridge.so.0.4
+/home/odroid/workspace/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node: omniwheel_robot/CMakeFiles/omniwheel_robot_node.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/odroid/workspace/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/odroid/workspace/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node"
+	cd /home/odroid/workspace/catkin_ws/build/omniwheel_robot && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/omniwheel_robot_node.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-omniwheel_robot/CMakeFiles/omniwheel_robot_node.dir/build: /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node
+omniwheel_robot/CMakeFiles/omniwheel_robot_node.dir/build: /home/odroid/workspace/catkin_ws/devel/lib/omniwheel_robot/omniwheel_robot_node
 
 .PHONY : omniwheel_robot/CMakeFiles/omniwheel_robot_node.dir/build
 
@@ -122,10 +122,10 @@ omniwheel_robot/CMakeFiles/omniwheel_robot_node.dir/requires: omniwheel_robot/CM
 .PHONY : omniwheel_robot/CMakeFiles/omniwheel_robot_node.dir/requires
 
 omniwheel_robot/CMakeFiles/omniwheel_robot_node.dir/clean:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/omniwheel_robot && $(CMAKE_COMMAND) -P CMakeFiles/omniwheel_robot_node.dir/cmake_clean.cmake
+	cd /home/odroid/workspace/catkin_ws/build/omniwheel_robot && $(CMAKE_COMMAND) -P CMakeFiles/omniwheel_robot_node.dir/cmake_clean.cmake
 .PHONY : omniwheel_robot/CMakeFiles/omniwheel_robot_node.dir/clean
 
 omniwheel_robot/CMakeFiles/omniwheel_robot_node.dir/depend:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/omniwheel_robot /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/omniwheel_robot /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/omniwheel_robot/CMakeFiles/omniwheel_robot_node.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/odroid/workspace/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/odroid/workspace/catkin_ws/src /home/odroid/workspace/catkin_ws/src/omniwheel_robot /home/odroid/workspace/catkin_ws/build /home/odroid/workspace/catkin_ws/build/omniwheel_robot /home/odroid/workspace/catkin_ws/build/omniwheel_robot/CMakeFiles/omniwheel_robot_node.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : omniwheel_robot/CMakeFiles/omniwheel_robot_node.dir/depend
 

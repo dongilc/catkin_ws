@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/src/amg_p1_node.cpp" "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/amg_p1/CMakeFiles/amg_p1_node.dir/src/amg_p1_node.cpp.o"
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/src/computed_torque_control.cpp" "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/amg_p1/CMakeFiles/amg_p1_node.dir/src/computed_torque_control.cpp.o"
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/src/lqr_motion_planner.cpp" "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/amg_p1/CMakeFiles/amg_p1_node.dir/src/lqr_motion_planner.cpp.o"
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/src/mpc_motion_planner.cpp" "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/amg_p1/CMakeFiles/amg_p1_node.dir/src/mpc_motion_planner.cpp.o"
+  "/home/odroid/workspace/catkin_ws/src/amg_p1/src/amg_p1_node.cpp" "/home/odroid/workspace/catkin_ws/build/amg_p1/CMakeFiles/amg_p1_node.dir/src/amg_p1_node.cpp.o"
+  "/home/odroid/workspace/catkin_ws/src/amg_p1/src/computed_torque_control.cpp" "/home/odroid/workspace/catkin_ws/build/amg_p1/CMakeFiles/amg_p1_node.dir/src/computed_torque_control.cpp.o"
+  "/home/odroid/workspace/catkin_ws/src/amg_p1/src/lqr_motion_planner.cpp" "/home/odroid/workspace/catkin_ws/build/amg_p1/CMakeFiles/amg_p1_node.dir/src/lqr_motion_planner.cpp.o"
+  "/home/odroid/workspace/catkin_ws/src/amg_p1/src/mpc_motion_planner.cpp" "/home/odroid/workspace/catkin_ws/build/amg_p1/CMakeFiles/amg_p1_node.dir/src/mpc_motion_planner.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -20,8 +20,8 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/include"
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/include"
+  "/home/odroid/workspace/catkin_ws/devel/include"
+  "/home/odroid/workspace/catkin_ws/src/amg_p1/include"
   "/opt/ros/melodic/include"
   "/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   )

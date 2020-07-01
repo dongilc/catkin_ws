@@ -5,8 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/kitech_controllers.dir/src/leg_controllers/leg_desired.cpp.o"
   "CMakeFiles/kitech_controllers.dir/src/leg_controllers/virtual_spring_damper_controller.cpp.o"
   "CMakeFiles/kitech_controllers.dir/src/segway_controllers/segway_controller.cpp.o"
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libkitech_controllers.pdb"
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libkitech_controllers.so"
+  "/home/odroid/workspace/catkin_ws/devel/lib/libkitech_controllers.pdb"
+  "/home/odroid/workspace/catkin_ws/devel/lib/libkitech_controllers.so"
 )
 
 # Per-language clean rules from dependency scanning.

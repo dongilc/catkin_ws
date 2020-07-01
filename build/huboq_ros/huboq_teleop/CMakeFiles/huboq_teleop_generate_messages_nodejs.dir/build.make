@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/odroid/workspace/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build
+CMAKE_BINARY_DIR = /home/odroid/workspace/catkin_ws/build
 
 # Utility rule file for huboq_teleop_generate_messages_nodejs.
 
@@ -63,10 +63,10 @@ huboq_ros/huboq_teleop/CMakeFiles/huboq_teleop_generate_messages_nodejs.dir/buil
 .PHONY : huboq_ros/huboq_teleop/CMakeFiles/huboq_teleop_generate_messages_nodejs.dir/build
 
 huboq_ros/huboq_teleop/CMakeFiles/huboq_teleop_generate_messages_nodejs.dir/clean:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/huboq_ros/huboq_teleop && $(CMAKE_COMMAND) -P CMakeFiles/huboq_teleop_generate_messages_nodejs.dir/cmake_clean.cmake
+	cd /home/odroid/workspace/catkin_ws/build/huboq_ros/huboq_teleop && $(CMAKE_COMMAND) -P CMakeFiles/huboq_teleop_generate_messages_nodejs.dir/cmake_clean.cmake
 .PHONY : huboq_ros/huboq_teleop/CMakeFiles/huboq_teleop_generate_messages_nodejs.dir/clean
 
 huboq_ros/huboq_teleop/CMakeFiles/huboq_teleop_generate_messages_nodejs.dir/depend:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/huboq_ros/huboq_teleop /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/huboq_ros/huboq_teleop /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/huboq_ros/huboq_teleop/CMakeFiles/huboq_teleop_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/odroid/workspace/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/odroid/workspace/catkin_ws/src /home/odroid/workspace/catkin_ws/src/huboq_ros/huboq_teleop /home/odroid/workspace/catkin_ws/build /home/odroid/workspace/catkin_ws/build/huboq_ros/huboq_teleop /home/odroid/workspace/catkin_ws/build/huboq_ros/huboq_teleop/CMakeFiles/huboq_teleop_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : huboq_ros/huboq_teleop/CMakeFiles/huboq_teleop_generate_messages_nodejs.dir/depend
 

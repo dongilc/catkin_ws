@@ -1,4 +1,4 @@
-prefix=/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/install
+prefix=/home/odroid/workspace/catkin_ws/install
 
 Name: huboq_teleop
 Description: Description of huboq_teleop

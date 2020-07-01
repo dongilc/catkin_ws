@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/kitech_segway_type/kitech_segway_type_teleop/src/kitech_segway_type_teleop_node.cpp
+/home/odroid/workspace/catkin_ws/src/kitech_segway_type/kitech_segway_type_teleop/src/kitech_segway_type_teleop_node.cpp
 ros/ros.h
-/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/kitech_segway_type/kitech_segway_type_teleop/src/ros/ros.h
+/home/odroid/workspace/catkin_ws/src/kitech_segway_type/kitech_segway_type_teleop/src/ros/ros.h
 std_msgs/Float32.h
 -
 sensor_msgs/Joy.h

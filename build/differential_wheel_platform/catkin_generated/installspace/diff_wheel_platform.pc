@@ -1,4 +1,4 @@
-prefix=/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/install
+prefix=/home/odroid/workspace/catkin_ws/install
 
 Name: diff_wheel_platform
 Description: Description of diff_wheel_platform

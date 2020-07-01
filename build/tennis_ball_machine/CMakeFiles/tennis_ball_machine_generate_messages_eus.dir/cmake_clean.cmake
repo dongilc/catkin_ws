@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/tennis_ball_machine_generate_messages_eus"
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/share/roseus/ros/tennis_ball_machine/manifest.l"
+  "/home/odroid/workspace/catkin_ws/devel/share/roseus/ros/tennis_ball_machine/manifest.l"
 )
 
 # Per-language clean rules from dependency scanning.

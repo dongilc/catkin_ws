@@ -14,7 +14,7 @@
 
 #include "vesc_driver/vesc_packet_factory.h"
 
-#define DEBUG_VIEW_PACKET	//cdi
+//#define DEBUG_VIEW_PACKET	//cdi
 
 namespace vesc_driver
 {

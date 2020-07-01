@@ -43,25 +43,25 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/odroid/workspace/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build
+CMAKE_BINARY_DIR = /home/odroid/workspace/catkin_ws/build
 
 # Utility rule file for kitech_controllers_generate_messages_eus.
 
 # Include the progress variables for this target.
 include kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/CMakeFiles/kitech_controllers_generate_messages_eus.dir/progress.make
 
-kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/CMakeFiles/kitech_controllers_generate_messages_eus: /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/share/roseus/ros/kitech_controllers/manifest.l
+kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/CMakeFiles/kitech_controllers_generate_messages_eus: /home/odroid/workspace/catkin_ws/devel/share/roseus/ros/kitech_controllers/manifest.l
 
 
-/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/share/roseus/ros/kitech_controllers/manifest.l: /opt/ros/melodic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp manifest code for kitech_controllers"
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers && ../../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/share/roseus/ros/kitech_controllers kitech_controllers std_msgs
+/home/odroid/workspace/catkin_ws/devel/share/roseus/ros/kitech_controllers/manifest.l: /opt/ros/melodic/lib/geneus/gen_eus.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/odroid/workspace/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp manifest code for kitech_controllers"
+	cd /home/odroid/workspace/catkin_ws/build/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers && ../../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/odroid/workspace/catkin_ws/devel/share/roseus/ros/kitech_controllers kitech_controllers std_msgs
 
 kitech_controllers_generate_messages_eus: kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/CMakeFiles/kitech_controllers_generate_messages_eus
-kitech_controllers_generate_messages_eus: /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/share/roseus/ros/kitech_controllers/manifest.l
+kitech_controllers_generate_messages_eus: /home/odroid/workspace/catkin_ws/devel/share/roseus/ros/kitech_controllers/manifest.l
 kitech_controllers_generate_messages_eus: kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/CMakeFiles/kitech_controllers_generate_messages_eus.dir/build.make
 
 .PHONY : kitech_controllers_generate_messages_eus
@@ -72,10 +72,10 @@ kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/CM
 .PHONY : kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/CMakeFiles/kitech_controllers_generate_messages_eus.dir/build
 
 kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/CMakeFiles/kitech_controllers_generate_messages_eus.dir/clean:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers && $(CMAKE_COMMAND) -P CMakeFiles/kitech_controllers_generate_messages_eus.dir/cmake_clean.cmake
+	cd /home/odroid/workspace/catkin_ws/build/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers && $(CMAKE_COMMAND) -P CMakeFiles/kitech_controllers_generate_messages_eus.dir/cmake_clean.cmake
 .PHONY : kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/CMakeFiles/kitech_controllers_generate_messages_eus.dir/clean
 
 kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/CMakeFiles/kitech_controllers_generate_messages_eus.dir/depend:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/CMakeFiles/kitech_controllers_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/odroid/workspace/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/odroid/workspace/catkin_ws/src /home/odroid/workspace/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers /home/odroid/workspace/catkin_ws/build /home/odroid/workspace/catkin_ws/build/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers /home/odroid/workspace/catkin_ws/build/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/CMakeFiles/kitech_controllers_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/CMakeFiles/kitech_controllers_generate_messages_eus.dir/depend
 

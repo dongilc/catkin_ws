@@ -43,25 +43,25 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/odroid/workspace/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build
+CMAKE_BINARY_DIR = /home/odroid/workspace/catkin_ws/build
 
 # Utility rule file for vesc_control_ex2_generate_messages_eus.
 
 # Include the progress variables for this target.
 include vesc_control_ex2/CMakeFiles/vesc_control_ex2_generate_messages_eus.dir/progress.make
 
-vesc_control_ex2/CMakeFiles/vesc_control_ex2_generate_messages_eus: /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/share/roseus/ros/vesc_control_ex2/manifest.l
+vesc_control_ex2/CMakeFiles/vesc_control_ex2_generate_messages_eus: /home/odroid/workspace/catkin_ws/devel/share/roseus/ros/vesc_control_ex2/manifest.l
 
 
-/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/share/roseus/ros/vesc_control_ex2/manifest.l: /opt/ros/melodic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp manifest code for vesc_control_ex2"
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc_control_ex2 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/share/roseus/ros/vesc_control_ex2 vesc_control_ex2 std_msgs
+/home/odroid/workspace/catkin_ws/devel/share/roseus/ros/vesc_control_ex2/manifest.l: /opt/ros/melodic/lib/geneus/gen_eus.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/odroid/workspace/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp manifest code for vesc_control_ex2"
+	cd /home/odroid/workspace/catkin_ws/build/vesc_control_ex2 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/odroid/workspace/catkin_ws/devel/share/roseus/ros/vesc_control_ex2 vesc_control_ex2 std_msgs
 
 vesc_control_ex2_generate_messages_eus: vesc_control_ex2/CMakeFiles/vesc_control_ex2_generate_messages_eus
-vesc_control_ex2_generate_messages_eus: /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/share/roseus/ros/vesc_control_ex2/manifest.l
+vesc_control_ex2_generate_messages_eus: /home/odroid/workspace/catkin_ws/devel/share/roseus/ros/vesc_control_ex2/manifest.l
 vesc_control_ex2_generate_messages_eus: vesc_control_ex2/CMakeFiles/vesc_control_ex2_generate_messages_eus.dir/build.make
 
 .PHONY : vesc_control_ex2_generate_messages_eus
@@ -72,10 +72,10 @@ vesc_control_ex2/CMakeFiles/vesc_control_ex2_generate_messages_eus.dir/build: ve
 .PHONY : vesc_control_ex2/CMakeFiles/vesc_control_ex2_generate_messages_eus.dir/build
 
 vesc_control_ex2/CMakeFiles/vesc_control_ex2_generate_messages_eus.dir/clean:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc_control_ex2 && $(CMAKE_COMMAND) -P CMakeFiles/vesc_control_ex2_generate_messages_eus.dir/cmake_clean.cmake
+	cd /home/odroid/workspace/catkin_ws/build/vesc_control_ex2 && $(CMAKE_COMMAND) -P CMakeFiles/vesc_control_ex2_generate_messages_eus.dir/cmake_clean.cmake
 .PHONY : vesc_control_ex2/CMakeFiles/vesc_control_ex2_generate_messages_eus.dir/clean
 
 vesc_control_ex2/CMakeFiles/vesc_control_ex2_generate_messages_eus.dir/depend:
-	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc_control_ex2 /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc_control_ex2 /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc_control_ex2/CMakeFiles/vesc_control_ex2_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/odroid/workspace/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/odroid/workspace/catkin_ws/src /home/odroid/workspace/catkin_ws/src/vesc_control_ex2 /home/odroid/workspace/catkin_ws/build /home/odroid/workspace/catkin_ws/build/vesc_control_ex2 /home/odroid/workspace/catkin_ws/build/vesc_control_ex2/CMakeFiles/vesc_control_ex2_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : vesc_control_ex2/CMakeFiles/vesc_control_ex2_generate_messages_eus.dir/depend
 

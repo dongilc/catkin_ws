@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/vesc_control_ex2_generate_messages_eus"
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/share/roseus/ros/vesc_control_ex2/manifest.l"
+  "/home/odroid/workspace/catkin_ws/devel/share/roseus/ros/vesc_control_ex2/manifest.l"
 )
 
 # Per-language clean rules from dependency scanning.

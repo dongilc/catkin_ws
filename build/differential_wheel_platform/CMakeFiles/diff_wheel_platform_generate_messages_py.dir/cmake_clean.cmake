@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/diff_wheel_platform_generate_messages_py"
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/python2.7/dist-packages/diff_wheel_platform/msg/_CTM_Message.py"
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/python2.7/dist-packages/diff_wheel_platform/msg/__init__.py"
+  "/home/odroid/workspace/catkin_ws/devel/lib/python2.7/dist-packages/diff_wheel_platform/msg/_CTM_Message.py"
+  "/home/odroid/workspace/catkin_ws/devel/lib/python2.7/dist-packages/diff_wheel_platform/msg/__init__.py"
 )
 
 # Per-language clean rules from dependency scanning.

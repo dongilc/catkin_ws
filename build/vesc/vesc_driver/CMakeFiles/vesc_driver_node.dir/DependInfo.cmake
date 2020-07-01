@@ -4,11 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_driver.cpp" "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc/vesc_driver/CMakeFiles/vesc_driver_node.dir/src/vesc_driver.cpp.o"
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_driver_node.cpp" "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc/vesc_driver/CMakeFiles/vesc_driver_node.dir/src/vesc_driver_node.cpp.o"
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_interface.cpp" "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc/vesc_driver/CMakeFiles/vesc_driver_node.dir/src/vesc_interface.cpp.o"
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_packet.cpp" "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc/vesc_driver/CMakeFiles/vesc_driver_node.dir/src/vesc_packet.cpp.o"
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_packet_factory.cpp" "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc/vesc_driver/CMakeFiles/vesc_driver_node.dir/src/vesc_packet_factory.cpp.o"
+  "/home/odroid/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_driver.cpp" "/home/odroid/workspace/catkin_ws/build/vesc/vesc_driver/CMakeFiles/vesc_driver_node.dir/src/vesc_driver.cpp.o"
+  "/home/odroid/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_driver_node.cpp" "/home/odroid/workspace/catkin_ws/build/vesc/vesc_driver/CMakeFiles/vesc_driver_node.dir/src/vesc_driver_node.cpp.o"
+  "/home/odroid/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_interface.cpp" "/home/odroid/workspace/catkin_ws/build/vesc/vesc_driver/CMakeFiles/vesc_driver_node.dir/src/vesc_interface.cpp.o"
+  "/home/odroid/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_packet.cpp" "/home/odroid/workspace/catkin_ws/build/vesc/vesc_driver/CMakeFiles/vesc_driver_node.dir/src/vesc_packet.cpp.o"
+  "/home/odroid/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_packet_factory.cpp" "/home/odroid/workspace/catkin_ws/build/vesc/vesc_driver/CMakeFiles/vesc_driver_node.dir/src/vesc_packet_factory.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -21,8 +21,8 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/include"
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/include"
+  "/home/odroid/workspace/catkin_ws/src/vesc/vesc_driver/include"
+  "/home/odroid/workspace/catkin_ws/devel/include"
   "/opt/ros/melodic/include"
   "/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   )

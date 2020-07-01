@@ -1,11 +1,11 @@
 file(REMOVE_RECURSE
   "CMakeFiles/vesc_msgs_generate_messages_py"
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/python2.7/dist-packages/vesc_msgs/msg/_VescStateStamped.py"
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/python2.7/dist-packages/vesc_msgs/msg/_VescState.py"
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/python2.7/dist-packages/vesc_msgs/msg/_VescSetCommand.py"
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/python2.7/dist-packages/vesc_msgs/msg/_VescGetCustomApp.py"
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/python2.7/dist-packages/vesc_msgs/msg/_VescSetCustomApp.py"
-  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/python2.7/dist-packages/vesc_msgs/msg/__init__.py"
+  "/home/odroid/workspace/catkin_ws/devel/lib/python2.7/dist-packages/vesc_msgs/msg/_VescGetCustomApp.py"
+  "/home/odroid/workspace/catkin_ws/devel/lib/python2.7/dist-packages/vesc_msgs/msg/_VescStateStamped.py"
+  "/home/odroid/workspace/catkin_ws/devel/lib/python2.7/dist-packages/vesc_msgs/msg/_VescState.py"
+  "/home/odroid/workspace/catkin_ws/devel/lib/python2.7/dist-packages/vesc_msgs/msg/_VescSetCommand.py"
+  "/home/odroid/workspace/catkin_ws/devel/lib/python2.7/dist-packages/vesc_msgs/msg/_VescSetCustomApp.py"
+  "/home/odroid/workspace/catkin_ws/devel/lib/python2.7/dist-packages/vesc_msgs/msg/__init__.py"
 )
 
 # Per-language clean rules from dependency scanning.
