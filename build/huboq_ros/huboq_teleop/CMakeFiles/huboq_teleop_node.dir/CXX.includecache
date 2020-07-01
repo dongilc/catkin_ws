@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/huboq_ros/huboq_teleop/src/huboq_teleop_node.cpp
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/huboq_ros/huboq_teleop/src/huboq_teleop_node.cpp
 ros/ros.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/huboq_ros/huboq_teleop/src/ros/ros.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/huboq_ros/huboq_teleop/src/ros/ros.h
 std_msgs/Float32.h
 -
 sensor_msgs/Joy.h

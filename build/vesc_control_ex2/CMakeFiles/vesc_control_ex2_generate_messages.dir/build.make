@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cdi/SynologyDrive/workspace/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cdi/SynologyDrive/workspace/catkin_ws/build
+CMAKE_BINARY_DIR = /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build
 
 # Utility rule file for vesc_control_ex2_generate_messages.
 
@@ -63,10 +63,10 @@ vesc_control_ex2/CMakeFiles/vesc_control_ex2_generate_messages.dir/build: vesc_c
 .PHONY : vesc_control_ex2/CMakeFiles/vesc_control_ex2_generate_messages.dir/build
 
 vesc_control_ex2/CMakeFiles/vesc_control_ex2_generate_messages.dir/clean:
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build/vesc_control_ex2 && $(CMAKE_COMMAND) -P CMakeFiles/vesc_control_ex2_generate_messages.dir/cmake_clean.cmake
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc_control_ex2 && $(CMAKE_COMMAND) -P CMakeFiles/vesc_control_ex2_generate_messages.dir/cmake_clean.cmake
 .PHONY : vesc_control_ex2/CMakeFiles/vesc_control_ex2_generate_messages.dir/clean
 
 vesc_control_ex2/CMakeFiles/vesc_control_ex2_generate_messages.dir/depend:
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cdi/SynologyDrive/workspace/catkin_ws/src /home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc_control_ex2 /home/cdi/SynologyDrive/workspace/catkin_ws/build /home/cdi/SynologyDrive/workspace/catkin_ws/build/vesc_control_ex2 /home/cdi/SynologyDrive/workspace/catkin_ws/build/vesc_control_ex2/CMakeFiles/vesc_control_ex2_generate_messages.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc_control_ex2 /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc_control_ex2 /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc_control_ex2/CMakeFiles/vesc_control_ex2_generate_messages.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : vesc_control_ex2/CMakeFiles/vesc_control_ex2_generate_messages.dir/depend
 

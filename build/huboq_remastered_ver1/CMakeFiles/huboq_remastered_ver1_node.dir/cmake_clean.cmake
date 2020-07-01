@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/huboq_remastered_ver1_node.dir/src/huboq_remastered_ver1_node.cpp.o"
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/huboq_remastered_ver1/huboq_remastered_ver1_node.pdb"
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/huboq_remastered_ver1/huboq_remastered_ver1_node"
+  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/huboq_remastered_ver1/huboq_remastered_ver1_node.pdb"
+  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/huboq_remastered_ver1/huboq_remastered_ver1_node"
 )
 
 # Per-language clean rules from dependency scanning.

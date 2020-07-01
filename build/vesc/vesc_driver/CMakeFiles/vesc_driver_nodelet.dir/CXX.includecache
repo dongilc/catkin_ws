@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/include/vesc_msgs/VescGetCustomApp.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/include/vesc_msgs/VescGetCustomApp.h
 string
 -
 vector
@@ -24,7 +24,7 @@ ros/message_operations.h
 std_msgs/Header.h
 -
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/include/vesc_msgs/VescSetCommand.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/include/vesc_msgs/VescSetCommand.h
 string
 -
 vector
@@ -40,7 +40,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/include/vesc_msgs/VescSetCustomApp.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/include/vesc_msgs/VescSetCustomApp.h
 string
 -
 vector
@@ -56,7 +56,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/include/vesc_msgs/VescState.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/include/vesc_msgs/VescState.h
 string
 -
 vector
@@ -72,7 +72,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/include/vesc_msgs/VescStateStamped.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/include/vesc_msgs/VescStateStamped.h
 string
 -
 vector
@@ -92,13 +92,13 @@ std_msgs/Header.h
 vesc_msgs/VescState.h
 -
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/include/vesc_driver/datatypes.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/include/vesc_driver/datatypes.h
 stdint.h
 -
 stdbool.h
 -
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/include/vesc_driver/v8stdint.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/include/vesc_driver/v8stdint.h
 stddef.h
 -
 stdio.h
@@ -106,7 +106,7 @@ stdio.h
 stdint.h
 -
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/include/vesc_driver/vesc_driver.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/include/vesc_driver/vesc_driver.h
 string
 -
 ros/ros.h
@@ -118,19 +118,19 @@ std_msgs/Float64.h
 boost/optional.hpp
 -
 vesc_driver/vesc_interface.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/include/vesc_driver/vesc_driver/vesc_interface.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/include/vesc_driver/vesc_driver/vesc_interface.h
 vesc_driver/vesc_packet.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/include/vesc_driver/vesc_driver/vesc_packet.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/include/vesc_driver/vesc_driver/vesc_packet.h
 vesc_msgs/VescSetCommand.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/include/vesc_driver/vesc_msgs/VescSetCommand.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/include/vesc_driver/vesc_msgs/VescSetCommand.h
 vesc_msgs/VescStateStamped.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/include/vesc_driver/vesc_msgs/VescStateStamped.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/include/vesc_driver/vesc_msgs/VescStateStamped.h
 vesc_msgs/VescGetCustomApp.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/include/vesc_driver/vesc_msgs/VescGetCustomApp.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/include/vesc_driver/vesc_msgs/VescGetCustomApp.h
 vesc_msgs/VescSetCustomApp.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/include/vesc_driver/vesc_msgs/VescSetCustomApp.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/include/vesc_driver/vesc_msgs/VescSetCustomApp.h
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/include/vesc_driver/vesc_interface.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/include/vesc_driver/vesc_interface.h
 string
 -
 sstream
@@ -148,9 +148,9 @@ boost/scoped_ptr.hpp
 boost/shared_ptr.hpp
 -
 vesc_driver/vesc_packet.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/include/vesc_driver/vesc_driver/vesc_packet.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/include/vesc_driver/vesc_driver/vesc_packet.h
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/include/vesc_driver/vesc_packet.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/include/vesc_driver/vesc_packet.h
 string
 -
 vector
@@ -162,13 +162,13 @@ boost/crc.hpp
 boost/shared_ptr.hpp
 -
 vesc_driver/datatypes.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/include/vesc_driver/vesc_driver/datatypes.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/include/vesc_driver/vesc_driver/datatypes.h
 vesc_driver/v8stdint.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/include/vesc_driver/vesc_driver/v8stdint.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/include/vesc_driver/vesc_driver/v8stdint.h
 vesc_msgs/VescSetCustomApp.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/include/vesc_driver/vesc_msgs/VescSetCustomApp.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/include/vesc_driver/vesc_msgs/VescSetCustomApp.h
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/include/vesc_driver/vesc_packet_factory.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/include/vesc_driver/vesc_packet_factory.h
 vector
 -
 map
@@ -182,13 +182,13 @@ boost/function.hpp
 boost/shared_ptr.hpp
 -
 vesc_driver/v8stdint.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/include/vesc_driver/vesc_driver/v8stdint.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/include/vesc_driver/vesc_driver/v8stdint.h
 vesc_driver/vesc_packet.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/include/vesc_driver/vesc_driver/vesc_packet.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/include/vesc_driver/vesc_driver/vesc_packet.h
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_driver.cpp
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_driver.cpp
 vesc_driver/vesc_driver.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_driver/vesc_driver.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_driver/vesc_driver.h
 cassert
 -
 cmath
@@ -198,7 +198,7 @@ sstream
 boost/bind.hpp
 -
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_driver_nodelet.cpp
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_driver_nodelet.cpp
 boost/shared_ptr.hpp
 -
 nodelet/nodelet.h
@@ -208,11 +208,11 @@ pluginlib/class_list_macros.h
 ros/ros.h
 -
 vesc_driver/vesc_driver.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_driver/vesc_driver.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_driver/vesc_driver.h
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_interface.cpp
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_interface.cpp
 vesc_driver/vesc_interface.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_driver/vesc_interface.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_driver/vesc_interface.h
 pthread.h
 -
 string
@@ -228,11 +228,11 @@ serial/serial.h
 boost/crc.hpp
 -
 vesc_driver/vesc_packet_factory.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_driver/vesc_packet_factory.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_driver/vesc_packet_factory.h
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_packet.cpp
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_packet.cpp
 vesc_driver/vesc_packet.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_driver/vesc_packet.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_driver/vesc_packet.h
 cassert
 -
 iterator
@@ -244,15 +244,15 @@ boost/range/distance.hpp
 boost/range/end.hpp
 -
 vesc_driver/vesc_packet_factory.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_driver/vesc_packet_factory.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_driver/vesc_packet_factory.h
 vesc_driver/datatypes.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_driver/datatypes.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_driver/datatypes.h
 vesc_msgs/VescSetCustomApp.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_msgs/VescSetCustomApp.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_msgs/VescSetCustomApp.h
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_packet_factory.cpp
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_packet_factory.cpp
 vesc_driver/vesc_packet_factory.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_driver/vesc_packet_factory.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_driver/vesc_packet_factory.h
 cassert
 -
 iterator
@@ -264,7 +264,7 @@ boost/range/distance.hpp
 boost/range/end.hpp
 -
 vesc_driver/vesc_packet.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_driver/vesc_packet.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_driver/vesc_packet.h
 
 /opt/ros/melodic/include/class_loader/class_loader.hpp
 boost/bind.hpp

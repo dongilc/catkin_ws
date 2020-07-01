@@ -10,7 +10,7 @@ import genpy
 class LA_Message(genpy.Message):
   _md5sum = "7905fa336d4f2fe4db8c49c8192c0986"
   _type = "amg_p1/LA_Message"
-  _has_header = False #flag to mark the presence of a Header object
+  _has_header = False  # flag to mark the presence of a Header object
   _full_text = """time stamp
 
 float64[] deg_total_target
@@ -34,7 +34,7 @@ float64[] deg_total_now"""
     """
     if args or kwds:
       super(LA_Message, self).__init__(*args, **kwds)
-      #message fields cannot be None, assign default values for those that are
+      # message fields cannot be None, assign default values for those that are
       if self.stamp is None:
         self.stamp = genpy.Time()
       if self.deg_total_target is None:
@@ -101,7 +101,7 @@ float64[] deg_total_now"""
       self.stamp.canon()
       return self
     except struct.error as e:
-      raise genpy.DeserializationError(e) #most likely buffer underfill
+      raise genpy.DeserializationError(e)  # most likely buffer underfill
 
 
   def serialize_numpy(self, buff, numpy):
@@ -155,7 +155,7 @@ float64[] deg_total_now"""
       self.stamp.canon()
       return self
     except struct.error as e:
-      raise genpy.DeserializationError(e) #most likely buffer underfill
+      raise genpy.DeserializationError(e)  # most likely buffer underfill
 
 _struct_I = genpy.struct_I
 def _get_struct_I():

@@ -1,8 +1,8 @@
-# Install script for directory: /home/cdi/SynologyDrive/workspace/catkin_ws/src/kitech_segway_type/kitech_segway_type_teleop
+# Install script for directory: /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/kitech_segway_type/kitech_segway_type_teleop
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/cdi/SynologyDrive/workspace/catkin_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "")
+    set(CMAKE_INSTALL_CONFIG_NAME "Debug")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -38,37 +38,37 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kitech_segway_type_teleop/cmake" TYPE FILE FILES "/home/cdi/SynologyDrive/workspace/catkin_ws/build/kitech_segway_type/kitech_segway_type_teleop/catkin_generated/installspace/kitech_segway_type_teleop-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kitech_segway_type_teleop/cmake" TYPE FILE FILES "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/kitech_segway_type/kitech_segway_type_teleop/catkin_generated/installspace/kitech_segway_type_teleop-msg-paths.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/cdi/SynologyDrive/workspace/catkin_ws/devel/share/roseus/ros/kitech_segway_type_teleop")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/share/roseus/ros/kitech_segway_type_teleop")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python2" -m compileall "/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/python2.7/dist-packages/kitech_segway_type_teleop")
+  execute_process(COMMAND "/usr/bin/python2" -m compileall "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/python2.7/dist-packages/kitech_segway_type_teleop")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/python2.7/dist-packages/kitech_segway_type_teleop")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/python2.7/dist-packages/kitech_segway_type_teleop")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/cdi/SynologyDrive/workspace/catkin_ws/build/kitech_segway_type/kitech_segway_type_teleop/catkin_generated/installspace/kitech_segway_type_teleop.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/kitech_segway_type/kitech_segway_type_teleop/catkin_generated/installspace/kitech_segway_type_teleop.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kitech_segway_type_teleop/cmake" TYPE FILE FILES "/home/cdi/SynologyDrive/workspace/catkin_ws/build/kitech_segway_type/kitech_segway_type_teleop/catkin_generated/installspace/kitech_segway_type_teleop-msg-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kitech_segway_type_teleop/cmake" TYPE FILE FILES "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/kitech_segway_type/kitech_segway_type_teleop/catkin_generated/installspace/kitech_segway_type_teleop-msg-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kitech_segway_type_teleop/cmake" TYPE FILE FILES
-    "/home/cdi/SynologyDrive/workspace/catkin_ws/build/kitech_segway_type/kitech_segway_type_teleop/catkin_generated/installspace/kitech_segway_type_teleopConfig.cmake"
-    "/home/cdi/SynologyDrive/workspace/catkin_ws/build/kitech_segway_type/kitech_segway_type_teleop/catkin_generated/installspace/kitech_segway_type_teleopConfig-version.cmake"
+    "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/kitech_segway_type/kitech_segway_type_teleop/catkin_generated/installspace/kitech_segway_type_teleopConfig.cmake"
+    "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/kitech_segway_type/kitech_segway_type_teleop/catkin_generated/installspace/kitech_segway_type_teleopConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kitech_segway_type_teleop" TYPE FILE FILES "/home/cdi/SynologyDrive/workspace/catkin_ws/src/kitech_segway_type/kitech_segway_type_teleop/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kitech_segway_type_teleop" TYPE FILE FILES "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/kitech_segway_type/kitech_segway_type_teleop/package.xml")
 endif()
 

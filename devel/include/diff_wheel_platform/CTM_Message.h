@@ -81,6 +81,24 @@ ros::message_operations::Printer< ::diff_wheel_platform::CTM_Message_<ContainerA
 return s;
 }
 
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::diff_wheel_platform::CTM_Message_<ContainerAllocator1> & lhs, const ::diff_wheel_platform::CTM_Message_<ContainerAllocator2> & rhs)
+{
+  return lhs.stamp == rhs.stamp &&
+    lhs.target_vel == rhs.target_vel &&
+    lhs.current_vel == rhs.current_vel &&
+    lhs.target_pos == rhs.target_pos &&
+    lhs.current_pos == rhs.current_pos;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::diff_wheel_platform::CTM_Message_<ContainerAllocator1> & lhs, const ::diff_wheel_platform::CTM_Message_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
+}
+
+
 } // namespace diff_wheel_platform
 
 namespace ros
@@ -88,12 +106,6 @@ namespace ros
 namespace message_traits
 {
 
-
-
-// BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': False}
-// {'diff_wheel_platform': ['/home/cdi/SynologyDrive/workspace/catkin_ws/src/differential_wheel_platform/msg'], 'std_msgs': ['/opt/ros/melodic/share/std_msgs/cmake/../msg']}
-
-// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
 
 

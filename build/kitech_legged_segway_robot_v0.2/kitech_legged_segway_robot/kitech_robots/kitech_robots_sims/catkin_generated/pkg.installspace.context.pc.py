@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "kitech_robots_sims"
-PROJECT_SPACE_DIR = "/home/cdi/SynologyDrive/workspace/catkin_ws/install"
+PROJECT_SPACE_DIR = "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/install"
 PROJECT_VERSION = "0.0.0"

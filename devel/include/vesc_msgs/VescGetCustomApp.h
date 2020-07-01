@@ -127,6 +127,33 @@ ros::message_operations::Printer< ::vesc_msgs::VescGetCustomApp_<ContainerAlloca
 return s;
 }
 
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::vesc_msgs::VescGetCustomApp_<ContainerAllocator1> & lhs, const ::vesc_msgs::VescGetCustomApp_<ContainerAllocator2> & rhs)
+{
+  return lhs.header == rhs.header &&
+    lhs.send_mode_index1 == rhs.send_mode_index1 &&
+    lhs.fw_ver_major == rhs.fw_ver_major &&
+    lhs.fw_ver_minor == rhs.fw_ver_minor &&
+    lhs.fault_code == rhs.fault_code &&
+    lhs.app_status_code == rhs.app_status_code &&
+    lhs.send_mode_index2 == rhs.send_mode_index2 &&
+    lhs.can_devs_num == rhs.can_devs_num &&
+    lhs.can_id == rhs.can_id &&
+    lhs.custom_status == rhs.custom_status &&
+    lhs.enc_rps == rhs.enc_rps &&
+    lhs.enc_rad == rhs.enc_rad &&
+    lhs.current == rhs.current &&
+    lhs.duty == rhs.duty;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::vesc_msgs::VescGetCustomApp_<ContainerAllocator1> & lhs, const ::vesc_msgs::VescGetCustomApp_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
+}
+
+
 } // namespace vesc_msgs
 
 namespace ros
@@ -134,12 +161,6 @@ namespace ros
 namespace message_traits
 {
 
-
-
-// BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': True}
-// {'std_msgs': ['/opt/ros/melodic/share/std_msgs/cmake/../msg'], 'vesc_msgs': ['/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg']}
-
-// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
 
 

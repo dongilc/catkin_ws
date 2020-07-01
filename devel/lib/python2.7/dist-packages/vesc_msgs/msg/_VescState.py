@@ -9,7 +9,7 @@ import struct
 class VescState(genpy.Message):
   _md5sum = "d0f1524501b5a4208865a58f9472f3ff"
   _type = "vesc_msgs/VescState"
-  _has_header = False #flag to mark the presence of a Header object
+  _has_header = False  # flag to mark the presence of a Header object
   _full_text = """# Vedder VESC open source motor controller state (telemetry)
 
 # fault codes
@@ -64,7 +64,7 @@ int32   controller_id"""
     """
     if args or kwds:
       super(VescState, self).__init__(*args, **kwds)
-      #message fields cannot be None, assign default values for those that are
+      # message fields cannot be None, assign default values for those that are
       if self.voltage_input is None:
         self.voltage_input = 0.
       if self.temperature_pcb is None:
@@ -142,7 +142,7 @@ int32   controller_id"""
       (_x.voltage_input, _x.temperature_pcb, _x.current_motor, _x.current_input, _x.speed, _x.duty_cycle, _x.charge_drawn, _x.charge_regen, _x.energy_drawn, _x.energy_regen, _x.displacement, _x.distance_traveled, _x.fault_code, _x.pid_pos_now, _x.controller_id,) = _get_struct_12didi().unpack(str[start:end])
       return self
     except struct.error as e:
-      raise genpy.DeserializationError(e) #most likely buffer underfill
+      raise genpy.DeserializationError(e)  # most likely buffer underfill
 
 
   def serialize_numpy(self, buff, numpy):
@@ -171,7 +171,7 @@ int32   controller_id"""
       (_x.voltage_input, _x.temperature_pcb, _x.current_motor, _x.current_input, _x.speed, _x.duty_cycle, _x.charge_drawn, _x.charge_regen, _x.energy_drawn, _x.energy_regen, _x.displacement, _x.distance_traveled, _x.fault_code, _x.pid_pos_now, _x.controller_id,) = _get_struct_12didi().unpack(str[start:end])
       return self
     except struct.error as e:
-      raise genpy.DeserializationError(e) #most likely buffer underfill
+      raise genpy.DeserializationError(e)  # most likely buffer underfill
 
 _struct_I = genpy.struct_I
 def _get_struct_I():

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cdi/SynologyDrive/workspace/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cdi/SynologyDrive/workspace/catkin_ws/build
+CMAKE_BINARY_DIR = /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build
 
 # Include any dependencies generated for this target.
 include vesc_control_ex1/CMakeFiles/vesc_control_ex1_node.dir/depend.make
@@ -58,17 +58,17 @@ include vesc_control_ex1/CMakeFiles/vesc_control_ex1_node.dir/progress.make
 include vesc_control_ex1/CMakeFiles/vesc_control_ex1_node.dir/flags.make
 
 vesc_control_ex1/CMakeFiles/vesc_control_ex1_node.dir/src/vesc_control_ex1_node.cpp.o: vesc_control_ex1/CMakeFiles/vesc_control_ex1_node.dir/flags.make
-vesc_control_ex1/CMakeFiles/vesc_control_ex1_node.dir/src/vesc_control_ex1_node.cpp.o: /home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc_control_ex1/src/vesc_control_ex1_node.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdi/SynologyDrive/workspace/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object vesc_control_ex1/CMakeFiles/vesc_control_ex1_node.dir/src/vesc_control_ex1_node.cpp.o"
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build/vesc_control_ex1 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vesc_control_ex1_node.dir/src/vesc_control_ex1_node.cpp.o -c /home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc_control_ex1/src/vesc_control_ex1_node.cpp
+vesc_control_ex1/CMakeFiles/vesc_control_ex1_node.dir/src/vesc_control_ex1_node.cpp.o: /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc_control_ex1/src/vesc_control_ex1_node.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object vesc_control_ex1/CMakeFiles/vesc_control_ex1_node.dir/src/vesc_control_ex1_node.cpp.o"
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc_control_ex1 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vesc_control_ex1_node.dir/src/vesc_control_ex1_node.cpp.o -c /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc_control_ex1/src/vesc_control_ex1_node.cpp
 
 vesc_control_ex1/CMakeFiles/vesc_control_ex1_node.dir/src/vesc_control_ex1_node.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vesc_control_ex1_node.dir/src/vesc_control_ex1_node.cpp.i"
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build/vesc_control_ex1 && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc_control_ex1/src/vesc_control_ex1_node.cpp > CMakeFiles/vesc_control_ex1_node.dir/src/vesc_control_ex1_node.cpp.i
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc_control_ex1 && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc_control_ex1/src/vesc_control_ex1_node.cpp > CMakeFiles/vesc_control_ex1_node.dir/src/vesc_control_ex1_node.cpp.i
 
 vesc_control_ex1/CMakeFiles/vesc_control_ex1_node.dir/src/vesc_control_ex1_node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vesc_control_ex1_node.dir/src/vesc_control_ex1_node.cpp.s"
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build/vesc_control_ex1 && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc_control_ex1/src/vesc_control_ex1_node.cpp -o CMakeFiles/vesc_control_ex1_node.dir/src/vesc_control_ex1_node.cpp.s
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc_control_ex1 && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc_control_ex1/src/vesc_control_ex1_node.cpp -o CMakeFiles/vesc_control_ex1_node.dir/src/vesc_control_ex1_node.cpp.s
 
 vesc_control_ex1/CMakeFiles/vesc_control_ex1_node.dir/src/vesc_control_ex1_node.cpp.o.requires:
 
@@ -88,33 +88,32 @@ vesc_control_ex1_node_OBJECTS = \
 # External object files for target vesc_control_ex1_node
 vesc_control_ex1_node_EXTERNAL_OBJECTS =
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: vesc_control_ex1/CMakeFiles/vesc_control_ex1_node.dir/src/vesc_control_ex1_node.cpp.o
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: vesc_control_ex1/CMakeFiles/vesc_control_ex1_node.dir/build.make
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /opt/ros/melodic/lib/libroscpp.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /opt/ros/melodic/lib/librosconsole.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /opt/ros/melodic/lib/librosconsole_log4cxx.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /opt/ros/melodic/lib/librosconsole_backend_interface.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /opt/ros/melodic/lib/libxmlrpcpp.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /opt/ros/melodic/lib/libroscpp_serialization.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /opt/ros/melodic/lib/librostime.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /opt/ros/melodic/lib/libcpp_common.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: vesc_control_ex1/CMakeFiles/vesc_control_ex1_node.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cdi/SynologyDrive/workspace/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node"
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build/vesc_control_ex1 && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/vesc_control_ex1_node.dir/link.txt --verbose=$(VERBOSE)
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: vesc_control_ex1/CMakeFiles/vesc_control_ex1_node.dir/src/vesc_control_ex1_node.cpp.o
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: vesc_control_ex1/CMakeFiles/vesc_control_ex1_node.dir/build.make
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /opt/ros/melodic/lib/libroscpp.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /opt/ros/melodic/lib/librosconsole.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /opt/ros/melodic/lib/librosconsole_log4cxx.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /opt/ros/melodic/lib/librosconsole_backend_interface.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /opt/ros/melodic/lib/libxmlrpcpp.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /opt/ros/melodic/lib/libroscpp_serialization.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /opt/ros/melodic/lib/librostime.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /opt/ros/melodic/lib/libcpp_common.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node: vesc_control_ex1/CMakeFiles/vesc_control_ex1_node.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node"
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc_control_ex1 && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/vesc_control_ex1_node.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-vesc_control_ex1/CMakeFiles/vesc_control_ex1_node.dir/build: /home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node
+vesc_control_ex1/CMakeFiles/vesc_control_ex1_node.dir/build: /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/vesc_control_ex1/vesc_control_ex1_node
 
 .PHONY : vesc_control_ex1/CMakeFiles/vesc_control_ex1_node.dir/build
 
@@ -123,10 +122,10 @@ vesc_control_ex1/CMakeFiles/vesc_control_ex1_node.dir/requires: vesc_control_ex1
 .PHONY : vesc_control_ex1/CMakeFiles/vesc_control_ex1_node.dir/requires
 
 vesc_control_ex1/CMakeFiles/vesc_control_ex1_node.dir/clean:
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build/vesc_control_ex1 && $(CMAKE_COMMAND) -P CMakeFiles/vesc_control_ex1_node.dir/cmake_clean.cmake
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc_control_ex1 && $(CMAKE_COMMAND) -P CMakeFiles/vesc_control_ex1_node.dir/cmake_clean.cmake
 .PHONY : vesc_control_ex1/CMakeFiles/vesc_control_ex1_node.dir/clean
 
 vesc_control_ex1/CMakeFiles/vesc_control_ex1_node.dir/depend:
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cdi/SynologyDrive/workspace/catkin_ws/src /home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc_control_ex1 /home/cdi/SynologyDrive/workspace/catkin_ws/build /home/cdi/SynologyDrive/workspace/catkin_ws/build/vesc_control_ex1 /home/cdi/SynologyDrive/workspace/catkin_ws/build/vesc_control_ex1/CMakeFiles/vesc_control_ex1_node.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc_control_ex1 /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc_control_ex1 /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc_control_ex1/CMakeFiles/vesc_control_ex1_node.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : vesc_control_ex1/CMakeFiles/vesc_control_ex1_node.dir/depend
 

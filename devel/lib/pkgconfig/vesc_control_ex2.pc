@@ -1,8 +1,8 @@
-prefix=/home/cdi/SynologyDrive/workspace/catkin_ws/devel
+prefix=/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel
 
 Name: vesc_control_ex2
 Description: Description of vesc_control_ex2
 Version: 0.0.1
 Cflags: 
-Libs: -L/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib -lvesc_control_ex2
+Libs: -L${prefix}/lib -lvesc_control_ex2
 Requires: joy roscpp std_msgs vesc_msgs

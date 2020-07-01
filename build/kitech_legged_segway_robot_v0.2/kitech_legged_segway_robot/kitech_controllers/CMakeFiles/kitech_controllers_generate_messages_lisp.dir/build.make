@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cdi/SynologyDrive/workspace/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cdi/SynologyDrive/workspace/catkin_ws/build
+CMAKE_BINARY_DIR = /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build
 
 # Utility rule file for kitech_controllers_generate_messages_lisp.
 
@@ -63,10 +63,10 @@ kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/CM
 .PHONY : kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/CMakeFiles/kitech_controllers_generate_messages_lisp.dir/build
 
 kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/CMakeFiles/kitech_controllers_generate_messages_lisp.dir/clean:
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers && $(CMAKE_COMMAND) -P CMakeFiles/kitech_controllers_generate_messages_lisp.dir/cmake_clean.cmake
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers && $(CMAKE_COMMAND) -P CMakeFiles/kitech_controllers_generate_messages_lisp.dir/cmake_clean.cmake
 .PHONY : kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/CMakeFiles/kitech_controllers_generate_messages_lisp.dir/clean
 
 kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/CMakeFiles/kitech_controllers_generate_messages_lisp.dir/depend:
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cdi/SynologyDrive/workspace/catkin_ws/src /home/cdi/SynologyDrive/workspace/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers /home/cdi/SynologyDrive/workspace/catkin_ws/build /home/cdi/SynologyDrive/workspace/catkin_ws/build/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers /home/cdi/SynologyDrive/workspace/catkin_ws/build/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/CMakeFiles/kitech_controllers_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/CMakeFiles/kitech_controllers_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/CMakeFiles/kitech_controllers_generate_messages_lisp.dir/depend
 

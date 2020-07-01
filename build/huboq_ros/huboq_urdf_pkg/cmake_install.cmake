@@ -1,8 +1,8 @@
-# Install script for directory: /home/cdi/SynologyDrive/workspace/catkin_ws/src/huboq_ros/huboq_urdf_pkg
+# Install script for directory: /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/huboq_ros/huboq_urdf_pkg
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/cdi/SynologyDrive/workspace/catkin_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "")
+    set(CMAKE_INSTALL_CONFIG_NAME "Debug")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/cdi/SynologyDrive/workspace/catkin_ws/build/huboq_ros/huboq_urdf_pkg/catkin_generated/installspace/huboq_urdf_pkg.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/huboq_ros/huboq_urdf_pkg/catkin_generated/installspace/huboq_urdf_pkg.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/huboq_urdf_pkg/cmake" TYPE FILE FILES
-    "/home/cdi/SynologyDrive/workspace/catkin_ws/build/huboq_ros/huboq_urdf_pkg/catkin_generated/installspace/huboq_urdf_pkgConfig.cmake"
-    "/home/cdi/SynologyDrive/workspace/catkin_ws/build/huboq_ros/huboq_urdf_pkg/catkin_generated/installspace/huboq_urdf_pkgConfig-version.cmake"
+    "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/huboq_ros/huboq_urdf_pkg/catkin_generated/installspace/huboq_urdf_pkgConfig.cmake"
+    "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/huboq_ros/huboq_urdf_pkg/catkin_generated/installspace/huboq_urdf_pkgConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/huboq_urdf_pkg" TYPE FILE FILES "/home/cdi/SynologyDrive/workspace/catkin_ws/src/huboq_ros/huboq_urdf_pkg/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/huboq_urdf_pkg" TYPE FILE FILES "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/huboq_ros/huboq_urdf_pkg/package.xml")
 endif()
 

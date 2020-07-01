@@ -9,7 +9,7 @@ import struct
 class VescSetCommand(genpy.Message):
   _md5sum = "9cffe44297165322576d6c2378fd0593"
   _type = "vesc_msgs/VescSetCommand"
-  _has_header = False #flag to mark the presence of a Header object
+  _has_header = False  # flag to mark the presence of a Header object
   _full_text = """float64 data
 bool  send_can
 uint8 can_id"""
@@ -32,7 +32,7 @@ uint8 can_id"""
     """
     if args or kwds:
       super(VescSetCommand, self).__init__(*args, **kwds)
-      #message fields cannot be None, assign default values for those that are
+      # message fields cannot be None, assign default values for those that are
       if self.data is None:
         self.data = 0.
       if self.send_can is None:
@@ -75,7 +75,7 @@ uint8 can_id"""
       self.send_can = bool(self.send_can)
       return self
     except struct.error as e:
-      raise genpy.DeserializationError(e) #most likely buffer underfill
+      raise genpy.DeserializationError(e)  # most likely buffer underfill
 
 
   def serialize_numpy(self, buff, numpy):
@@ -105,7 +105,7 @@ uint8 can_id"""
       self.send_can = bool(self.send_can)
       return self
     except struct.error as e:
-      raise genpy.DeserializationError(e) #most likely buffer underfill
+      raise genpy.DeserializationError(e)  # most likely buffer underfill
 
 _struct_I = genpy.struct_I
 def _get_struct_I():

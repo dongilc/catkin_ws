@@ -86,6 +86,25 @@ ros::message_operations::Printer< ::vesc_msgs::VescSetCustomApp_<ContainerAlloca
 return s;
 }
 
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::vesc_msgs::VescSetCustomApp_<ContainerAllocator1> & lhs, const ::vesc_msgs::VescSetCustomApp_<ContainerAllocator2> & rhs)
+{
+  return lhs.num_of_id == rhs.num_of_id &&
+    lhs.id_set == rhs.id_set &&
+    lhs.comm_set == rhs.comm_set &&
+    lhs.can_forward_set == rhs.can_forward_set &&
+    lhs.value_set == rhs.value_set &&
+    lhs.data_bytes == rhs.data_bytes;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::vesc_msgs::VescSetCustomApp_<ContainerAllocator1> & lhs, const ::vesc_msgs::VescSetCustomApp_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
+}
+
+
 } // namespace vesc_msgs
 
 namespace ros
@@ -93,12 +112,6 @@ namespace ros
 namespace message_traits
 {
 
-
-
-// BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': False}
-// {'std_msgs': ['/opt/ros/melodic/share/std_msgs/cmake/../msg'], 'vesc_msgs': ['/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg']}
-
-// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
 
 

@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/include/amg_p1/CTM_Message.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/include/amg_p1/CTM_Message.h
 string
 -
 vector
@@ -22,7 +22,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/include/amg_p1/LA_Message.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/include/amg_p1/LA_Message.h
 string
 -
 vector
@@ -38,7 +38,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/include/amg_p1/MP_Message.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/include/amg_p1/MP_Message.h
 string
 -
 vector
@@ -54,7 +54,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/include/vesc_msgs/VescGetCustomApp.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/include/vesc_msgs/VescGetCustomApp.h
 string
 -
 vector
@@ -72,7 +72,7 @@ ros/message_operations.h
 std_msgs/Header.h
 -
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/include/vesc_msgs/VescSetCommand.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/include/vesc_msgs/VescSetCommand.h
 string
 -
 vector
@@ -88,7 +88,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/include/vesc_msgs/VescSetCustomApp.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/include/vesc_msgs/VescSetCustomApp.h
 string
 -
 vector
@@ -104,7 +104,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/include/vesc_msgs/VescState.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/include/vesc_msgs/VescState.h
 string
 -
 vector
@@ -120,7 +120,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/include/vesc_msgs/VescStateStamped.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/include/vesc_msgs/VescStateStamped.h
 string
 -
 vector
@@ -140,69 +140,69 @@ std_msgs/Header.h
 vesc_msgs/VescState.h
 -
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/amg_p1/include/amg_p1.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/include/amg_p1.h
 ros/ros.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/amg_p1/include/ros/ros.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/include/ros/ros.h
 std_msgs/Bool.h
 -
 sensor_msgs/Joy.h
 -
 vesc_msgs/VescSetCommand.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/amg_p1/include/vesc_msgs/VescSetCommand.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/include/vesc_msgs/VescSetCommand.h
 vesc_msgs/VescStateStamped.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/amg_p1/include/vesc_msgs/VescStateStamped.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/include/vesc_msgs/VescStateStamped.h
 vesc_msgs/VescGetCustomApp.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/amg_p1/include/vesc_msgs/VescGetCustomApp.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/include/vesc_msgs/VescGetCustomApp.h
 vesc_msgs/VescSetCustomApp.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/amg_p1/include/vesc_msgs/VescSetCustomApp.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/include/vesc_msgs/VescSetCustomApp.h
 amg_p1/LA_Message.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/amg_p1/include/amg_p1/LA_Message.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/include/amg_p1/LA_Message.h
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/amg_p1/include/computed_torque_control.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/include/computed_torque_control.h
 ros/ros.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/amg_p1/include/ros/ros.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/include/ros/ros.h
 amg_p1/CTM_Message.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/amg_p1/include/amg_p1/CTM_Message.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/include/amg_p1/CTM_Message.h
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/amg_p1/include/lqr_motion_planner.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/include/lqr_motion_planner.h
 ros/ros.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/amg_p1/include/ros/ros.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/include/ros/ros.h
 amg_p1/MP_Message.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/amg_p1/include/amg_p1/MP_Message.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/include/amg_p1/MP_Message.h
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/amg_p1/include/mpc_motion_planner.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/include/mpc_motion_planner.h
 ros/ros.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/amg_p1/include/ros/ros.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/include/ros/ros.h
 amg_p1/MP_Message.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/amg_p1/include/amg_p1/MP_Message.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/include/amg_p1/MP_Message.h
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/amg_p1/src/amg_p1_node.cpp
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/src/amg_p1_node.cpp
 amg_p1.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/amg_p1/src/amg_p1.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/src/amg_p1.h
 computed_torque_control.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/amg_p1/src/computed_torque_control.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/src/computed_torque_control.h
 lqr_motion_planner.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/amg_p1/src/lqr_motion_planner.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/src/lqr_motion_planner.h
 mpc_motion_planner.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/amg_p1/src/mpc_motion_planner.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/src/mpc_motion_planner.h
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/amg_p1/src/computed_torque_control.cpp
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/src/computed_torque_control.cpp
 ros/ros.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/amg_p1/src/ros/ros.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/src/ros/ros.h
 computed_torque_control.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/amg_p1/src/computed_torque_control.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/src/computed_torque_control.h
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/amg_p1/src/lqr_motion_planner.cpp
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/src/lqr_motion_planner.cpp
 ros/ros.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/amg_p1/src/ros/ros.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/src/ros/ros.h
 lqr_motion_planner.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/amg_p1/src/lqr_motion_planner.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/src/lqr_motion_planner.h
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/amg_p1/src/mpc_motion_planner.cpp
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/src/mpc_motion_planner.cpp
 ros/ros.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/amg_p1/src/ros/ros.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/src/ros/ros.h
 mpc_motion_planner.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/amg_p1/src/mpc_motion_planner.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1/src/mpc_motion_planner.h
 
 /opt/ros/melodic/include/ros/advertise_options.h
 ros/forwards.h

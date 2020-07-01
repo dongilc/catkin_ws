@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/include/vesc_msgs/VescState.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/include/vesc_msgs/VescState.h
 string
 -
 vector
@@ -22,7 +22,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/include/vesc_msgs/VescStateStamped.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/include/vesc_msgs/VescStateStamped.h
 string
 -
 vector
@@ -42,7 +42,7 @@ std_msgs/Header.h
 vesc_msgs/VescState.h
 -
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_ackermann/include/vesc_ackermann/vesc_to_odom.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_ackermann/include/vesc_ackermann/vesc_to_odom.h
 ros/ros.h
 -
 vesc_msgs/VescStateStamped.h
@@ -54,9 +54,9 @@ boost/shared_ptr.hpp
 tf/transform_broadcaster.h
 -
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_ackermann/src/vesc_to_odom.cpp
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_ackermann/src/vesc_to_odom.cpp
 vesc_ackermann/vesc_to_odom.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_ackermann/src/vesc_ackermann/vesc_to_odom.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_ackermann/src/vesc_ackermann/vesc_to_odom.h
 cmath
 -
 nav_msgs/Odometry.h
@@ -64,11 +64,11 @@ nav_msgs/Odometry.h
 geometry_msgs/TransformStamped.h
 -
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_ackermann/src/vesc_to_odom_node.cpp
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_ackermann/src/vesc_to_odom_node.cpp
 ros/ros.h
 -
 vesc_ackermann/vesc_to_odom.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_ackermann/src/vesc_ackermann/vesc_to_odom.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_ackermann/src/vesc_ackermann/vesc_to_odom.h
 
 /opt/ros/melodic/include/geometry_msgs/Point.h
 string
@@ -1039,6 +1039,8 @@ Vector3.h
 /opt/ros/melodic/include/tf/LinearMath/Vector3.h
 Quaternion.h
 /opt/ros/melodic/include/tf/LinearMath/Quaternion.h
+ros/macros.h
+-
 
 /opt/ros/melodic/include/tf/LinearMath/MinMax.h
 
@@ -1055,6 +1057,8 @@ Vector3.h
 /opt/ros/melodic/include/tf/LinearMath/Vector3.h
 QuadWord.h
 /opt/ros/melodic/include/tf/LinearMath/QuadWord.h
+ros/macros.h
+-
 
 /opt/ros/melodic/include/tf/LinearMath/Scalar.h
 math.h
@@ -1120,6 +1124,8 @@ boost/signals2.hpp
 geometry_msgs/TwistStamped.h
 /opt/ros/melodic/include/tf/geometry_msgs/TwistStamped.h
 tf2_ros/buffer.h
+-
+ros/macros.h
 -
 
 /opt/ros/melodic/include/tf/tfMessage.h

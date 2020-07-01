@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cdi/SynologyDrive/workspace/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cdi/SynologyDrive/workspace/catkin_ws/build
+CMAKE_BINARY_DIR = /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build
 
 # Utility rule file for diagnostic_msgs_generate_messages_eus.
 
@@ -63,10 +63,10 @@ amg_p1/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/build: diagnostic_ms
 .PHONY : amg_p1/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/build
 
 amg_p1/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/clean:
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build/amg_p1 && $(CMAKE_COMMAND) -P CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/cmake_clean.cmake
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/amg_p1 && $(CMAKE_COMMAND) -P CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/cmake_clean.cmake
 .PHONY : amg_p1/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/clean
 
 amg_p1/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/depend:
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cdi/SynologyDrive/workspace/catkin_ws/src /home/cdi/SynologyDrive/workspace/catkin_ws/src/amg_p1 /home/cdi/SynologyDrive/workspace/catkin_ws/build /home/cdi/SynologyDrive/workspace/catkin_ws/build/amg_p1 /home/cdi/SynologyDrive/workspace/catkin_ws/build/amg_p1/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/amg_p1 /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/amg_p1 /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/amg_p1/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : amg_p1/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/depend
 

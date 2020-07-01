@@ -2,7 +2,7 @@
 
 message(STATUS "vesc_msgs: 5 messages, 0 services")
 
-set(MSG_I_FLAGS "-Ivesc_msgs:/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg;-Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg")
+set(MSG_I_FLAGS "-Ivesc_msgs:/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg;-Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -17,29 +17,29 @@ add_custom_target(vesc_msgs_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescState.msg" NAME_WE)
+get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescStateStamped.msg" NAME_WE)
 add_custom_target(_vesc_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "vesc_msgs" "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescState.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "vesc_msgs" "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescStateStamped.msg" "vesc_msgs/VescState:std_msgs/Header"
 )
 
-get_filename_component(_filename "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCommand.msg" NAME_WE)
+get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescState.msg" NAME_WE)
 add_custom_target(_vesc_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "vesc_msgs" "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCommand.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "vesc_msgs" "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescState.msg" ""
 )
 
-get_filename_component(_filename "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescGetCustomApp.msg" NAME_WE)
+get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCommand.msg" NAME_WE)
 add_custom_target(_vesc_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "vesc_msgs" "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescGetCustomApp.msg" "std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "vesc_msgs" "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCommand.msg" ""
 )
 
-get_filename_component(_filename "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCustomApp.msg" NAME_WE)
+get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescGetCustomApp.msg" NAME_WE)
 add_custom_target(_vesc_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "vesc_msgs" "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCustomApp.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "vesc_msgs" "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescGetCustomApp.msg" "std_msgs/Header"
 )
 
-get_filename_component(_filename "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescStateStamped.msg" NAME_WE)
+get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCustomApp.msg" NAME_WE)
 add_custom_target(_vesc_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "vesc_msgs" "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescStateStamped.msg" "vesc_msgs/VescState:std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "vesc_msgs" "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCustomApp.msg" ""
 )
 
 #
@@ -49,33 +49,33 @@ add_custom_target(_vesc_msgs_generate_messages_check_deps_${_filename}
 ### Section generating for lang: gencpp
 ### Generating Messages
 _generate_msg_cpp(vesc_msgs
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescState.msg"
+  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescStateStamped.msg"
+  "${MSG_I_FLAGS}"
+  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescState.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/vesc_msgs
+)
+_generate_msg_cpp(vesc_msgs
+  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescState.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/vesc_msgs
 )
 _generate_msg_cpp(vesc_msgs
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCommand.msg"
+  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCommand.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/vesc_msgs
 )
 _generate_msg_cpp(vesc_msgs
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescGetCustomApp.msg"
+  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescGetCustomApp.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/vesc_msgs
 )
 _generate_msg_cpp(vesc_msgs
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCustomApp.msg"
+  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCustomApp.msg"
   "${MSG_I_FLAGS}"
   ""
-  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/vesc_msgs
-)
-_generate_msg_cpp(vesc_msgs
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescStateStamped.msg"
-  "${MSG_I_FLAGS}"
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescState.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/vesc_msgs
 )
 
@@ -93,15 +93,15 @@ add_custom_target(vesc_msgs_generate_messages_cpp
 add_dependencies(vesc_msgs_generate_messages vesc_msgs_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescState.msg" NAME_WE)
+get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescStateStamped.msg" NAME_WE)
 add_dependencies(vesc_msgs_generate_messages_cpp _vesc_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCommand.msg" NAME_WE)
+get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescState.msg" NAME_WE)
 add_dependencies(vesc_msgs_generate_messages_cpp _vesc_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescGetCustomApp.msg" NAME_WE)
+get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCommand.msg" NAME_WE)
 add_dependencies(vesc_msgs_generate_messages_cpp _vesc_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCustomApp.msg" NAME_WE)
+get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescGetCustomApp.msg" NAME_WE)
 add_dependencies(vesc_msgs_generate_messages_cpp _vesc_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescStateStamped.msg" NAME_WE)
+get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCustomApp.msg" NAME_WE)
 add_dependencies(vesc_msgs_generate_messages_cpp _vesc_msgs_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -114,33 +114,33 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS vesc_msgs_generate_messages_cpp)
 ### Section generating for lang: geneus
 ### Generating Messages
 _generate_msg_eus(vesc_msgs
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescState.msg"
+  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescStateStamped.msg"
+  "${MSG_I_FLAGS}"
+  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescState.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/vesc_msgs
+)
+_generate_msg_eus(vesc_msgs
+  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescState.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/vesc_msgs
 )
 _generate_msg_eus(vesc_msgs
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCommand.msg"
+  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCommand.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/vesc_msgs
 )
 _generate_msg_eus(vesc_msgs
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescGetCustomApp.msg"
+  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescGetCustomApp.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/vesc_msgs
 )
 _generate_msg_eus(vesc_msgs
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCustomApp.msg"
+  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCustomApp.msg"
   "${MSG_I_FLAGS}"
   ""
-  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/vesc_msgs
-)
-_generate_msg_eus(vesc_msgs
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescStateStamped.msg"
-  "${MSG_I_FLAGS}"
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescState.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/vesc_msgs
 )
 
@@ -158,15 +158,15 @@ add_custom_target(vesc_msgs_generate_messages_eus
 add_dependencies(vesc_msgs_generate_messages vesc_msgs_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescState.msg" NAME_WE)
+get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescStateStamped.msg" NAME_WE)
 add_dependencies(vesc_msgs_generate_messages_eus _vesc_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCommand.msg" NAME_WE)
+get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescState.msg" NAME_WE)
 add_dependencies(vesc_msgs_generate_messages_eus _vesc_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescGetCustomApp.msg" NAME_WE)
+get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCommand.msg" NAME_WE)
 add_dependencies(vesc_msgs_generate_messages_eus _vesc_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCustomApp.msg" NAME_WE)
+get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescGetCustomApp.msg" NAME_WE)
 add_dependencies(vesc_msgs_generate_messages_eus _vesc_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescStateStamped.msg" NAME_WE)
+get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCustomApp.msg" NAME_WE)
 add_dependencies(vesc_msgs_generate_messages_eus _vesc_msgs_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -179,33 +179,33 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS vesc_msgs_generate_messages_eus)
 ### Section generating for lang: genlisp
 ### Generating Messages
 _generate_msg_lisp(vesc_msgs
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescState.msg"
+  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescStateStamped.msg"
+  "${MSG_I_FLAGS}"
+  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescState.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/vesc_msgs
+)
+_generate_msg_lisp(vesc_msgs
+  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescState.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/vesc_msgs
 )
 _generate_msg_lisp(vesc_msgs
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCommand.msg"
+  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCommand.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/vesc_msgs
 )
 _generate_msg_lisp(vesc_msgs
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescGetCustomApp.msg"
+  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescGetCustomApp.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/vesc_msgs
 )
 _generate_msg_lisp(vesc_msgs
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCustomApp.msg"
+  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCustomApp.msg"
   "${MSG_I_FLAGS}"
   ""
-  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/vesc_msgs
-)
-_generate_msg_lisp(vesc_msgs
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescStateStamped.msg"
-  "${MSG_I_FLAGS}"
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescState.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/vesc_msgs
 )
 
@@ -223,15 +223,15 @@ add_custom_target(vesc_msgs_generate_messages_lisp
 add_dependencies(vesc_msgs_generate_messages vesc_msgs_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescState.msg" NAME_WE)
+get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescStateStamped.msg" NAME_WE)
 add_dependencies(vesc_msgs_generate_messages_lisp _vesc_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCommand.msg" NAME_WE)
+get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescState.msg" NAME_WE)
 add_dependencies(vesc_msgs_generate_messages_lisp _vesc_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescGetCustomApp.msg" NAME_WE)
+get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCommand.msg" NAME_WE)
 add_dependencies(vesc_msgs_generate_messages_lisp _vesc_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCustomApp.msg" NAME_WE)
+get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescGetCustomApp.msg" NAME_WE)
 add_dependencies(vesc_msgs_generate_messages_lisp _vesc_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescStateStamped.msg" NAME_WE)
+get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCustomApp.msg" NAME_WE)
 add_dependencies(vesc_msgs_generate_messages_lisp _vesc_msgs_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -244,33 +244,33 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS vesc_msgs_generate_messages_lisp)
 ### Section generating for lang: gennodejs
 ### Generating Messages
 _generate_msg_nodejs(vesc_msgs
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescState.msg"
+  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescStateStamped.msg"
+  "${MSG_I_FLAGS}"
+  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescState.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/vesc_msgs
+)
+_generate_msg_nodejs(vesc_msgs
+  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescState.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/vesc_msgs
 )
 _generate_msg_nodejs(vesc_msgs
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCommand.msg"
+  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCommand.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/vesc_msgs
 )
 _generate_msg_nodejs(vesc_msgs
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescGetCustomApp.msg"
+  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescGetCustomApp.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/vesc_msgs
 )
 _generate_msg_nodejs(vesc_msgs
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCustomApp.msg"
+  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCustomApp.msg"
   "${MSG_I_FLAGS}"
   ""
-  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/vesc_msgs
-)
-_generate_msg_nodejs(vesc_msgs
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescStateStamped.msg"
-  "${MSG_I_FLAGS}"
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescState.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/vesc_msgs
 )
 
@@ -288,15 +288,15 @@ add_custom_target(vesc_msgs_generate_messages_nodejs
 add_dependencies(vesc_msgs_generate_messages vesc_msgs_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescState.msg" NAME_WE)
+get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescStateStamped.msg" NAME_WE)
 add_dependencies(vesc_msgs_generate_messages_nodejs _vesc_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCommand.msg" NAME_WE)
+get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescState.msg" NAME_WE)
 add_dependencies(vesc_msgs_generate_messages_nodejs _vesc_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescGetCustomApp.msg" NAME_WE)
+get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCommand.msg" NAME_WE)
 add_dependencies(vesc_msgs_generate_messages_nodejs _vesc_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCustomApp.msg" NAME_WE)
+get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescGetCustomApp.msg" NAME_WE)
 add_dependencies(vesc_msgs_generate_messages_nodejs _vesc_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescStateStamped.msg" NAME_WE)
+get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCustomApp.msg" NAME_WE)
 add_dependencies(vesc_msgs_generate_messages_nodejs _vesc_msgs_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -309,33 +309,33 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS vesc_msgs_generate_messages_nodejs)
 ### Section generating for lang: genpy
 ### Generating Messages
 _generate_msg_py(vesc_msgs
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescState.msg"
+  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescStateStamped.msg"
+  "${MSG_I_FLAGS}"
+  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescState.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/vesc_msgs
+)
+_generate_msg_py(vesc_msgs
+  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescState.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/vesc_msgs
 )
 _generate_msg_py(vesc_msgs
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCommand.msg"
+  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCommand.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/vesc_msgs
 )
 _generate_msg_py(vesc_msgs
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescGetCustomApp.msg"
+  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescGetCustomApp.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/vesc_msgs
 )
 _generate_msg_py(vesc_msgs
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCustomApp.msg"
+  "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCustomApp.msg"
   "${MSG_I_FLAGS}"
   ""
-  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/vesc_msgs
-)
-_generate_msg_py(vesc_msgs
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescStateStamped.msg"
-  "${MSG_I_FLAGS}"
-  "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescState.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/vesc_msgs
 )
 
@@ -353,15 +353,15 @@ add_custom_target(vesc_msgs_generate_messages_py
 add_dependencies(vesc_msgs_generate_messages vesc_msgs_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescState.msg" NAME_WE)
+get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescStateStamped.msg" NAME_WE)
 add_dependencies(vesc_msgs_generate_messages_py _vesc_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCommand.msg" NAME_WE)
+get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescState.msg" NAME_WE)
 add_dependencies(vesc_msgs_generate_messages_py _vesc_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescGetCustomApp.msg" NAME_WE)
+get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCommand.msg" NAME_WE)
 add_dependencies(vesc_msgs_generate_messages_py _vesc_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCustomApp.msg" NAME_WE)
+get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescGetCustomApp.msg" NAME_WE)
 add_dependencies(vesc_msgs_generate_messages_py _vesc_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescStateStamped.msg" NAME_WE)
+get_filename_component(_filename "/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCustomApp.msg" NAME_WE)
 add_dependencies(vesc_msgs_generate_messages_py _vesc_msgs_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

@@ -1,8 +1,8 @@
-prefix=/home/cdi/SynologyDrive/workspace/catkin_ws/install
+prefix=/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/install
 
 Name: huboq_remastered_test
 Description: Description of huboq_remastered_test
 Version: 0.0.1
 Cflags: 
-Libs: -L/home/cdi/SynologyDrive/workspace/catkin_ws/install/lib -lhuboq_remastered_test
+Libs: -L${prefix}/lib -lhuboq_remastered_test
 Requires: joy roscpp std_msgs vesc_msgs

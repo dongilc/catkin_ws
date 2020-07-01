@@ -9,7 +9,7 @@ import struct
 class VescSetCustomApp(genpy.Message):
   _md5sum = "c46f4ff65abd5670780793173869e6b9"
   _type = "vesc_msgs/VescSetCustomApp"
-  _has_header = False #flag to mark the presence of a Header object
+  _has_header = False  # flag to mark the presence of a Header object
   _full_text = """# VESCuino CDI CUSTOM_APP TX Messages
 
 int32       num_of_id
@@ -37,7 +37,7 @@ int32       data_bytes"""
     """
     if args or kwds:
       super(VescSetCustomApp, self).__init__(*args, **kwds)
-      #message fields cannot be None, assign default values for those that are
+      # message fields cannot be None, assign default values for those that are
       if self.num_of_id is None:
         self.num_of_id = 0
       if self.id_set is None:
@@ -70,7 +70,8 @@ int32       data_bytes"""
     :param buff: buffer, ``StringIO``
     """
     try:
-      buff.write(_get_struct_i().pack(self.num_of_id))
+      _x = self.num_of_id
+      buff.write(_get_struct_i().pack(_x))
       length = len(self.id_set)
       buff.write(_struct_I.pack(length))
       pattern = '<%si'%length
@@ -87,7 +88,8 @@ int32       data_bytes"""
       buff.write(_struct_I.pack(length))
       pattern = '<%sd'%length
       buff.write(struct.pack(pattern, *self.value_set))
-      buff.write(_get_struct_i().pack(self.data_bytes))
+      _x = self.data_bytes
+      buff.write(_get_struct_i().pack(_x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -135,7 +137,7 @@ int32       data_bytes"""
       (self.data_bytes,) = _get_struct_i().unpack(str[start:end])
       return self
     except struct.error as e:
-      raise genpy.DeserializationError(e) #most likely buffer underfill
+      raise genpy.DeserializationError(e)  # most likely buffer underfill
 
 
   def serialize_numpy(self, buff, numpy):
@@ -145,7 +147,8 @@ int32       data_bytes"""
     :param numpy: numpy python module
     """
     try:
-      buff.write(_get_struct_i().pack(self.num_of_id))
+      _x = self.num_of_id
+      buff.write(_get_struct_i().pack(_x))
       length = len(self.id_set)
       buff.write(_struct_I.pack(length))
       pattern = '<%si'%length
@@ -162,7 +165,8 @@ int32       data_bytes"""
       buff.write(_struct_I.pack(length))
       pattern = '<%sd'%length
       buff.write(self.value_set.tostring())
-      buff.write(_get_struct_i().pack(self.data_bytes))
+      _x = self.data_bytes
+      buff.write(_get_struct_i().pack(_x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -211,7 +215,7 @@ int32       data_bytes"""
       (self.data_bytes,) = _get_struct_i().unpack(str[start:end])
       return self
     except struct.error as e:
-      raise genpy.DeserializationError(e) #most likely buffer underfill
+      raise genpy.DeserializationError(e)  # most likely buffer underfill
 
 _struct_I = genpy.struct_I
 def _get_struct_I():

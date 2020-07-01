@@ -108,6 +108,29 @@ struct VescState_
 
 
 
+// reducing the odds to have name collisions with Windows.h 
+#if defined(_WIN32) && defined(FAULT_CODE_NONE)
+  #undef FAULT_CODE_NONE
+#endif
+#if defined(_WIN32) && defined(FAULT_CODE_OVER_VOLTAGE)
+  #undef FAULT_CODE_OVER_VOLTAGE
+#endif
+#if defined(_WIN32) && defined(FAULT_CODE_UNDER_VOLTAGE)
+  #undef FAULT_CODE_UNDER_VOLTAGE
+#endif
+#if defined(_WIN32) && defined(FAULT_CODE_DRV8302)
+  #undef FAULT_CODE_DRV8302
+#endif
+#if defined(_WIN32) && defined(FAULT_CODE_ABS_OVER_CURRENT)
+  #undef FAULT_CODE_ABS_OVER_CURRENT
+#endif
+#if defined(_WIN32) && defined(FAULT_CODE_OVER_TEMP_FET)
+  #undef FAULT_CODE_OVER_TEMP_FET
+#endif
+#if defined(_WIN32) && defined(FAULT_CODE_OVER_TEMP_MOTOR)
+  #undef FAULT_CODE_OVER_TEMP_MOTOR
+#endif
+
   enum {
     FAULT_CODE_NONE = 0,
     FAULT_CODE_OVER_VOLTAGE = 1,
@@ -154,6 +177,34 @@ ros::message_operations::Printer< ::vesc_msgs::VescState_<ContainerAllocator> >:
 return s;
 }
 
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::vesc_msgs::VescState_<ContainerAllocator1> & lhs, const ::vesc_msgs::VescState_<ContainerAllocator2> & rhs)
+{
+  return lhs.voltage_input == rhs.voltage_input &&
+    lhs.temperature_pcb == rhs.temperature_pcb &&
+    lhs.current_motor == rhs.current_motor &&
+    lhs.current_input == rhs.current_input &&
+    lhs.speed == rhs.speed &&
+    lhs.duty_cycle == rhs.duty_cycle &&
+    lhs.charge_drawn == rhs.charge_drawn &&
+    lhs.charge_regen == rhs.charge_regen &&
+    lhs.energy_drawn == rhs.energy_drawn &&
+    lhs.energy_regen == rhs.energy_regen &&
+    lhs.displacement == rhs.displacement &&
+    lhs.distance_traveled == rhs.distance_traveled &&
+    lhs.fault_code == rhs.fault_code &&
+    lhs.pid_pos_now == rhs.pid_pos_now &&
+    lhs.controller_id == rhs.controller_id;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::vesc_msgs::VescState_<ContainerAllocator1> & lhs, const ::vesc_msgs::VescState_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
+}
+
+
 } // namespace vesc_msgs
 
 namespace ros
@@ -161,12 +212,6 @@ namespace ros
 namespace message_traits
 {
 
-
-
-// BOOLTRAITS {'IsFixedSize': True, 'IsMessage': True, 'HasHeader': False}
-// {'std_msgs': ['/opt/ros/melodic/share/std_msgs/cmake/../msg'], 'vesc_msgs': ['/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_msgs/msg']}
-
-// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
 
 

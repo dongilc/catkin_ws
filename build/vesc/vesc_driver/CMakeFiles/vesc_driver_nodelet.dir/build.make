@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cdi/SynologyDrive/workspace/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cdi/SynologyDrive/workspace/catkin_ws/build
+CMAKE_BINARY_DIR = /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build
 
 # Include any dependencies generated for this target.
 include vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/depend.make
@@ -58,17 +58,17 @@ include vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/progress.make
 include vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/flags.make
 
 vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver_nodelet.cpp.o: vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/flags.make
-vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver_nodelet.cpp.o: /home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_driver_nodelet.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdi/SynologyDrive/workspace/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver_nodelet.cpp.o"
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build/vesc/vesc_driver && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver_nodelet.cpp.o -c /home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_driver_nodelet.cpp
+vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver_nodelet.cpp.o: /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_driver_nodelet.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver_nodelet.cpp.o"
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc/vesc_driver && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver_nodelet.cpp.o -c /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_driver_nodelet.cpp
 
 vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver_nodelet.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver_nodelet.cpp.i"
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build/vesc/vesc_driver && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_driver_nodelet.cpp > CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver_nodelet.cpp.i
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc/vesc_driver && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_driver_nodelet.cpp > CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver_nodelet.cpp.i
 
 vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver_nodelet.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver_nodelet.cpp.s"
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build/vesc/vesc_driver && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_driver_nodelet.cpp -o CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver_nodelet.cpp.s
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc/vesc_driver && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_driver_nodelet.cpp -o CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver_nodelet.cpp.s
 
 vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver_nodelet.cpp.o.requires:
 
@@ -82,17 +82,17 @@ vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver_nodelet.cpp.
 
 
 vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver.cpp.o: vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/flags.make
-vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver.cpp.o: /home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_driver.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdi/SynologyDrive/workspace/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver.cpp.o"
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build/vesc/vesc_driver && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver.cpp.o -c /home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_driver.cpp
+vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver.cpp.o: /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_driver.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver.cpp.o"
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc/vesc_driver && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver.cpp.o -c /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_driver.cpp
 
 vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver.cpp.i"
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build/vesc/vesc_driver && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_driver.cpp > CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver.cpp.i
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc/vesc_driver && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_driver.cpp > CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver.cpp.i
 
 vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver.cpp.s"
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build/vesc/vesc_driver && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_driver.cpp -o CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver.cpp.s
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc/vesc_driver && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_driver.cpp -o CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver.cpp.s
 
 vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver.cpp.o.requires:
 
@@ -106,17 +106,17 @@ vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver.cpp.o.provid
 
 
 vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_interface.cpp.o: vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/flags.make
-vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_interface.cpp.o: /home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_interface.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdi/SynologyDrive/workspace/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_interface.cpp.o"
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build/vesc/vesc_driver && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vesc_driver_nodelet.dir/src/vesc_interface.cpp.o -c /home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_interface.cpp
+vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_interface.cpp.o: /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_interface.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_interface.cpp.o"
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc/vesc_driver && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vesc_driver_nodelet.dir/src/vesc_interface.cpp.o -c /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_interface.cpp
 
 vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_interface.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vesc_driver_nodelet.dir/src/vesc_interface.cpp.i"
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build/vesc/vesc_driver && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_interface.cpp > CMakeFiles/vesc_driver_nodelet.dir/src/vesc_interface.cpp.i
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc/vesc_driver && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_interface.cpp > CMakeFiles/vesc_driver_nodelet.dir/src/vesc_interface.cpp.i
 
 vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_interface.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vesc_driver_nodelet.dir/src/vesc_interface.cpp.s"
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build/vesc/vesc_driver && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_interface.cpp -o CMakeFiles/vesc_driver_nodelet.dir/src/vesc_interface.cpp.s
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc/vesc_driver && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_interface.cpp -o CMakeFiles/vesc_driver_nodelet.dir/src/vesc_interface.cpp.s
 
 vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_interface.cpp.o.requires:
 
@@ -130,17 +130,17 @@ vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_interface.cpp.o.pro
 
 
 vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet.cpp.o: vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/flags.make
-vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet.cpp.o: /home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_packet.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdi/SynologyDrive/workspace/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet.cpp.o"
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build/vesc/vesc_driver && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet.cpp.o -c /home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_packet.cpp
+vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet.cpp.o: /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_packet.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet.cpp.o"
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc/vesc_driver && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet.cpp.o -c /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_packet.cpp
 
 vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet.cpp.i"
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build/vesc/vesc_driver && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_packet.cpp > CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet.cpp.i
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc/vesc_driver && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_packet.cpp > CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet.cpp.i
 
 vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet.cpp.s"
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build/vesc/vesc_driver && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_packet.cpp -o CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet.cpp.s
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc/vesc_driver && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_packet.cpp -o CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet.cpp.s
 
 vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet.cpp.o.requires:
 
@@ -154,17 +154,17 @@ vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet.cpp.o.provid
 
 
 vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet_factory.cpp.o: vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/flags.make
-vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet_factory.cpp.o: /home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_packet_factory.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdi/SynologyDrive/workspace/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet_factory.cpp.o"
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build/vesc/vesc_driver && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet_factory.cpp.o -c /home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_packet_factory.cpp
+vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet_factory.cpp.o: /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_packet_factory.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet_factory.cpp.o"
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc/vesc_driver && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet_factory.cpp.o -c /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_packet_factory.cpp
 
 vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet_factory.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet_factory.cpp.i"
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build/vesc/vesc_driver && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_packet_factory.cpp > CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet_factory.cpp.i
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc/vesc_driver && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_packet_factory.cpp > CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet_factory.cpp.i
 
 vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet_factory.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet_factory.cpp.s"
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build/vesc/vesc_driver && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver/src/vesc_packet_factory.cpp -o CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet_factory.cpp.s
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc/vesc_driver && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver/src/vesc_packet_factory.cpp -o CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet_factory.cpp.s
 
 vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet_factory.cpp.o.requires:
 
@@ -188,48 +188,48 @@ vesc_driver_nodelet_OBJECTS = \
 # External object files for target vesc_driver_nodelet
 vesc_driver_nodelet_EXTERNAL_OBJECTS =
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver_nodelet.cpp.o
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver.cpp.o
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_interface.cpp.o
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet.cpp.o
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet_factory.cpp.o
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/build.make
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /opt/ros/melodic/lib/libnodeletlib.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /opt/ros/melodic/lib/libbondcpp.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /opt/ros/melodic/lib/libclass_loader.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /usr/lib/libPocoFoundation.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /usr/lib/x86_64-linux-gnu/libdl.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /opt/ros/melodic/lib/libroslib.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /opt/ros/melodic/lib/librospack.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /usr/lib/x86_64-linux-gnu/libpython2.7.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /opt/ros/melodic/lib/libroscpp.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /opt/ros/melodic/lib/librosconsole.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /opt/ros/melodic/lib/librosconsole_log4cxx.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /opt/ros/melodic/lib/librosconsole_backend_interface.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /opt/ros/melodic/lib/libxmlrpcpp.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /opt/ros/melodic/lib/libroscpp_serialization.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /opt/ros/melodic/lib/librostime.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /opt/ros/melodic/lib/libcpp_common.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /opt/ros/melodic/lib/libserial.so
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so: vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cdi/SynologyDrive/workspace/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX shared library /home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so"
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build/vesc/vesc_driver && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/vesc_driver_nodelet.dir/link.txt --verbose=$(VERBOSE)
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver_nodelet.cpp.o
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_driver.cpp.o
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_interface.cpp.o
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet.cpp.o
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/src/vesc_packet_factory.cpp.o
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/build.make
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /opt/ros/melodic/lib/libnodeletlib.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /opt/ros/melodic/lib/libbondcpp.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /usr/lib/x86_64-linux-gnu/libuuid.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /opt/ros/melodic/lib/libclass_loader.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /usr/lib/libPocoFoundation.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /usr/lib/x86_64-linux-gnu/libdl.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /opt/ros/melodic/lib/libroslib.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /opt/ros/melodic/lib/librospack.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /usr/lib/x86_64-linux-gnu/libpython2.7.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /opt/ros/melodic/lib/libroscpp.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /opt/ros/melodic/lib/librosconsole.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /opt/ros/melodic/lib/librosconsole_log4cxx.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /opt/ros/melodic/lib/librosconsole_backend_interface.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /opt/ros/melodic/lib/libxmlrpcpp.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /opt/ros/melodic/lib/libroscpp_serialization.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /opt/ros/melodic/lib/librostime.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /opt/ros/melodic/lib/libcpp_common.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: /opt/ros/melodic/lib/libserial.so
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so: vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX shared library /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so"
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc/vesc_driver && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/vesc_driver_nodelet.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/build: /home/cdi/SynologyDrive/workspace/catkin_ws/devel/lib/libvesc_driver_nodelet.so
+vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/build: /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/libvesc_driver_nodelet.so
 
 .PHONY : vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/build
 
@@ -242,10 +242,10 @@ vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/requires: vesc/vesc_driver/C
 .PHONY : vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/requires
 
 vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/clean:
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build/vesc/vesc_driver && $(CMAKE_COMMAND) -P CMakeFiles/vesc_driver_nodelet.dir/cmake_clean.cmake
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc/vesc_driver && $(CMAKE_COMMAND) -P CMakeFiles/vesc_driver_nodelet.dir/cmake_clean.cmake
 .PHONY : vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/clean
 
 vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/depend:
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cdi/SynologyDrive/workspace/catkin_ws/src /home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc/vesc_driver /home/cdi/SynologyDrive/workspace/catkin_ws/build /home/cdi/SynologyDrive/workspace/catkin_ws/build/vesc/vesc_driver /home/cdi/SynologyDrive/workspace/catkin_ws/build/vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc/vesc_driver /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc/vesc_driver /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : vesc/vesc_driver/CMakeFiles/vesc_driver_nodelet.dir/depend
 

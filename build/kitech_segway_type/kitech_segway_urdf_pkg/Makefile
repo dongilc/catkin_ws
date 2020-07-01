@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cdi/SynologyDrive/workspace/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cdi/SynologyDrive/workspace/catkin_ws/build
+CMAKE_BINARY_DIR = /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,14 +137,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/cdi/SynologyDrive/workspace/catkin_ws/build/CMakeFiles /home/cdi/SynologyDrive/workspace/catkin_ws/build/kitech_segway_type/kitech_segway_urdf_pkg/CMakeFiles/progress.marks
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_urdf_pkg/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cdi/SynologyDrive/workspace/catkin_ws/build/CMakeFiles 0
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/CMakeFiles /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/kitech_segway_type/kitech_segway_urdf_pkg/CMakeFiles/progress.marks
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_urdf_pkg/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_urdf_pkg/clean
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_urdf_pkg/clean
 .PHONY : clean
 
 # The main clean target
@@ -154,22 +154,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_urdf_pkg/preinstall
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_urdf_pkg/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_urdf_pkg/preinstall
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_urdf_pkg/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 kitech_segway_type/kitech_segway_urdf_pkg/CMakeFiles/kitech_segway_urdf_pkg_xacro_generated_to_devel_space_.dir/rule:
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_urdf_pkg/CMakeFiles/kitech_segway_urdf_pkg_xacro_generated_to_devel_space_.dir/rule
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 kitech_segway_type/kitech_segway_urdf_pkg/CMakeFiles/kitech_segway_urdf_pkg_xacro_generated_to_devel_space_.dir/rule
 .PHONY : kitech_segway_type/kitech_segway_urdf_pkg/CMakeFiles/kitech_segway_urdf_pkg_xacro_generated_to_devel_space_.dir/rule
 
 # Convenience name for target.
@@ -179,7 +179,7 @@ kitech_segway_urdf_pkg_xacro_generated_to_devel_space_: kitech_segway_type/kitec
 
 # fast build rule for target.
 kitech_segway_urdf_pkg_xacro_generated_to_devel_space_/fast:
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build && $(MAKE) -f kitech_segway_type/kitech_segway_urdf_pkg/CMakeFiles/kitech_segway_urdf_pkg_xacro_generated_to_devel_space_.dir/build.make kitech_segway_type/kitech_segway_urdf_pkg/CMakeFiles/kitech_segway_urdf_pkg_xacro_generated_to_devel_space_.dir/build
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(MAKE) -f kitech_segway_type/kitech_segway_urdf_pkg/CMakeFiles/kitech_segway_urdf_pkg_xacro_generated_to_devel_space_.dir/build.make kitech_segway_type/kitech_segway_urdf_pkg/CMakeFiles/kitech_segway_urdf_pkg_xacro_generated_to_devel_space_.dir/build
 .PHONY : kitech_segway_urdf_pkg_xacro_generated_to_devel_space_/fast
 
 # Help Target
@@ -207,6 +207,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

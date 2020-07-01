@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/include/body_cmd_joy.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/include/body_cmd_joy.h
 ros/ros.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/include/ros/ros.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/include/ros/ros.h
 std_msgs/Float32.h
 -
 sensor_msgs/Joy.h
@@ -16,7 +16,7 @@ sensor_msgs/Joy.h
 Eigen/Eigen
 -
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/include/leg_controllers/leg_controller.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/include/leg_controllers/leg_controller.h
 array
 -
 leg_controllers/virtual_spring_damper_controller.h
@@ -24,7 +24,7 @@ leg_controllers/virtual_spring_damper_controller.h
 leg_controllers/leg_desired.h
 -
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/include/leg_controllers/leg_desired.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/include/leg_controllers/leg_desired.h
 array
 -
 kdl/kdl.hpp
@@ -32,7 +32,7 @@ kdl/kdl.hpp
 kdl/tree.hpp
 -
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/include/leg_controllers/virtual_spring_damper_controller.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/include/leg_controllers/virtual_spring_damper_controller.h
 array
 -
 kdl/kdl.hpp
@@ -40,7 +40,7 @@ kdl/kdl.hpp
 kdl/chaindynparam.hpp
 -
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/include/main_controller.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/include/main_controller.h
 array
 -
 boost/scoped_ptr.hpp
@@ -88,33 +88,33 @@ std_msgs/Float32.h
 sensor_msgs/Joy.h
 -
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/include/segway_controllers/segway_controller.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/include/segway_controllers/segway_controller.h
 array
 -
 kdl/chaindynparam.hpp
 -
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/src/body_cmd_joy.cpp
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/src/body_cmd_joy.cpp
 body_cmd_joy.h
 -
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/src/leg_controllers/leg_controller.cpp
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/src/leg_controllers/leg_controller.cpp
 leg_controllers/leg_controller.h
 -
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/src/leg_controllers/leg_desired.cpp
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/src/leg_controllers/leg_desired.cpp
 leg_controllers/leg_desired.h
 -
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/src/leg_controllers/virtual_spring_damper_controller.cpp
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/src/leg_controllers/virtual_spring_damper_controller.cpp
 leg_controllers/virtual_spring_damper_controller.h
 -
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/src/main_controller.cpp
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/src/main_controller.cpp
 main_controller.h
 -
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/src/segway_controllers/segway_controller.cpp
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/kitech_legged_segway_robot_v0.2/kitech_legged_segway_robot/kitech_controllers/src/segway_controllers/segway_controller.cpp
 segway_controllers/segway_controller.h
 -
 
@@ -560,8 +560,6 @@ map
 string
 -
 vector
--
-boost/ptr_container/ptr_vector.hpp
 -
 ros/console.h
 -

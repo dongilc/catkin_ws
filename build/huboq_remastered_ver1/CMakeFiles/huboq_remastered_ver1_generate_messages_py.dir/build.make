@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cdi/SynologyDrive/workspace/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cdi/SynologyDrive/workspace/catkin_ws/build
+CMAKE_BINARY_DIR = /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build
 
 # Utility rule file for huboq_remastered_ver1_generate_messages_py.
 
@@ -63,10 +63,10 @@ huboq_remastered_ver1/CMakeFiles/huboq_remastered_ver1_generate_messages_py.dir/
 .PHONY : huboq_remastered_ver1/CMakeFiles/huboq_remastered_ver1_generate_messages_py.dir/build
 
 huboq_remastered_ver1/CMakeFiles/huboq_remastered_ver1_generate_messages_py.dir/clean:
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build/huboq_remastered_ver1 && $(CMAKE_COMMAND) -P CMakeFiles/huboq_remastered_ver1_generate_messages_py.dir/cmake_clean.cmake
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/huboq_remastered_ver1 && $(CMAKE_COMMAND) -P CMakeFiles/huboq_remastered_ver1_generate_messages_py.dir/cmake_clean.cmake
 .PHONY : huboq_remastered_ver1/CMakeFiles/huboq_remastered_ver1_generate_messages_py.dir/clean
 
 huboq_remastered_ver1/CMakeFiles/huboq_remastered_ver1_generate_messages_py.dir/depend:
-	cd /home/cdi/SynologyDrive/workspace/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cdi/SynologyDrive/workspace/catkin_ws/src /home/cdi/SynologyDrive/workspace/catkin_ws/src/huboq_remastered_ver1 /home/cdi/SynologyDrive/workspace/catkin_ws/build /home/cdi/SynologyDrive/workspace/catkin_ws/build/huboq_remastered_ver1 /home/cdi/SynologyDrive/workspace/catkin_ws/build/huboq_remastered_ver1/CMakeFiles/huboq_remastered_ver1_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/huboq_remastered_ver1 /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/huboq_remastered_ver1 /home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build/huboq_remastered_ver1/CMakeFiles/huboq_remastered_ver1_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : huboq_remastered_ver1/CMakeFiles/huboq_remastered_ver1_generate_messages_py.dir/depend
 

@@ -5,13 +5,13 @@ python3 = True if sys.hexversion > 0x03000000 else False
 import genpy
 import struct
 
-import vesc_msgs.msg
 import std_msgs.msg
+import vesc_msgs.msg
 
 class VescStateStamped(genpy.Message):
   _md5sum = "9a8702668689b68c9f5537e770e374de"
   _type = "vesc_msgs/VescStateStamped"
-  _has_header = True #flag to mark the presence of a Header object
+  _has_header = True  # flag to mark the presence of a Header object
   _full_text = """# Timestamped VESC open source motor controller state (telemetry)
 
 Header  header
@@ -79,7 +79,7 @@ int32   controller_id"""
     """
     if args or kwds:
       super(VescStateStamped, self).__init__(*args, **kwds)
-      #message fields cannot be None, assign default values for those that are
+      # message fields cannot be None, assign default values for those that are
       if self.header is None:
         self.header = std_msgs.msg.Header()
       if self.state is None:
@@ -143,7 +143,7 @@ int32   controller_id"""
       (_x.state.voltage_input, _x.state.temperature_pcb, _x.state.current_motor, _x.state.current_input, _x.state.speed, _x.state.duty_cycle, _x.state.charge_drawn, _x.state.charge_regen, _x.state.energy_drawn, _x.state.energy_regen, _x.state.displacement, _x.state.distance_traveled, _x.state.fault_code, _x.state.pid_pos_now, _x.state.controller_id,) = _get_struct_12didi().unpack(str[start:end])
       return self
     except struct.error as e:
-      raise genpy.DeserializationError(e) #most likely buffer underfill
+      raise genpy.DeserializationError(e)  # most likely buffer underfill
 
 
   def serialize_numpy(self, buff, numpy):
@@ -197,21 +197,21 @@ int32   controller_id"""
       (_x.state.voltage_input, _x.state.temperature_pcb, _x.state.current_motor, _x.state.current_input, _x.state.speed, _x.state.duty_cycle, _x.state.charge_drawn, _x.state.charge_regen, _x.state.energy_drawn, _x.state.energy_regen, _x.state.displacement, _x.state.distance_traveled, _x.state.fault_code, _x.state.pid_pos_now, _x.state.controller_id,) = _get_struct_12didi().unpack(str[start:end])
       return self
     except struct.error as e:
-      raise genpy.DeserializationError(e) #most likely buffer underfill
+      raise genpy.DeserializationError(e)  # most likely buffer underfill
 
 _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_3I = None
-def _get_struct_3I():
-    global _struct_3I
-    if _struct_3I is None:
-        _struct_3I = struct.Struct("<3I")
-    return _struct_3I
 _struct_12didi = None
 def _get_struct_12didi():
     global _struct_12didi
     if _struct_12didi is None:
         _struct_12didi = struct.Struct("<12didi")
     return _struct_12didi
+_struct_3I = None
+def _get_struct_3I():
+    global _struct_3I
+    if _struct_3I is None:
+        _struct_3I = struct.Struct("<3I")
+    return _struct_3I

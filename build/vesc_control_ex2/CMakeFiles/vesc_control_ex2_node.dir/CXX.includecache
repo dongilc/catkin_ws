@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/include/vesc_msgs/VescGetCustomApp.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/include/vesc_msgs/VescGetCustomApp.h
 string
 -
 vector
@@ -24,7 +24,7 @@ ros/message_operations.h
 std_msgs/Header.h
 -
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/include/vesc_msgs/VescSetCommand.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/include/vesc_msgs/VescSetCommand.h
 string
 -
 vector
@@ -40,7 +40,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/include/vesc_msgs/VescSetCustomApp.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/include/vesc_msgs/VescSetCustomApp.h
 string
 -
 vector
@@ -56,7 +56,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/include/vesc_msgs/VescState.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/include/vesc_msgs/VescState.h
 string
 -
 vector
@@ -72,7 +72,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/devel/include/vesc_msgs/VescStateStamped.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/include/vesc_msgs/VescStateStamped.h
 string
 -
 vector
@@ -92,9 +92,9 @@ std_msgs/Header.h
 vesc_msgs/VescState.h
 -
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc_control_ex2/include/vesc_control.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc_control_ex2/include/vesc_control.h
 ros/ros.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc_control_ex2/include/ros/ros.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc_control_ex2/include/ros/ros.h
 std_msgs/Bool.h
 -
 sensor_msgs/Joy.h
@@ -102,17 +102,17 @@ sensor_msgs/Joy.h
 geometry_msgs/Twist.h
 -
 vesc_msgs/VescSetCommand.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc_control_ex2/include/vesc_msgs/VescSetCommand.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc_control_ex2/include/vesc_msgs/VescSetCommand.h
 vesc_msgs/VescStateStamped.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc_control_ex2/include/vesc_msgs/VescStateStamped.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc_control_ex2/include/vesc_msgs/VescStateStamped.h
 vesc_msgs/VescGetCustomApp.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc_control_ex2/include/vesc_msgs/VescGetCustomApp.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc_control_ex2/include/vesc_msgs/VescGetCustomApp.h
 vesc_msgs/VescSetCustomApp.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc_control_ex2/include/vesc_msgs/VescSetCustomApp.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc_control_ex2/include/vesc_msgs/VescSetCustomApp.h
 
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc_control_ex2/src/vesc_control_ex2_node.cpp
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc_control_ex2/src/vesc_control_ex2_node.cpp
 vesc_control.h
-/home/cdi/SynologyDrive/workspace/catkin_ws/src/vesc_control_ex2/src/vesc_control.h
+/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src/vesc_control_ex2/src/vesc_control.h
 
 /opt/ros/melodic/include/geometry_msgs/Twist.h
 string

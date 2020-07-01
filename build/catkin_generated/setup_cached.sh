@@ -7,7 +7,10 @@
 # new environment variables
 
 # modified environment variables
-export LD_LIBRARY_PATH="/opt/ros/melodic/lib"
-export PKG_CONFIG_PATH="/opt/ros/melodic/lib/pkgconfig"
-export PWD="/home/cdi/SynologyDrive/workspace/catkin_ws/build"
-export PYTHONPATH="/opt/ros/melodic/lib/python2.7/dist-packages"
+export CMAKE_PREFIX_PATH="/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib:$LD_LIBRARY_PATH"
+export PATH="/opt/ros/melodic/bin:/home/cdi/Qt5.12.9/5.12.9/gcc_64/bin:/usr/bin:/home/cdi/anaconda3/bin:/home/cdi/anaconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+export PKG_CONFIG_PATH="/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PWD="/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/build"
+export PYTHONPATH="/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/devel/lib/python2.7/dist-packages:$PYTHONPATH"
+export ROS_PACKAGE_PATH="/home/cdi/Dropbox/Workspace_CDI/workspace_prog/catkin_ws/src:$ROS_PACKAGE_PATH"

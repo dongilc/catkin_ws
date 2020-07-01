@@ -10,7 +10,7 @@ import genpy
 class CTM_Message(genpy.Message):
   _md5sum = "ed2ad4965391603c3242af0f3ef56859"
   _type = "diff_wheel_platform/CTM_Message"
-  _has_header = False #flag to mark the presence of a Header object
+  _has_header = False  # flag to mark the presence of a Header object
   _full_text = """time stamp
 float64[] target_vel
 float64[] current_vel
@@ -35,7 +35,7 @@ float64[] current_pos"""
     """
     if args or kwds:
       super(CTM_Message, self).__init__(*args, **kwds)
-      #message fields cannot be None, assign default values for those that are
+      # message fields cannot be None, assign default values for those that are
       if self.stamp is None:
         self.stamp = genpy.Time()
       if self.target_vel is None:
@@ -130,7 +130,7 @@ float64[] current_pos"""
       self.stamp.canon()
       return self
     except struct.error as e:
-      raise genpy.DeserializationError(e) #most likely buffer underfill
+      raise genpy.DeserializationError(e)  # most likely buffer underfill
 
 
   def serialize_numpy(self, buff, numpy):
@@ -206,7 +206,7 @@ float64[] current_pos"""
       self.stamp.canon()
       return self
     except struct.error as e:
-      raise genpy.DeserializationError(e) #most likely buffer underfill
+      raise genpy.DeserializationError(e)  # most likely buffer underfill
 
 _struct_I = genpy.struct_I
 def _get_struct_I():

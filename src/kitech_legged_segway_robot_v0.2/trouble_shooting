@@ -1,0 +1,12 @@
+1. No module named 'rospkg'
+pip install rospkg
+
+2. gazebo-ros
+sudo apt-get install ros-melodic-gazebo-ros
+
+3. rosdep
+sudo apt-get install python-rosdep2
+
+4. Error in REST request for accessing api.ignition.org
+--> update gazebo version
+http://gazebosim.org/tutorials?tut=install_ubuntu&cat=install#Alternativeinstallation:step-by-step
