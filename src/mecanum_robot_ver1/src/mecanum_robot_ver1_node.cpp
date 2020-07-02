@@ -57,50 +57,83 @@ void TeleopInput::keyboardCallback(const geometry_msgs::Twist::ConstPtr& cmd_vel
 void TeleopInput::joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
 {
 	static int joy_cont_mode;
-	double joy_cmd_forward, joy_cmd_lateral, joy_cmd_steering, joy_cmd_brake;
+	double joy_cmd_forward, joy_cmd_lateral, joy_cmd_steering;
 	double joy_cmd_hit, joy_cmd_spin;
+	static double launcher_lower_speed = 0;
+	static double launcher_upper_speed = 0;
 
-    //ROS_INFO("%.3f, %.3f, %.3f, %.3f", joy->axes[0], joy->axes[1], joy->axes[2], joy->axes[3]);
+    //ROS_INFO("%.3f, %.3f, %.3f, %.3f, %.3f, %.3f", joy->axes[0], joy->axes[1], joy->axes[2], joy->axes[3], joy->axes[4], joy->axes[5]);
 	//ROS_INFO("%d, %d", joy->buttons[0], joy->buttons[1]);
 
-	joy_cmd_forward = (joy->axes[1])*(-0.5);
-	joy_cmd_lateral = (joy->axes[2])*(0.5);
-	joy_cmd_steering = (joy->axes[0])*(1.0);
+	joy_cmd_forward = (joy->axes[2])*(0.5);
+	joy_cmd_lateral = (joy->axes[3])*(0.5);
+	joy_cmd_steering = (joy->axes[0])*(0.7);
 
-	joy_cmd_hit = joy->axes[3]*(-500.0);
-	joy_cmd_spin = joy->axes[0]*(500.0);
+	vh1_->speed[0] = joy_cmd_forward;
+	vh1_->speed[1] = joy_cmd_lateral;
+	vh1_->speed[2] = joy_cmd_steering;
+
+	joy_cmd_hit = joy->axes[4]*(-500.0);
+	joy_cmd_spin = joy->axes[5]*(-500.0);
 
 	if(joy->buttons[0] == 1)
 	{
-		vh2_->speed[0] += joy_cmd_hit - joy_cmd_spin;
-		vh2_->speed[1] += -(joy_cmd_hit + joy_cmd_spin);
+		vh2_->enable.data = true;
 
-		if(joy->buttons[1] == 1)
-		{
-			if(vh2_->speed[0] >= (vh2_->speed[1]*-1.)) 
-			{
-				vh2_->speed[1] = vh2_->speed[0]*-1.;
-			}
-			else
-			{
-				vh2_->speed[0] = vh2_->speed[1]*-1.;
-			}
+		if(launcher_lower_speed>25000 && joy_cmd_hit>0) 
+		{	
+			joy_cmd_hit = 0;
 		}
+		else if(launcher_lower_speed<1000 && joy_cmd_hit<0)
+		{
+			joy_cmd_hit = 0;
+		}
+
+		if(launcher_upper_speed>25000 && joy_cmd_hit>0) 
+		{	
+			joy_cmd_hit = 0;
+		}
+		else if(launcher_upper_speed<1000 && joy_cmd_hit<0)
+		{
+			joy_cmd_hit = 0;
+		}
+
+		if((launcher_upper_speed - launcher_lower_speed>=7000) && joy_cmd_spin>0) 
+		{
+			joy_cmd_spin = 0;
+		}	
+		else if((launcher_lower_speed - launcher_upper_speed>=7000) && joy_cmd_spin<0) 
+		{
+			joy_cmd_spin = 0;
+		}		
+
+		launcher_lower_speed += joy_cmd_hit - joy_cmd_spin;
+		launcher_upper_speed += joy_cmd_hit + joy_cmd_spin;
 	}
 	else
 	{
-		if(joy->buttons[1] == 1 && vh2_->speed[0]<=5000 && vh2_->speed[1]>=-5000)
-		{
-			vh2_->speed[0] = vh2_->speed[1] = 0;
-		}
-
-		vh1_->speed[0] = joy_cmd_forward;
-		vh1_->speed[1] = joy_cmd_lateral;
-		vh1_->speed[2] = joy_cmd_steering;
+		vh2_->enable.data = false;
+		launcher_lower_speed = 0;
+		launcher_upper_speed = 0;
 	}
 
-	//ROS_INFO("%.3f, %.3f", vh2_->speed[0], vh2_->speed[1]);
-	//ROS_INFO("vx=%.3f, vy=%.3f, wz=%.3f", vh1_->speed[0], vh1_->speed[1], vh1_->speed[2]);
+	if(joy->buttons[1] == 1)
+	{
+		if(launcher_upper_speed >= launcher_lower_speed) 
+		{
+			launcher_upper_speed = launcher_lower_speed;
+		}
+		else
+		{
+			launcher_lower_speed = launcher_upper_speed;
+		}
+	}
+
+	vh2_->speed[0] = launcher_lower_speed;
+	vh2_->speed[1] = -launcher_upper_speed;
+
+	ROS_INFO("launcher_lower:%.3f, launcher_upper:%.3f", launcher_lower_speed, launcher_upper_speed);
+	ROS_INFO("vx=%.3f, vy=%.3f, wz=%.3f", vh1_->speed[0], vh1_->speed[1], vh1_->speed[2]);
 
 /*
 	// enable
@@ -304,13 +337,6 @@ void TeleopVesc::setDutyCycleOut()
 				this->vesc_cmd_duty.publish(cmd_msg);
 			}
 		}
-		/*
-		else if(this->port_name=="/dev/ttyVESC2")
-		{
-			// duty
-			setCmdMsg(this->duty[0], 0, 0);
-			this->vesc_cmd_duty.publish(cmd_msg);
-		}*/
 	}
 }
 
