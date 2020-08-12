@@ -1,0 +1,6 @@
+{
+    "folders": [{
+        "uri": "sftp://odroid:odroid@10.0.0.1/home/odroid",
+        "name": "odroid_home"
+    }]
+}

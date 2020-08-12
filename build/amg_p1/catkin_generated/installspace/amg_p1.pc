@@ -1,8 +1,0 @@
-prefix=/home/odroid/workspace/catkin_ws/install
-
-Name: amg_p1
-Description: Description of amg_p1
-Version: 0.0.1
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib -lamg_p1
-Requires: joy roscpp std_msgs vesc_msgs

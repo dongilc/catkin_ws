@@ -1,2 +1,0 @@
-set(vesc_msgs_MESSAGE_FILES "/home/odroid/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescState.msg;/home/odroid/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescStateStamped.msg;/home/odroid/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCommand.msg;/home/odroid/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescGetCustomApp.msg;/home/odroid/workspace/catkin_ws/src/vesc/vesc_msgs/msg/VescSetCustomApp.msg")
-set(vesc_msgs_SERVICE_FILES "")

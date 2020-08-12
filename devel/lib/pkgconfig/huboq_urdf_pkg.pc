@@ -1,8 +1,0 @@
-prefix=/home/odroid/workspace/catkin_ws/devel
-
-Name: huboq_urdf_pkg
-Description: Description of huboq_urdf_pkg
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

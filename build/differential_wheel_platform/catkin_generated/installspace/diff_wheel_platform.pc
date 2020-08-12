@@ -1,8 +1,0 @@
-prefix=/home/odroid/workspace/catkin_ws/install
-
-Name: diff_wheel_platform
-Description: Description of diff_wheel_platform
-Version: 0.0.1
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib -ldiff_wheel_platform
-Requires: joy roscpp std_msgs vesc_msgs
