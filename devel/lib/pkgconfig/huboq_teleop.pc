@@ -1,8 +1,0 @@
-prefix=/home/odroid/workspace/catkin_ws/devel
-
-Name: huboq_teleop
-Description: Description of huboq_teleop
-Version: 0.0.1
-Cflags: 
-Libs: -L${prefix}/lib -lhuboq_teleop
-Requires: joy roscpp std_msgs

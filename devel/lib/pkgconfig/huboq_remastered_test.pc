@@ -1,8 +1,0 @@
-prefix=/home/odroid/workspace/catkin_ws/devel
-
-Name: huboq_remastered_test
-Description: Description of huboq_remastered_test
-Version: 0.0.1
-Cflags: 
-Libs: -L${prefix}/lib -lhuboq_remastered_test
-Requires: joy roscpp std_msgs vesc_msgs

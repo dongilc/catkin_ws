@@ -1,8 +1,0 @@
-prefix=/home/odroid/workspace/catkin_ws/devel
-
-Name: vesc_control_ex1
-Description: Description of vesc_control_ex1
-Version: 0.0.1
-Cflags: 
-Libs: -L${prefix}/lib -lvesc_control_ex1
-Requires: joy roscpp std_msgs vesc_msgs

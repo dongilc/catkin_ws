@@ -1,8 +1,0 @@
-prefix=/home/odroid/workspace/catkin_ws/install
-
-Name: kitech_robots_sims
-Description: Description of kitech_robots_sims
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
