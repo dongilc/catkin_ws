@@ -1,7 +1,7 @@
 /*
  *  mecanum_robot_ver1_node.cpp
  * 
- *  Created on: Nov. 23, 2018
+ *  Created on: July. 11, 2020
  *      Author: cdi
  */
 
@@ -12,6 +12,7 @@
 #define VESC_ID_1				1
 #define VESC_ID_2				2
 #define VESC_ID_3				3
+#define VESC_ID_4				4
 #define CAN_FORWARD_OFF			0
 #define CAN_FORWARD_ON			1
 #define BRAKE_CURRENT			10.
@@ -57,7 +58,7 @@ void TeleopInput::keyboardCallback(const geometry_msgs::Twist::ConstPtr& cmd_vel
 void TeleopInput::joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
 {
 	static int joy_cont_mode;
-	double joy_cmd_forward, joy_cmd_lateral, joy_cmd_steering;
+	double joy_cmd_forward, joy_cmd_lateral, joy_cmd_steering, joy_cmd_elevation;
 	double joy_cmd_hit, joy_cmd_spin;
 	static double launcher_lower_speed = 0;
 	static double launcher_upper_speed = 0;
@@ -66,8 +67,9 @@ void TeleopInput::joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
 	//ROS_INFO("%d, %d", joy->buttons[0], joy->buttons[1]);
 
 	joy_cmd_forward = (joy->axes[2])*(0.5);
-	joy_cmd_lateral = (joy->axes[3])*(0.5);
+	joy_cmd_lateral = (joy->axes[3])*(-0.5);
 	joy_cmd_steering = (joy->axes[0])*(0.7);
+	joy_cmd_elevation = (joy->axes[1])*(0.95);
 
 	vh1_->speed[0] = joy_cmd_forward;
 	vh1_->speed[1] = joy_cmd_lateral;
@@ -78,7 +80,7 @@ void TeleopInput::joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
 
 	if(joy->buttons[0] == 1)
 	{
-		vh2_->enable.data = true;
+		//vh2_->enable.data = true;
 
 		if(launcher_lower_speed>25000 && joy_cmd_hit>0) 
 		{	
@@ -98,11 +100,11 @@ void TeleopInput::joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
 			joy_cmd_hit = 0;
 		}
 
-		if((launcher_upper_speed - launcher_lower_speed>=7000) && joy_cmd_spin>0) 
+		if((launcher_upper_speed - launcher_lower_speed>=12000) && joy_cmd_spin>0) 
 		{
 			joy_cmd_spin = 0;
 		}	
-		else if((launcher_lower_speed - launcher_upper_speed>=7000) && joy_cmd_spin<0) 
+		else if((launcher_lower_speed - launcher_upper_speed>=12000) && joy_cmd_spin<0) 
 		{
 			joy_cmd_spin = 0;
 		}		
@@ -112,28 +114,34 @@ void TeleopInput::joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
 	}
 	else
 	{
-		vh2_->enable.data = false;
+		//vh2_->enable.data = false;
 		launcher_lower_speed = 0;
 		launcher_upper_speed = 0;
 	}
 
+	// ball feeder on
 	if(joy->buttons[1] == 1)
 	{
-		if(launcher_upper_speed >= launcher_lower_speed) 
-		{
-			launcher_upper_speed = launcher_lower_speed;
-		}
-		else
-		{
-			launcher_lower_speed = launcher_upper_speed;
-		}
+		// ball feeding
+		vh1_->duty[7] = 0.95;
+	}
+	else if(joy->buttons[1] == 0)
+	{
+		// ball feeding
+		vh1_->duty[7] = 0.;
 	}
 
-	vh2_->speed[0] = launcher_lower_speed;
-	vh2_->speed[1] = -launcher_upper_speed;
+	// launcher speed
+	//vh2_->speed[0] = launcher_lower_speed;
+	//vh2_->speed[1] = -launcher_upper_speed;
+	vh1_->speed[5] = launcher_lower_speed;
+	vh1_->speed[6] = -launcher_upper_speed;
+	
+	// Elevation
+	vh1_->duty[4] = joy_cmd_elevation;
 
-	ROS_INFO("launcher_lower:%.3f, launcher_upper:%.3f", launcher_lower_speed, launcher_upper_speed);
-	ROS_INFO("vx=%.3f, vy=%.3f, wz=%.3f", vh1_->speed[0], vh1_->speed[1], vh1_->speed[2]);
+	ROS_INFO("launcher_lower:%.3f, launcher_upper:%.3f, Elevation:%.3f", launcher_lower_speed, launcher_upper_speed, joy_cmd_elevation);
+	//ROS_INFO("vx=%.3f, vy=%.3f, wz=%.3f", vh1_->speed[0], vh1_->speed[1], vh1_->speed[2]);
 
 /*
 	// enable
@@ -292,7 +300,7 @@ void TeleopVesc::setCurrentOut()
 
 	if(enable.data)
 	{
-		if(this->port_name=="/dev/ttyVESC1")
+		if(this->port_name=="/dev/ttyVESC2")
 		{
 			// current
 			for(int i=0; i<=1; i++) {
@@ -327,15 +335,20 @@ void TeleopVesc::setDutyCycleOut()
 
 	if(this->enable.data)
 	{
-		if(this->port_name=="/dev/ttyVESC0")
+		if(this->port_name=="/dev/ttyVESC2")
 		{
 			// duty
-			for(int i=0; i<=3; i++) {
+			//for(int i=0; i<=3; i++) {
+			for(int i=0; i<=4; i++) {	// including elevation
 				if(i==0) can_forw = CAN_FORWARD_OFF;
 				else     can_forw = CAN_FORWARD_ON;
 				setCmdMsg(this->duty[i], can_forw, i);
 				this->vesc_cmd_duty.publish(cmd_msg);
 			}
+
+			// ball feeder
+			setCmdMsg(this->duty[7], CAN_FORWARD_ON, 7);
+			this->vesc_cmd_duty.publish(cmd_msg);
 		}
 	}
 }
@@ -344,12 +357,13 @@ void TeleopVesc::setSpeedOut()
 {
 	int can_forw = 0;
 
-	if(enable.data)
+	if(this->enable.data)
 	{
-		if(this->port_name=="/dev/ttyVESC1")
+		//if(this->port_name=="/dev/ttyVESC1")
+		if(this->port_name=="/dev/ttyVESC2")
 		{
 			// speed
-			for(int i=0; i<=1; i++) {
+			for(int i=5; i<=6; i++) {
 				if(i==0) can_forw = CAN_FORWARD_OFF;
 				else     can_forw = CAN_FORWARD_ON;
 				setCmdMsg(this->speed[i], can_forw, i);
@@ -419,21 +433,20 @@ int main(int argc, char **argv)
   int rate_hz = 100;	//hz
 
   // TeleopVesc Class
-  TeleopVesc *teleop_vesc1 = new TeleopVesc(4, "/dev/ttyVESC0"); 
-  TeleopVesc *teleop_vesc2 = new TeleopVesc(2, "/dev/ttyVESC1"); 
+  TeleopVesc *teleop_vesc1 = new TeleopVesc(8, "/dev/ttyVESC2"); 
 
 // TeleopInput Class
-  TeleopInput tele_input(teleop_vesc1, teleop_vesc2, NULL);
+  TeleopInput tele_input(teleop_vesc1, NULL, NULL);
 
   // ROS Loop
   int cnt_lp = 0;
   ros::Rate loop_rate(rate_hz); //Hz
   ROS_INFO("Start Tele-operation");
   teleop_vesc1->enable.data = true;
-  teleop_vesc2->enable.data = true;
+  //teleop_vesc2->enable.data = true;
 
   teleop_vesc1->startTime = ros::Time::now();
-  teleop_vesc2->startTime = ros::Time::now();
+  //teleop_vesc2->startTime = ros::Time::now();
 
   while (ros::ok())
   { 
@@ -473,16 +486,37 @@ int main(int argc, char **argv)
 		//teleop_vesc->duty[2] = 0.1;
 		//teleop_vesc->duty[3] = 0.1;
 		teleop_vesc1->setDutyCycleOut();
+
+		//teleop_vesc1->custom_cmd_type[0] = COMM_SET_DPS;
+		//teleop_vesc1->custom_cmd_value[0] = 100.;
+		//teleop_vesc1->custom_cmd_type[1] = COMM_SET_DPS;
+		//teleop_vesc1->custom_cmd_value[1] = 100.;
+		//teleop_vesc1->custom_cmd_type[2] = COMM_SET_DPS;
+		//teleop_vesc1->custom_cmd_value[2] = 100.;
+		//teleop_vesc1->custom_cmd_type[3] = COMM_SET_DPS;
+		//teleop_vesc1->custom_cmd_value[3] = 100.;
+		//teleop_vesc1->setCustomOut();
+
+
+
+		//teleop_vesc->custom_cmd_value[0] = teleop_vesc->dps[0]*amplitude*2*M_PI*freq*cos(2*M_PI*freq*(ros::Time::now() - teleop_vesc->startTime).toSec());
+		//teleop_vesc->custom_cmd_type[1] = COMM_SET_DPS;
+		//teleop_vesc->custom_cmd_value[1] = 1000.;
+		//teleop_vesc->custom_cmd_type[2] = COMM_SET_DPS;
+		//teleop_vesc->custom_cmd_value[2] = -1000.;
+
+
 		//ROS_INFO("duty_0:%.2f, duty_1:%.2f, duty_2:%.2f, duty_3:%.2f", teleop_vesc->duty[0], teleop_vesc->duty[1], teleop_vesc->duty[2], teleop_vesc->duty[3]);
 
 		// // position example (0~360 deg)
 		//teleop_vesc->position[0] = 0.;
 		// teleop_vesc->position[1] = 15.;
 		// teleop_vesc->position[2] = 270.;
-		// teleop_vesc->position[3] = -45.;
+		// teleop_vesc->position[3] = -4;
 		//teleop_vesc->setPositionOut();
 
-		teleop_vesc2->setSpeedOut();
+		//teleop_vesc2->setSpeedOut();
+		teleop_vesc1->setSpeedOut();
 
 		// Custom example
 		//freq = teleop_vesc->speed[0];

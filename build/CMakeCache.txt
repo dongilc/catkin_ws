@@ -944,6 +944,9 @@ diff_wheel_platform_BINARY_DIR:STATIC=/home/odroid/workspace/catkin_ws/build/dif
 //Value Computed by CMake
 diff_wheel_platform_SOURCE_DIR:STATIC=/home/odroid/workspace/catkin_ws/src/differential_wheel_platform
 
+//The directory containing a CMake configuration file for dynamic_reconfigure.
+dynamic_reconfigure_DIR:PATH=/opt/ros/melodic/share/dynamic_reconfigure/cmake
+
 //The directory containing a CMake configuration file for gencpp.
 gencpp_DIR:PATH=/opt/ros/melodic/share/gencpp/cmake
 
@@ -1139,6 +1142,12 @@ qtros_BINARY_DIR:STATIC=/home/odroid/workspace/catkin_ws/build/qtros
 
 //Value Computed by CMake
 qtros_SOURCE_DIR:STATIC=/home/odroid/workspace/catkin_ws/src/qtros
+
+//Value Computed by CMake
+razor_imu_9dof_BINARY_DIR:STATIC=/home/odroid/workspace/catkin_ws/build/razor_imu_9dof
+
+//Value Computed by CMake
+razor_imu_9dof_SOURCE_DIR:STATIC=/home/odroid/workspace/catkin_ws/src/razor_imu_9dof
 
 //The directory containing a CMake configuration file for realtime_tools.
 realtime_tools_DIR:PATH=/opt/ros/melodic/share/realtime_tools/cmake
@@ -1400,7 +1409,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=28
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=29
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

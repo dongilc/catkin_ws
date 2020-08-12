@@ -1,7 +1,7 @@
 <launch>
   <!-- VESC1 driver parameters -->
   <arg name="node_name1" default="vesc_driver_node1" />
-  <arg name="port1" default="/dev/ttyVESC0" />
+  <arg name="port1" default="/dev/ttyVESC2" />
 
   <!-- VESC1 driver node -->
   <node pkg="vesc_driver" type="vesc_driver_node" name="$(arg node_name1)" output="screen">
@@ -9,19 +9,25 @@
   </node>
 
   <!-- VESC2 driver parameters -->
-  <arg name="node_name2" default="vesc_driver_node2" />
-  <arg name="port2" default="/dev/ttyVESC1" />
+  <!--  <arg name="node_name2" default="vesc_driver_node2" />   -->
+  <!--  <arg name="port2" default="/dev/ttyVESC1" />   -->
 
   <!-- VESC2 driver node -->
-  <node pkg="vesc_driver" type="vesc_driver_node" name="$(arg node_name2)" output="screen">
-    <param name="port" value="$(arg port2)" />
-  </node>
+  <!--  <node pkg="vesc_driver" type="vesc_driver_node" name="$(arg node_name2)" output="screen">   -->
+  <!--    <param name="port" value="$(arg port2)" />   -->
+  <!--  </node>   -->
 
   <!-- joy node -->
   <node respawn="true" pkg="joy" type="joy_node" name="joy_teleop" output="screen">
     <param name="dev" type="string" value="/dev/input/js0" />
     <param name="deadzone" value="0.1" />
   </node>
+
+ <!-- imu node -->
+  <arg name="razor_config_file" default="$(find razor_imu_9dof)/config/my_razor.yaml"/>
+     <node pkg="razor_imu_9dof" type="imu_node.py" name="imu_node" output="screen">
+        <rosparam file="$(arg razor_config_file)" command="load"/>
+     </node>
 
  <!-- mecanum_robot_ver1 node -->
   <node pkg="mecanum_robot_ver1" type="mecanum_robot_ver1_node" name="mecanum_robot_ver1_node" output="screen"/>
