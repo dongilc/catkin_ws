@@ -1,0 +1,20 @@
+<launch>
+  <!-- VESC1 driver parameters -->
+  <arg name="node_name1" default="vesc_driver_node1" />
+  <arg name="port1" default="/dev/ttyACM0" />
+
+  <!-- VESC1 driver node -->
+  <node pkg="vesc_driver" type="vesc_driver_node" name="$(arg node_name1)" output="screen">
+    <param name="port" value="$(arg port1)" />
+  </node>
+
+  <!--  joy node -->
+  <!-- <node respawn="true" pkg="joy" type="joy_node" name="joy_teleop" output="screen"> -->
+  <!--   <param name="dev" type="string" value="/dev/input/js0" /> -->
+  <!--   <param name="deadzone" value="0.1" /> -->
+  <!-- </node> -->
+
+ <!-- me_exp_2020_node -->
+  <node pkg="me_exp_2020" type="me_exp_2020_node" name="me_exp_2020_node" output="screen"/>
+
+ </launch>

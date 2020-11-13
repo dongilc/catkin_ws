@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: kitech_controllers
+Description: Description of kitech_controllers
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lkitech_controllers
+Requires: angles controller_interface control_msgs urdf kdl_parser realtime_tools message_generation roscpp joy std_msgs

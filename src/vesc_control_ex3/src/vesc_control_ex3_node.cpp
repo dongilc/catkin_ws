@@ -94,7 +94,7 @@ void TeleopInput::joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
 		joy_cmd_forward = (joy->axes[3]);
 		joy_cmd_steering = (joy->axes[2]);
 	}
-
+/*
 	// enable
 	// Button X
 	if(joy->buttons[0]==1) {
@@ -163,6 +163,7 @@ void TeleopInput::joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
 		//
 		break;
 	}
+	*/
 }
 
 void TeleopVesc::customsCallback(const vesc_msgs::VescGetCustomApp::ConstPtr& custom_rx_msg)
@@ -187,10 +188,38 @@ void TeleopVesc::customsCallback(const vesc_msgs::VescGetCustomApp::ConstPtr& cu
 	// ROS_INFO("rps_0:%.2f, rad_0:%.2f", custom_rx_msg->enc_rps[0], custom_rx_msg->enc_rad[0]);
 #endif
 
-	for(int i=0; i<(this->NO_VESC); i++) {
+	this->app_status_code = custom_rx_msg->app_status_code;
+	
+	for(int i=0; i<this->NO_VESC; i++) {
+		this->controller_id[i] = custom_rx_msg->can_id[i];
 		this->rps[i] = custom_rx_msg->enc_rps[i];
-		this->rad[i] = custom_rx_msg->enc_rad[i];
+		//rad[i] = custom_rx_msg->enc_rad[i];
+		this->current_status[i] = custom_rx_msg->current[i];
+		this->duty_status[i] = custom_rx_msg->duty[i];
+        this->custom_status[i] = custom_rx_msg->custom_status[i];
+    }
+
+	if(this->last_app_status_code!=this->app_status_code)	
+	{
+		if(this->port_name=="/dev/ttyVESC3")
+		{
+			if(this->custom_status[0]==2 && this->last_custom_status[0]!=2) {
+				ROS_INFO("VESC3, id=0, Success to find home");
+			}
+			else if(this->custom_status[1]==2 && this->last_custom_status[1]!=2) {
+				ROS_INFO("VESC3, id=1, Success to find home");
+			}
+
+			if(this->custom_status[0]==2 && this->custom_status[1]==2 && this->enable.data!=true) {
+				ROS_INFO("VESC3, Ready");
+				this->enable.data = true;
+			}
+		}
+		if(this->port_name=="/dev/ttyVESC2" && custom_rx_msg->can_devs_num==4) ROS_INFO("VESC2, Success to find home");
 	}
+
+	this->last_app_status_code = this->app_status_code;
+	for(int i=0; i<this->NO_VESC; i++) this->last_custom_status[i] = this->custom_status[i];
 }
 
 void TeleopVesc::stateCallback(const vesc_msgs::VescStateStamped::ConstPtr& state_msg)
@@ -373,7 +402,7 @@ int main(int argc, char **argv)
   float value_goto = 0.;
 
   // TeleopVesc Class
-  TeleopVesc *teleop_vesc1 = new TeleopVesc(1, "/dev/ttyACM1"); 
+  TeleopVesc *teleop_vesc1 = new TeleopVesc(2, "/dev/ttyACM0"); 
   //TeleopVesc *teleop_vesc2 = new TeleopVesc(1, "/dev/ttyACM1"); 
 
 // TeleopInput Class
@@ -422,11 +451,11 @@ int main(int argc, char **argv)
 		//teleop_vesc->setSpeedOut();
 
 		// // // duty example (0.005~0.95)
-		//teleop_vesc->duty[0] = duty[0];
+		teleop_vesc1->duty[0] = 0.15;
 		//teleop_vesc->duty[1] = duty[1];
 		//teleop_vesc1->duty[0] = 0.1;
 		//teleop_vesc1->duty[1] = 0.5;
-		//teleop_vesc1->setDutyCycleOut();
+		teleop_vesc1->setDutyCycleOut();
 
 		//teleop_vesc2->setDutyCycleOut();
 		//ROS_INFO("duty_0:%.2f, duty_1:%.2f", teleop_vesc->duty[0], teleop_vesc->duty[1]);
@@ -437,7 +466,7 @@ int main(int argc, char **argv)
 		// teleop_vesc->position[2] = 270.;
 		// teleop_vesc->position[3] = -45.;
 		//teleop_vesc->setPositionOut();
-
+/*
 		// Custom example
 		cnt++;
 		if(cnt>=200) {
@@ -448,11 +477,15 @@ int main(int argc, char **argv)
 			else if(value_goto==0)	value_goto = -1440;
 			cnt = 0;
 		}
-				
+	*/			
 		//teleop_vesc1->custom_cmd_type[0] = COMM_SET_DPS;
 		//teleop_vesc1->custom_cmd_value[0] = -48.*60.; //29000.; //48.;//(500)*.2*M_PI*(2.0)*cos(2*M_PI*(2.0)*(ros::Time::now() - teleop_vesc1->startTime).toSec());
-		teleop_vesc1->custom_cmd_type[0] = teleop_vesc1->custom_cmd_type[0];
-		teleop_vesc1->custom_cmd_value[0] = teleop_vesc1->custom_cmd_value[0];// + (40.)*sin(2*M_PI*(1.0)*(ros::Time::now() - teleop_vesc1->startTime).toSec());
+		//teleop_vesc1->custom_cmd_type[0] = COMM_SET_GOTO;
+		//teleop_vesc1->custom_cmd_value[0] = value_goto;
+		//teleop_vesc1->custom_cmd_type[1] = COMM_SET_GOTO;
+		//teleop_vesc1->custom_cmd_value[1] = value_goto;
+		
+		// + (40.)*sin(2*M_PI*(1.0)*(ros::Time::now() - teleop_vesc1->startTime).toSec());
 		//teleop_vesc1->custom_cmd_type[1] = COMM_SET_CURRENT;
 		//teleop_vesc1->custom_cmd_value[1] = 0;//108.52 + (40.)*sin(2*M_PI*(1.0)*(ros::Time::now() - teleop_vesc1->startTime).toSec());
 		//teleop_vesc->custom_cmd_type[2] = COMM_SET_DPS;
@@ -461,7 +494,7 @@ int main(int argc, char **argv)
 		//teleop_vesc->custom_cmd_value[3] = 1000.;
 		// teleop_vesc->custom_cmd_type[1] = COMM_SET_DPS;
 		//teleop_vesc->custom_cmd_value[1] = 0.;
-		teleop_vesc1->setCustomOut();
+		//teleop_vesc1->setCustomOut();
 
 		ros::spinOnce();
 		loop_rate.sleep();

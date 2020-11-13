@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: 2link_planar_exp
+Description: Description of 2link_planar_exp
+Version: 0.1.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

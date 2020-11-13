@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: kitech_segway_type_teleop
+Description: Description of kitech_segway_type_teleop
+Version: 0.0.1
+Cflags: 
+Libs: -L${prefix}/lib -lkitech_segway_type_teleop
+Requires: joy roscpp std_msgs
