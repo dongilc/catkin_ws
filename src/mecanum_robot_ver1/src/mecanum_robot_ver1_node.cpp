@@ -55,6 +55,29 @@ void TeleopInput::keyboardCallback(const geometry_msgs::Twist::ConstPtr& cmd_vel
 	*/
 }
 
+//
+void TrapezoidalVelProfile::GenProfile(float v_ref, float *vout)
+{
+	float da = 0;
+	float dv = 0;
+
+	// Profile Deg
+	if(v_ref == *vout) {
+		dv = 0;
+	}
+	else {
+		da = (v_ref - *vout)/dt;
+		if(fabs(da) >= (double)Amax) {
+			if(da>0) da = Amax;
+			else 	 da = -Amax;
+		}
+	}
+	dv = da*dt;
+	*vout += dv;
+
+	//ROS_INFO("dv:%.2f", dv);
+}
+
 void TeleopInput::joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
 {
 	static int joy_cont_mode;
@@ -67,7 +90,7 @@ void TeleopInput::joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
 	//ROS_INFO("%d, %d", joy->buttons[0], joy->buttons[1]);
 
 	joy_cmd_forward = (joy->axes[2])*(0.5);
-	joy_cmd_lateral = (joy->axes[3])*(-0.5);
+	joy_cmd_lateral = (joy->axes[3])*(-0.35);
 	joy_cmd_steering = (joy->axes[0])*(0.7);
 	joy_cmd_elevation = (joy->axes[1])*(0.95);
 
@@ -120,15 +143,23 @@ void TeleopInput::joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
 	}
 
 	// ball feeder on
+	std_msgs::Bool feeder;
+	feeder.data = false;
 	if(joy->buttons[1] == 1)
 	{
-		// ball feeding
-		vh1_->duty[7] = 0.95;
+		// ball feeding On
+		//vh1_->duty[7] = 0.95;
+		feeder.data = true;
+		vh1_->odroid_gpio_FEEDER.publish(feeder);
+		vh1_->led[2] = 1;
 	}
 	else if(joy->buttons[1] == 0)
 	{
-		// ball feeding
-		vh1_->duty[7] = 0.;
+		// ball feeding Off
+		//vh1_->duty[7] = 0.;
+		feeder.data = false;
+		vh1_->odroid_gpio_FEEDER.publish(feeder);
+		vh1_->led[2] = 0;
 	}
 
 	// launcher speed
@@ -139,10 +170,10 @@ void TeleopInput::joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
 	
 	// Elevation
 	vh1_->duty[4] = joy_cmd_elevation;
-
-	ROS_INFO("launcher_lower:%.3f, launcher_upper:%.3f, Elevation:%.3f", launcher_lower_speed, launcher_upper_speed, joy_cmd_elevation);
+	
+	ROS_INFO("lc_low:%.3f, lc_up:%.3f, ang:%.3f", launcher_lower_speed, launcher_upper_speed, this->launcher_incline_angle);
 	//ROS_INFO("vx=%.3f, vy=%.3f, wz=%.3f", vh1_->speed[0], vh1_->speed[1], vh1_->speed[2]);
-
+	
 /*
 	// enable
 	if(joy->buttons[1]==0) {
@@ -183,6 +214,58 @@ void TeleopInput::joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
 	*/
 }
 
+void TeleopInput::imuDataCallback(const sensor_msgs::Imu::ConstPtr& msg)
+{
+	//ROS_INFO("Imu Seq: [%d]", msg->header.seq);
+	//ROS_INFO("Imu Orientation x: [%f], y: [%f], z: [%f], w: [%f]", msg->orientation.x,msg->orientation.y,msg->orientation.z,msg->orientation.w);
+	this->launcher_incline_angle = msg->orientation.x*180./3.14;
+}
+
+void TeleopVesc::LEDToggleRED(int flag)
+{
+	static ros::Time time_prev, time_diff;
+	int sec = 0;
+
+	sec = (ros::Time::now() - time_prev).toSec();
+
+	if(sec >= 1 && flag==1)
+	{
+		if(this->led_R.data==false) 
+		{
+			this->led_R.data = true;
+			this->odroid_gpio_LED_R.publish(led_R);
+		}
+		else
+		{
+			this->led_R.data = false;
+			this->odroid_gpio_LED_R.publish(led_R);
+		}
+		time_prev = ros::Time::now();
+	}
+}
+
+void TeleopVesc::LEDToggleGreen(int flag)
+{
+	static ros::Time time_prev, time_diff;
+	int sec = 0;
+
+	sec = (ros::Time::now() - time_prev).toSec();
+
+	if(sec >= 1 && flag==1)
+	{
+		if(this->led_G.data==false) 
+		{
+			this->led_G.data = true;
+			this->odroid_gpio_LED_G.publish(led_G);
+		}
+		else
+		{
+			this->led_G.data = false;
+			this->odroid_gpio_LED_G.publish(led_G);
+		}
+		time_prev = ros::Time::now();
+	}
+}
 
 void TeleopVesc::customsCallback(const vesc_msgs::VescGetCustomApp::ConstPtr& custom_rx_msg)
 {
@@ -346,9 +429,11 @@ void TeleopVesc::setDutyCycleOut()
 				this->vesc_cmd_duty.publish(cmd_msg);
 			}
 
+			/*
 			// ball feeder
 			setCmdMsg(this->duty[7], CAN_FORWARD_ON, 7);
 			this->vesc_cmd_duty.publish(cmd_msg);
+			*/
 		}
 	}
 }
@@ -359,8 +444,8 @@ void TeleopVesc::setSpeedOut()
 
 	if(this->enable.data)
 	{
-		//if(this->port_name=="/dev/ttyVESC1")
 		if(this->port_name=="/dev/ttyVESC2")
+		//if(this->port_name=="/dev/ttyVESC2")
 		{
 			// speed
 			for(int i=5; i<=6; i++) {
@@ -435,8 +520,15 @@ int main(int argc, char **argv)
   // TeleopVesc Class
   TeleopVesc *teleop_vesc1 = new TeleopVesc(8, "/dev/ttyVESC2"); 
 
-// TeleopInput Class
+  // TeleopInput Class
   TeleopInput tele_input(teleop_vesc1, NULL, NULL);
+
+  // Velocity Profile
+  float amax = 0.5;
+  static float vout_x, vout_y, vout_z;
+  TrapezoidalVelProfile v_prof_x(amax, 1./rate_hz);
+  TrapezoidalVelProfile v_prof_y(amax, 1./rate_hz);
+  TrapezoidalVelProfile v_prof_z(3.*amax, 1./rate_hz);
 
   // ROS Loop
   int cnt_lp = 0;
@@ -479,7 +571,10 @@ int main(int argc, char **argv)
 		//teleop_vesc->setSpeedOut();
 
 		// // // duty example (0.005~0.95)
-		mecanum_robot_jacobian(teleop_vesc1->speed[0], teleop_vesc1->speed[1], teleop_vesc1->speed[2],
+		v_prof_x.GenProfile(teleop_vesc1->speed[0], &vout_x);
+		v_prof_y.GenProfile(teleop_vesc1->speed[1], &vout_y);
+		v_prof_z.GenProfile(teleop_vesc1->speed[2], &vout_z);
+		mecanum_robot_jacobian(vout_x, vout_y, vout_z,
 					  &(teleop_vesc1->duty[0]), &(teleop_vesc1->duty[1]), &(teleop_vesc1->duty[2]), &(teleop_vesc1->duty[3]));
 		//teleop_vesc->duty[0] = 0.1;
 		//teleop_vesc->duty[1] = 0.1;
@@ -496,8 +591,6 @@ int main(int argc, char **argv)
 		//teleop_vesc1->custom_cmd_type[3] = COMM_SET_DPS;
 		//teleop_vesc1->custom_cmd_value[3] = 100.;
 		//teleop_vesc1->setCustomOut();
-
-
 
 		//teleop_vesc->custom_cmd_value[0] = teleop_vesc->dps[0]*amplitude*2*M_PI*freq*cos(2*M_PI*freq*(ros::Time::now() - teleop_vesc->startTime).toSec());
 		//teleop_vesc->custom_cmd_type[1] = COMM_SET_DPS;
@@ -532,8 +625,30 @@ int main(int argc, char **argv)
 		//teleop_vesc->custom_cmd_value[1] = 0.;
 		//teleop_vesc->setCustomOut();
 
+		// Error : Toggle RED LED
+		//teleop_vesc1->LEDToggleRED(teleop_vesc1->led[0]);
+
+		// Feeder On : Toggle Green LED
+		teleop_vesc1->LEDToggleGreen(teleop_vesc1->led[2]);
+
+		// once in 1sec
+		std_msgs::Bool led_data;
+		if(cnt_lp>=rate_hz) 
+		{
+			// Power On : Red On
+			led_data.data = true;	// false is ON, only in case of red
+			teleop_vesc1->odroid_gpio_LED_Y.publish(led_data);
+
+			//
+			//ROS_INFO("vout_x:%.2f(%.2f), vout_y:%.2f(%.2f), vout_z:%.2f(%.2f)", 
+			//	vout_x,teleop_vesc1->speed[0], vout_y,teleop_vesc1->speed[1], vout_z,teleop_vesc1->speed[2]);
+
+			cnt_lp = 0;
+		}
+
 		ros::spinOnce();
 		loop_rate.sleep();
+		cnt_lp++;
   }
 
   return 0;

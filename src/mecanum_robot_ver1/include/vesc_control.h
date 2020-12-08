@@ -16,6 +16,7 @@
 #include "vesc_msgs/VescStateStamped.h"	//cdi
 #include "vesc_msgs/VescGetCustomApp.h"	//cdi
 #include "vesc_msgs/VescSetCustomApp.h"	//cdi
+#include "sensor_msgs/Imu.h"
 
 class TeleopVesc
 {
@@ -43,10 +44,13 @@ public:
 	int* 	last_custom_status;
 	int 	app_status_code;
 	int 	last_app_status_code;
+	int*	led;
 
 	ros::Time startTime;
 	std_msgs::Bool enable;
 	ros::Publisher vesc_cmd_get_customs, vesc_cmd_set_customs, vesc_cmd_alive, vesc_cmd_speed, vesc_cmd_current, vesc_cmd_duty, vesc_cmd_position, vesc_cmd_brake;
+	std_msgs::Bool led_R, led_Y, led_G;
+	ros::Publisher odroid_gpio_LED_R, odroid_gpio_LED_Y, odroid_gpio_LED_G, odroid_gpio_FEEDER;
 	vesc_msgs::VescSetCommand cmd_msg;
 	vesc_msgs::VescSetCustomApp custom_tx_msg;
 	std::string topic_name;
@@ -73,6 +77,7 @@ public:
 		custom_cmd_value = new double[NO_VESC];
 		custom_status = new int[NO_VESC];
 		last_custom_status = new int[NO_VESC];
+		led = new int[3];
 
 		// init
 		for(int i=0; i<NO_VESC; i++) {
@@ -93,6 +98,8 @@ public:
 			custom_status[i] = 0;
 			last_custom_status[i] = 0;
 		}
+		led[0] = led[1] = led[2] = false;
+		led_R.data = led_Y.data = led_G.data = false;
 
 		// Publisher
 		topic_name = port + "/commands/motor/get_customs";
@@ -111,6 +118,11 @@ public:
 		vesc_cmd_position = nh_.advertise<vesc_msgs::VescSetCommand>(topic_name, 10);
 		topic_name = port + "/commands/motor/brake";
 		vesc_cmd_brake = nh_.advertise<vesc_msgs::VescSetCommand>(topic_name, 10);
+		//
+		odroid_gpio_LED_R = nh_.advertise<std_msgs::Bool>("led_red", 10);
+		odroid_gpio_LED_Y = nh_.advertise<std_msgs::Bool>("led_yellow", 10);
+		odroid_gpio_LED_G = nh_.advertise<std_msgs::Bool>("led_green", 10);
+		odroid_gpio_FEEDER = nh_.advertise<std_msgs::Bool>("feeder", 10);
 
 		// Subscriber
 		topic_name = port + "/sensors/core";
@@ -137,6 +149,7 @@ public:
 		delete[] custom_cmd_value;
 		delete[] custom_status;
 		delete[] last_custom_status;
+		delete[] led;
 	}
 
 	void setCmdMsg(double data, int send_can, int can_id);
@@ -148,6 +161,8 @@ public:
 	void setDutyCycleOut();
 	void setSpeedOut();
 	void setPositionOut();
+	void LEDToggleRED(int flag);
+	void LEDToggleGreen(int flag);
 
 private:
 	void stateCallback(const vesc_msgs::VescStateStamped::ConstPtr& state_msg);
@@ -162,6 +177,7 @@ class TeleopInput
 {
 public:
 	TeleopVesc *vh1_, *vh2_, *vh3_;
+	double launcher_incline_angle;
 
 	TeleopInput(TeleopVesc *p_vesc1, TeleopVesc *p_vesc2, TeleopVesc *p_vesc3)
 	{	
@@ -170,14 +186,32 @@ public:
 		vh3_ = p_vesc3;
 		joy_sub_ = nh_.subscribe<sensor_msgs::Joy>("joy", 10, &TeleopInput::joyCallback, this);
 		keyboard_input_ = nh_.subscribe<geometry_msgs::Twist>("cmd_vel", 10, &TeleopInput::keyboardCallback, this);
+		imu_data = nh_.subscribe<sensor_msgs::Imu>("imu", 1000, &TeleopInput::imuDataCallback, this);
 	}
 
 private:
 	void joyCallback(const sensor_msgs::Joy::ConstPtr& joy);
 	void keyboardCallback(const geometry_msgs::Twist::ConstPtr& cmd_vel);
+	void imuDataCallback(const sensor_msgs::Imu::ConstPtr& msg);
 
 	ros::NodeHandle nh_;
-	ros::Subscriber joy_sub_, keyboard_input_;
+	ros::Subscriber joy_sub_, keyboard_input_, imu_data;
+};
+
+class TrapezoidalVelProfile
+{
+public:
+	float Amax;
+	float dt;
+
+	TrapezoidalVelProfile(float Acc_maximum, float DT)
+	{
+		Amax = Acc_maximum;
+		dt = DT;
+	}
+	void GenProfile(float v_ref, float *v_now);
+
+private:
 };
 
 #endif
