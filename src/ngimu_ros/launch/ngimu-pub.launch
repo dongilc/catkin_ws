@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="ngimu_ros" type="ngimu_node.py" name="ngimu_node" output="screen">
+  </node>
+</launch>

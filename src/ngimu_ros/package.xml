@@ -1,0 +1,22 @@
+<package>
+  <name>ngimu_ros</name>
+  <version>1.0.0</version>
+  <description>
+     ngimu ros driver
+  </description>
+
+  <maintainer email="dongilc@mju.ac.kr">Dongil Choi</maintainer>
+
+  <license>BSD</license>
+
+  <url type="website">.</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>rospy</run_depend>
+  <run_depend>tf</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>python-serial</run_depend>
+</package>
+
+
